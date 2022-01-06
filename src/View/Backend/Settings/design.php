@@ -3,22 +3,26 @@
  * Backend Page Setting - FAB Design
  */
 $fab_design = ( isset( $options->fab_design ) ) ?
-	$options->fab_design : $this->Plugin->getConfig()->default->fab_design;
+    $options->fab_design : $this->Plugin->getConfig()->default->fab_design;
+
+
+    /** Design Button */
+    $this->Form->Heading('Button');
+
+    /** Button Color */
+    $optionContainer = array( 'id' => 'option_design_template_color' );
+    ob_start();
+        $this->Form->text( 'fab_design[template][color]', array(
+            'id' => $optionContainer['id'],
+            'class' => array('input' => 'field_option_design_template_color colorpicker'),
+            'value' => isset( $fab_design->template->color ) ? $fab_design->template->color : '#5b59ec',
+        ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Color' )
+    ));
+
 ?>
 
-<h2 class="text-lg py-4 my-4 border-b border-gray-200">Button</h2>
-<div class="grid grid-cols-5 gap-4 py-4">
-
-    <div class="font-medium text-gray-600 pt-2">
-        <label for="field_option_design_template_color">Color</label>
-    </div>
-    <div class="col-span-4">
-        <input type="text" id="field_option_design_template_color"
-               name="fab_design[template][color]"
-               class="field_option_design_template_color colorpicker"
-               value="<?php echo isset( $fab_design->template->color ) ? esc_attr( $fab_design->template->color ) : '#5b59ec'; ?>">
-    </div>
-</div>
 <div class="grid grid-cols-5 gap-4 py-4">
     <div class="font-medium text-gray-600 pt-2">
         Tooltip

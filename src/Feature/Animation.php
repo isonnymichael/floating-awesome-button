@@ -21,11 +21,10 @@ class Animation extends Feature {
 	 * @pattern prototype
 	 */
 	public function __construct( $plugin ) {
-		parent::__construct( $plugin );
 		$this->WP          = $plugin->getWP();
 		$this->key         = 'core_animation';
 		$this->name        = 'Animation';
-		$this->description = 'Handles plugin core animation';
+		$this->description = 'To see animation reference you can go to <code><a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css</a></code>.';
 	}
 
 	/**

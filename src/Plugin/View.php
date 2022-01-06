@@ -21,11 +21,6 @@ class View {
 	protected $Page;
 
 	/**
-	 * @var     object  $Helper   Helper object for view
-	 */
-	protected $Helper;
-
-	/**
 	 * @access   protected
 	 * @var      array    $sections     Lists of view path callback to load
 	 */
@@ -58,8 +53,9 @@ class View {
 	 */
 	public function __construct( $plugin ) {
 		$this->Plugin  = $plugin;
-		$this->Helper  = ( method_exists( $plugin, 'getHelper' ) ) ? $plugin->getHelper() : '';
-		$this->WP      = ( method_exists( $plugin, 'getWP' ) ) ? $plugin->getWP() : '';
+		$this->Helper  = $plugin->getHelper();
+		$this->Form    = $plugin->getForm();
+		$this->WP      = $plugin->getWP();
 		$this->data    = array();
 		$this->options = array();
 	}
@@ -151,20 +147,6 @@ class View {
 	}
 
 	/**
-	 * @return object
-	 */
-	public function getHelper() {
-		return $this->Helper;
-	}
-
-	/**
-	 * @param object $Helper
-	 */
-	public function setHelper( $Helper ) {
-		$this->Helper = $Helper;
-	}
-
-	/**
 	 * @return array
 	 */
 	public function getSections() {
@@ -219,5 +201,15 @@ class View {
 	public function setOptions( $options ) {
 		$this->options = $options;
 	}
+
+    /** Static View Render - Used For (Options, Metafields, etc) */
+    public static function RenderStatic($path, $data = array()){
+        extract( $data );
+        require sprintf(
+            '%s%s.php',
+            json_decode( FAB_PATH )->view_path,
+            str_replace( '.', '/', $path )
+        );
+    }
 
 }

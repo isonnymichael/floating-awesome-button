@@ -8,74 +8,35 @@ $fab_design = ( isset( $options->fab_design ) ) ?
 
 <?php if ( $this->Helper->isPremiumPlan() ) : ?>
 
-    <!--.grid, Field Responsive-->
-    <div class="grid grid-cols-5 gap-4 py-4">
-        <div class="font-medium text-gray-600 pt-2">
-            Show in
-        </div>
-        <div class="col-span-4 flex">
-            <div class="flex">
-                <label for="switch_design_responsive_mobile" class="flex cursor-pointer">
-                    <div class="relative">
-                        <input
-                                type="checkbox"
-                                id="switch_design_responsive_mobile"
-                                class="option_settings switch sr-only"
-                                data-option="fab_design_responsive_mobile"
-                            <?php echo ( $fab->getResponsive()['device']['mobile'] ) ? 'checked' : ''; ?>
-                        >
-                        <div class="block bg-gray-300 w-10 h-6 rounded-full"></div>
-                        <div class="fab absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
-                    </div>
-                </label>
-                <input type="hidden" id="fab_design_responsive_mobile" name="fab_design_responsive[device][mobile]"
-                       class="border border-gray-200 py-2 px-3 text-grey-darkest"
-                       value="<?php echo ( $fab->getResponsive()['device']['mobile'] ) ? 'true' : ''; ?>" />
-                <span class="pl-2" style="padding-top:2px;">Mobile</span>
-            </div>
+    <?php
+        /** Responsive Option */
+        ob_start();
+            /** Mobile */
+            $this->Form->switch( 'fab_design_responsive[device][mobile]', array(
+                'id' => 'design_responsive_mobile',
+                'label' => array( 'text' => 'Mobile' ),
+                'value' => $fab->getResponsive()['device']['mobile'],
+            ));
 
-            <div class="flex pl-6">
-                <label for="switch_design_responsive_tablet" class="flex cursor-pointer">
-                    <div class="relative">
-                        <input
-                                type="checkbox"
-                                id="switch_design_responsive_tablet"
-                                class="option_settings switch sr-only"
-                                data-option="fab_design_responsive_tablet"
-                            <?php echo ( $fab->getResponsive()['device']['tablet'] ) ? 'checked' : ''; ?>
-                        >
-                        <div class="block bg-gray-300 w-10 h-6 rounded-full"></div>
-                        <div class="fab absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
-                    </div>
-                </label>
-                <input type="hidden" id="fab_design_responsive_tablet" name="fab_design_responsive[device][tablet]"
-                       class="border border-gray-200 py-2 px-3 text-grey-darkest"
-                       value="<?php echo ( $fab->getResponsive()['device']['tablet'] ) ? 'true' : ''; ?>" />
-                <span class="pl-2" style="padding-top:2px;">Tablet</span>
-            </div>
+            /** Tablet */
+            $this->Form->switch( 'fab_design_responsive[device][tablet]', array(
+                'id' => 'design_responsive_tablet',
+                'label' => array( 'text' => 'Tablet' ),
+                'class' => array('container' => 'flex pl-6'),
+                'value' => $fab->getResponsive()['device']['tablet'],
+            ));
 
-            <div class="flex pl-6">
-                <label for="switch_design_responsive_desktop" class="flex cursor-pointer">
-                    <div class="relative">
-                        <input
-                                type="checkbox"
-                                id="switch_design_responsive_desktop"
-                                class="option_settings switch sr-only"
-                                data-option="fab_design_responsive_desktop"
-                            <?php echo ( $fab->getResponsive()['device']['desktop'] ) ? 'checked' : ''; ?>
-                        >
-                        <div class="block bg-gray-300 w-10 h-6 rounded-full"></div>
-                        <div class="fab absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
-                    </div>
-                </label>
-                <input type="hidden" id="fab_design_responsive_desktop" name="fab_design_responsive[device][desktop]"
-                       class="border border-gray-200 py-2 px-3 text-grey-darkest"
-                       value="<?php echo ( $fab->getResponsive()['device']['desktop'] ) ? 'true' : ''; ?>" />
-                <span class="pl-2" style="padding-top:2px;">Desktop</span>
-            </div>
-
-        </div>
-    </div><!--.grid-->
+            /** Desktop */
+            $this->Form->switch( 'fab_design_responsive[device][desktop]', array(
+                'id' => 'design_responsive_desktop',
+                'label' => array( 'text' => 'Desktop' ),
+                'class' => array('container' => 'flex pl-6'),
+                'value' => $fab->getResponsive()['device']['desktop'],
+            ));
+        $this->Form->container( 'setting', ob_get_clean(), array(
+            'label' => array( 'text' => 'Show in' ),
+        ));
+    ?>
 
     <!--.grid, Field Shape-->
     <?php $shapeOption = ['shape']; ?>
@@ -105,20 +66,24 @@ $fab_design = ( isset( $options->fab_design ) ) ?
     </div>
     <!--.grid-->
 
-    <!--.grid, Color-->
-    <div class="grid grid-cols-5 gap-4 py-4">
-        <div class="font-medium text-gray-600 pt-2">
-            Color
-        </div>
-        <div class="col-span-4">
-            <input type="text"
-                   id="field_option_design_template_color"
-                   class="colorpicker" name="fab_design_template[color]"
-                   value="<?php echo ( $fab->getTemplate()['color'] ) ? esc_attr( $fab->getTemplate()['color'] ) : '' ?>">
-        </div>
-    </div>
-    <!--.grid-->
     <?php endif; ?>
+
+    <?php
+
+        /** Button Color */
+        $optionContainer = array( 'id' => 'option_design_template_color' );
+        ob_start();
+        $this->Form->text( 'fab_design_template[color]', array(
+            'id' => $optionContainer['id'],
+            'class' => array('input' => 'colorpicker'),
+            'value' => ( $fab->getTemplate()['color'] ) ? esc_attr( $fab->getTemplate()['color'] ) : '',
+        ));
+        $this->Form->container( 'setting', ob_get_clean(), array(
+            'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Color' )
+        ));
+
+    ?>
+
 <?php endif; ?>
 
 <div class="py-4 my-4 border-b border-gray-200">

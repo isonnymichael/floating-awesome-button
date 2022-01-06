@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit51c735aa9bd9616b6c1272155f13e4c6
+class ComposerStaticInitff71d5f720ea7122be5e4a999a3a9c50
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -31,6 +31,7 @@ class ComposerStaticInit51c735aa9bd9616b6c1272155f13e4c6
         'Fab\\Feature\\Hooks' => __DIR__ . '/../..' . '/src/Feature/Hooks.php',
         'Fab\\Feature\\Modal' => __DIR__ . '/../..' . '/src/Feature/Modal.php',
         'Fab\\Feature\\Order' => __DIR__ . '/../..' . '/src/Feature/Order.php',
+        'Fab\\Form' => __DIR__ . '/../..' . '/src/Plugin/Form.php',
         'Fab\\Helper' => __DIR__ . '/../..' . '/src/Plugin/Helper.php',
         'Fab\\Helper\\Directory' => __DIR__ . '/../..' . '/src/Plugin/Helper/Directory.php',
         'Fab\\Helper\\FABItem' => __DIR__ . '/../..' . '/src/Helper/FAB/FABItem.php',
@@ -38,15 +39,17 @@ class ComposerStaticInit51c735aa9bd9616b6c1272155f13e4c6
         'Fab\\Helper\\Option' => __DIR__ . '/../..' . '/src/Plugin/Helper/Option.php',
         'Fab\\Helper\\Plan' => __DIR__ . '/../..' . '/src/Plugin/Helper/Plan.php',
         'Fab\\Helper\\Text' => __DIR__ . '/../..' . '/src/Plugin/Helper/Text.php',
-        'Fab\\Metabox\\FABMetaboxDesign' => __DIR__ . '/../..' . '/src/Helper/FAB/FABMetaboxDesign.php',
-        'Fab\\Metabox\\FABMetaboxLocation' => __DIR__ . '/../..' . '/src/Helper/FAB/FABMetaboxLocation.php',
-        'Fab\\Metabox\\FABMetaboxSetting' => __DIR__ . '/../..' . '/src/Helper/FAB/FABMetaboxSetting.php',
-        'Fab\\Metabox\\FABMetaboxTrigger' => __DIR__ . '/../..' . '/src/Helper/FAB/FABMetaboxTrigger.php',
+        'Fab\\Metabox\\FABMetaboxDesign' => __DIR__ . '/../..' . '/src/Helper/FABMetabox/FABMetaboxDesign.php',
+        'Fab\\Metabox\\FABMetaboxLocation' => __DIR__ . '/../..' . '/src/Helper/FABMetabox/FABMetaboxLocation.php',
+        'Fab\\Metabox\\FABMetaboxSetting' => __DIR__ . '/../..' . '/src/Helper/FABMetabox/FABMetaboxSetting.php',
+        'Fab\\Metabox\\FABMetaboxTrigger' => __DIR__ . '/../..' . '/src/Helper/FABMetabox/FABMetaboxTrigger.php',
         'Fab\\Model\\Fab' => __DIR__ . '/../..' . '/src/Model/Fab.php',
         'Fab\\Model\\Model' => __DIR__ . '/../..' . '/src/Plugin/Model.php',
-        'Fab\\Module\\FABModuleAuthLogin' => __DIR__ . '/../..' . '/src/Helper/FAB/FABModuleAuthLogin.php',
-        'Fab\\Module\\FABModuleAuthLogout' => __DIR__ . '/../..' . '/src/Helper/FAB/FABModuleAuthLogout.php',
-        'Fab\\Module\\FABModuleSearch' => __DIR__ . '/../..' . '/src/Helper/FAB/FABModuleSearch.php',
+        'Fab\\Module\\FABModule' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModule.php',
+        'Fab\\Module\\FABModuleAuthLogin' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleAuthLogin.php',
+        'Fab\\Module\\FABModuleAuthLogout' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleAuthLogout.php',
+        'Fab\\Module\\FABModuleScrollToTop' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleScrollToTop.php',
+        'Fab\\Module\\FABModuleSearch' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleSearch.php',
         'Fab\\Plugin' => __DIR__ . '/../..' . '/src/Plugin/Plugin.php',
         'Fab\\View' => __DIR__ . '/../..' . '/src/Plugin/View.php',
         'Fab\\Wordpress\\Customizer\\Control' => __DIR__ . '/../..' . '/src/Wordpress/Customizer/Control.php',
@@ -83,7 +86,7 @@ class ComposerStaticInit51c735aa9bd9616b6c1272155f13e4c6
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit51c735aa9bd9616b6c1272155f13e4c6::$classMap;
+            $loader->classMap = ComposerStaticInitff71d5f720ea7122be5e4a999a3a9c50::$classMap;
 
         }, null, ClassLoader::class);
     }

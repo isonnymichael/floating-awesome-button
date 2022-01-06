@@ -12,8 +12,8 @@
 								0
 							</span>
                         <span class="text-gray-600 px-3">
-								<?php echo count( $featureHooks[ $slug ] ); ?>
-							</span>
+                            <?php echo count( $featureHooks[ $slug ] ); ?>
+                        </span>
                     </h3>
                 </div>
                 <div class="flex items-center relative">

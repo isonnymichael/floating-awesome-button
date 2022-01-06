@@ -121,7 +121,7 @@ class MetaboxDesign extends Base {
         $view->setData(
             array(
                 'fab' => new FABItem( $post->ID ),
-                'options' => (object) ( (array) $config + (array) $default ),
+                'options' => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
             )
         );
         $view->build();

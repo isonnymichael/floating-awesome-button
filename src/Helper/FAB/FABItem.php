@@ -18,6 +18,7 @@ use Fab\Metabox\FABMetaboxDesign;
 use Fab\Metabox\FABMetaboxTrigger;
 use Fab\Module\FABModuleAuthLogin;
 use Fab\Module\FABModuleAuthLogout;
+use Fab\Module\FABModuleScrollToTop;
 use Fab\Module\FABModuleSearch;
 
 class FABItem {
@@ -99,6 +100,12 @@ class FABItem {
      * @var      FABModal    $modal    modal
      */
     protected $modal;
+
+    /**
+     * @access   protected
+     * @var      FABModule    $module    module
+     */
+    protected $module;
 
 	/**
 	 * @access   protected
@@ -188,6 +195,9 @@ class FABItem {
 		/** Location */
 		$this->locations = $this->WP->get_post_meta( $this->ID, FABMetaboxLocation::$post_metas['locations']['meta_key'], true );
 		$this->locations = ( $this->locations ) ? json_decode( $this->locations, true ) : array();
+
+        /** Module */
+        if( $this->type === 'scrolltotop' ){ $this->module = new FABModuleScrollToTop(); }
 
 		/** Grab Link */
 		if ( $this->type === 'link' ) {
@@ -539,6 +549,22 @@ class FABItem {
         $this->modal = $modal;
     }
 
+    /**
+     * @return FABModule
+     */
+    public function getModule()
+    {
+        return $this->module;
+    }
+
+    /**
+     * @param FABModule $module
+     */
+    public function setModule($module): void
+    {
+        $this->module = $module;
+    }
+
 	/**
 	 * @return array
 	 */
@@ -631,6 +657,7 @@ class FABItem {
 	public function getVars() {
         $data = get_object_vars( $this );
         $data['modal'] = $this->modal->getVars();
+        if($this->module) $data['module'] = $this->module->getVars();
 		return $data;
 	}
 

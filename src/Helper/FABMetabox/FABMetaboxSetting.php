@@ -42,6 +42,10 @@ class FABMetaboxSetting extends Metabox {
 			'id'   => 'search',
 			'text' => 'Search',
 		),
+        array(
+            'id'   => 'scrolltotop',
+            'text' => 'Scroll To Top',
+        ),
 		array(
 			'text'     => 'Widget',
 			'children' => array(

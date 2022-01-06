@@ -101,6 +101,12 @@ class Plugin {
 	 */
 	protected $Helper;
 
+    /**
+     * @access   protected
+     * @var      object    $form  Form object for controller
+     */
+    protected $Form;
+
 	/**
 	 * @access   protected
 	 * @var      object    $helper  Helper object for controller
@@ -125,7 +131,8 @@ class Plugin {
 		$this->controllers = array();
 		$this->features    = array();
 		$this->models      = array();
-		$this->Helper      = new Helper( $this );
+		$this->Helper      = new Helper();
+		$this->Form        = new Form();
 		$this->WP          = new \Fab\Wordpress\Helper();
 		/** Init Config */
 		$this->config->path = explode( '/', dirname( __DIR__, 2 ) );
@@ -282,6 +289,21 @@ class Plugin {
 	}
 
     /**
+     * Get FAB Modules
+     */
+    public function getModules(){
+        $modules = [];
+        $allow = array( '.', '..', '.DS_Store', 'index.php', 'FABModule.php' );
+        foreach($this->Helper->getDirFiles( $this->path['plugin_path'] . 'src/Helper/FABModule' ) as $module){
+            if ( in_array( basename( $module ), $allow ) ) continue;
+            $name = basename( $module, '.php' );
+            $class = '\\Fab\\Module\\' . $name;
+            $modules[ $name ] = new $class();
+        }
+        return $modules;
+    }
+
+    /**
      * Set default config
      *
      * @return void
@@ -289,7 +311,10 @@ class Plugin {
     public function setDefaultOption(){
         $config = (array) $this->config->options;
         if(empty($config) || !$config){
-            $config = (array) $this->config->options + (array) $this->config->default;
+            $config = $this->Helper->ArrayMergeRecursive(
+                (array) $this->config->default,
+                (array) $this->config->options
+            );
             $this->WP->update_option( 'fab_config', (object) $config );
             $this->config->options = (object) $config;
         }
@@ -462,6 +487,22 @@ class Plugin {
 	public function setHelper( $Helper ) {
 		$this->Helper = $Helper;
 	}
+
+    /**
+     * @return object
+     */
+    public function getForm(): Form
+    {
+        return $this->Form;
+    }
+
+    /**
+     * @param object $Form
+     */
+    public function setForm(Form $Form): void
+    {
+        $this->Form = $Form;
+    }
 
 	/**
 	 * @return object

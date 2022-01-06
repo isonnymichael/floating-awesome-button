@@ -21,11 +21,10 @@ class Asset extends Feature {
 	 * @pattern prototype
 	 */
 	public function __construct( $plugin ) {
-		parent::__construct( $plugin );
 		$this->WP          = $plugin->getWP();
 		$this->key         = 'core_asset';
 		$this->name        = 'Asset';
-		$this->description = 'Handles plugin core asset';
+		$this->description = 'Plugin core assets feature';
 	}
 
 	/**

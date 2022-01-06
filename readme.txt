@@ -1,10 +1,10 @@
 === Floating Awesome Button ===
-Contributors: agung2001, freemius
-Tags: floating button, sticky button, action button, float menu, social sharing
+Contributors: agung2001
+Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.8.2
 Requires PHP: 5.6
-Stable tag: 1.4.17
+Stable tag: 1.4.18
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -98,6 +98,10 @@ who had helped provides and develop these libraries
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.4.18 =
+* Create new module scroll to top
+* Add module option in backend setting page
 
 = 1.4.17 =
 * Adding action button tooltip

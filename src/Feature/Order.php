@@ -21,11 +21,10 @@ class Order extends Feature {
 	 * @pattern prototype
 	 */
 	public function __construct( $plugin ) {
-		parent::__construct( $plugin );
 		$this->WP          = $plugin->getWP();
 		$this->key         = 'core_order';
 		$this->name        = 'Order';
-		$this->description = 'Sort FAB Orders';
+		$this->description = 'Drag & Drop to Reorder';
 	}
 
 	/**

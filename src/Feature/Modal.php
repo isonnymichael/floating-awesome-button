@@ -37,7 +37,6 @@ class Modal extends Feature {
      * @pattern prototype
      */
     public function __construct( $plugin ) {
-        parent::__construct( $plugin );
         $this->WP          = $plugin->getWP();
         $this->key         = 'core_modal';
         $this->name        = 'Modal';

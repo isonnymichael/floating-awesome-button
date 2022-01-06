@@ -123,7 +123,7 @@ class Backend extends Base {
 				'screen'         => FAB_SCREEN,
 				'path'           => FAB_PATH,
 				'premium'        => $this->Helper->isPremiumPlan(),
-				'options'        => (object) ( (array) $config + (array) $default ),
+				'options'        => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
 				'defaultOptions' => array(
                     'layout' => Design::$layout,
                     'template' => Design::$template

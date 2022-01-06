@@ -9,15 +9,19 @@
 <!-- START: ".fab-container" -->
 <div class="fab-container metabox-settings">
 
-	<!--.grid, Field Behaviour Display-->
-	<div class="grid grid-cols-5 gap-4 py-4">
-		<div class="font-medium text-gray-600 pt-2">
-			Type
-		</div>
-		<div class="col-span-4">
-			<select name="fab_setting_type" id="fab_setting_type" class="select2" data-selected="<?php echo esc_attr( $fab->getType() ); ?>"></select>
-		</div>
-	</div><!--.grid-->
+    <?php
+        /** Setting Type */
+        $optionContainer = array( 'id' => 'fab_setting_type' );
+        ob_start();
+            $this->Form->select( 'fab_setting_type', array(), array(
+                'id' => $optionContainer['id'],
+                'class' => array('input' => 'select2'),
+                'value' => $fab->getType(),
+            ));
+        $this->Form->container( 'setting', ob_get_clean(), array(
+            'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Type' )
+        ));
+    ?>
 
 	<!--.grid, Field Link-->
 	<div class="grid grid-cols-5 gap-4 py-4 fab-type-link" style="<?php echo 'link' !== esc_attr( $fab->getType() ) ? 'display:none' : ''; ?>">

@@ -18,7 +18,7 @@ $config = $this->Plugin->getConfig();
             </div>
         </div>
 
-        <div class="col-span-4 mx-8 md:mx-16 my-12">
+        <div class="col-span-4 mx-8 md:mx-16 my-12 overflow-scroll md:overflow-auto">
             <h2 class="text-3xl md:text-5xl font-medium mb-4">
                 <?php echo esc_attr( $this->Plugin->getName() ); ?>
             </h2>

@@ -206,6 +206,7 @@
         <em class="field-info">Modal background layer</em>
     </div>
 </div>
+
 <!--.grid, Color-->
 <div class="grid grid-cols-5 gap-4 py-4">
     <div class="font-medium text-gray-600 pt-2">
@@ -219,6 +220,7 @@
     </div>
 </div>
 <!--.grid-->
+
 <!--.grid, Opacity-->
 <div class="grid grid-cols-5 gap-4 py-4">
     <div class="font-medium text-gray-600 pt-2">

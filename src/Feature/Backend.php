@@ -20,7 +20,6 @@ class Backend extends Feature {
      * @pattern prototype
      */
     public function __construct($plugin){
-        parent::__construct($plugin);
         $this->key = 'core_backend';
         $this->name = 'Backend';
         $this->description = 'Handles plugin backend core function';

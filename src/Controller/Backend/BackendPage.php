@@ -45,6 +45,7 @@ class BackendPage extends Base {
 	 */
 	public function page_setting() {
 		/** Grab Data */
+        $plugin = \Fab\Plugin::getInstance();
 		$slug     = sprintf( '%s-setting', $this->Plugin->getSlug() );
 		$features = $this->page_setting_features();
 
@@ -59,106 +60,136 @@ class BackendPage extends Base {
 		/** Handle form submission */
 		$this->page_setting_submission( $slug, $features );
 
-		/** Section */
-		$sections                    = array();
-		$sections['Backend.setting'] = array(
-			'name'   => 'Setting',
-			'active' => true,
-		);
-		if ( ! $this->Plugin->getConfig()->production ) {
-			$sections['Backend.feature'] = array( 'name' => 'Feature' );
-		}
-		$sections['Backend.about'] = array( 'name' => 'About' );
+        /** Section */
+        $sections                    = array();
+        $sections['Backend.setting'] = array(
+            'name'   => 'Setting',
+            'active' => true,
+        );
+        if ( ! $this->Plugin->getConfig()->production ) {
+            $sections['Backend.feature'] = array( 'name' => 'Feature' );
+        }
+        $sections['Backend.module'] = array(
+            'name' => 'Module',
+        );
+        $sections['Backend.about'] = array( 'name' => 'About' );
 
-		/** Set View */
-		$view = new View( $this->Plugin );
-		$view->setTemplate( 'backend.default' );
-		$view->setSections( $sections );
-		$view->addData(
-			array(
-				'result'       => isset( $result ) ? $result : '',
-				'background'   => 'bg-alizarin',
-				'features'     => $features['features'],
-				'featureHooks' => $features['featureHooks'],
+        /** Set View */
+        $view = new View( $this->Plugin );
+        $view->setTemplate( 'backend.default' );
+        $view->setSections( $sections );
+        $view->addData(
+            array(
+                'result'       => isset( $result ) ? $result : '',
+                'background'   => 'bg-alizarin',
+                'features'     => $features['features'],
+                'featureHooks' => $features['featureHooks'],
+                'modules'     => $plugin->getModules(),
                 'options' => (object) (
                     (array) $this->WP->get_option( 'fab_config' ) +
                     (array) $this->Plugin->getConfig()->default
                 ),
-			)
-		);
-		$view->setOptions( array( 'shortcode' => false ) );
+            )
+        );
+        $view->setOptions( array( 'shortcode' => false ) );
 
-		/** Set Page */
-		$page = new SubmenuPage();
-		$page->setParentSlug( 'options-general.php' );
-		$page->setPageTitle( FAB_NAME );
-		$page->setMenuTitle( FAB_NAME );
-		$page->setCapability( 'manage_options' );
-		$page->setMenuSlug( $slug );
-		$page->setFunction( array( $page, 'loadView' ) );
-		$page->setView( $view );
-		$page->build();
+        /** Set Page */
+        $page = new SubmenuPage();
+        $page->setParentSlug( 'options-general.php' );
+        $page->setPageTitle( FAB_NAME );
+        $page->setMenuTitle( FAB_NAME );
+        $page->setCapability( 'manage_options' );
+        $page->setMenuSlug( $slug );
+        $page->setFunction( array( $page, 'loadView' ) );
+        $page->setView( $view );
+        $page->build();
+
+
 	}
 
-	/**
-	 * Handle Page Submission
-	 */
+	/*** Handle Page Submission */
 	public function page_setting_submission( $slug, $features ) {
-        $default = $this->Plugin->getConfig()->default;
-		$options = $this->Plugin->getConfig()->options;
 		if ( isset( $_GET['page'] ) && $_GET['page'] == $slug ) {
 			if ( $_POST && isset( $_POST['clear-config'] ) ) { /** Clear Config */
-				$this->WP->delete_option( 'fab_config' );
-				$this->WP->update_option( 'fab_config', $this->Plugin->getConfig()->default );
-			} elseif ( $_POST ) { /** Save Config */
-                $params = $_POST;
-
-				/** Sanitize & Transform Animation */
-                if ( isset( $params['fab_animation'] ) ) {
-                    $feature = $features['features']['core_animation'];
-                    $feature->sanitize();
-                    $featureOption = (isset($options->fab_animation)) ? $options->fab_animation : $default->fab_animation;
-                    $feature->setOptions( $featureOption );
-                    $options->fab_animation = $feature->transform();
-                }
-
-				/** Sanitize & Transform Assets */
-                if ( isset( $params['fab_assets'] ) ) {
-                    $feature = $features['features']['core_asset'];
-                    $feature->sanitize();
-                    $featureOption = (isset($options->fab_assets)) ? $options->fab_assets : $default->fab_assets;
-                    $feature->setOptions( $featureOption );
-                    $options->fab_assets = $feature->transform();
-                }
-
-                /** Sanitize & Transform Order */
-                if ( isset( $params['fab_design'] ) ) {
-                    $feature = $features['features']['core_design'];
-                    $featureOption = (isset($options->fab_design)) ? $options->fab_design : $default->fab_design;
-                    $feature->setOptions( $featureOption );
-                    $feature->sanitize();
-                    $options->fab_design = $feature->transform();
-                }
-
-				/** Sanitize & Transform Order */
-                if ( isset( $params['fab_order'] ) ) {
-                    $feature = $features['features']['core_order'];
-                    $feature->sanitize();
-                    $options->fab_order = $feature->transform();
-                }
-
-                /** Sanitize & Transform Feature */
-                if ( isset( $params['fab_hooks'] ) ) {
-                    $feature = $features['features']['core_hooks'];
-                    $feature->sanitize();
-                    $options->fab_hooks = $feature->getParams();
-                }
-
-				/** Save config */
-				$this->WP->update_option( 'fab_config', $options );
+                $this->page_setting_submission_clearconfig();
+            } elseif ( $_POST && isset( $_POST['module-config'] ) ) { /** Module Config */
+                $this->page_setting_submission_module();
+			} elseif ( $_POST ) { /** Save Setting */
+                $this->page_setting_submission_setting($features);
 			}
 		}
 	}
+
+    /** Clear Config */
+    public function page_setting_submission_clearconfig() {
+        $plugin = \Fab\Plugin::getInstance();
+        $modules = $plugin->getModules();
+        $this->WP->delete_option( 'fab_config' );
+        $this->WP->update_option( 'fab_config', $this->Plugin->getConfig()->default );
+        foreach($modules as $module){
+            $this->WP->delete_option( sprintf('fab_%s', $module->getKey() ) );
+        }
+    }
+
+    /** Save Module Config */
+    public function page_setting_submission_module() {
+        $params = $_POST;
+        foreach($params as $key => $options){
+            if(strpos($key, 'fab_')===false) continue;
+            $this->WP->update_option( $key, $options );
+        }
+    }
+
+    /** Save Plugin Setting */
+    public function page_setting_submission_setting( $features ) {
+        $default = $this->Plugin->getConfig()->default;
+        $options = $this->Plugin->getConfig()->options;
+        $params = $_POST;
+
+        /** Sanitize & Transform Animation */
+        if ( isset( $params['fab_animation'] ) ) {
+            $feature = $features['features']['core_animation'];
+            $feature->sanitize();
+            $featureOption = (isset($options->fab_animation)) ? $options->fab_animation : $default->fab_animation;
+            $feature->setOptions( $featureOption );
+            $options->fab_animation = $feature->transform();
+        }
+
+        /** Sanitize & Transform Assets */
+        if ( isset( $params['fab_assets'] ) ) {
+            $feature = $features['features']['core_asset'];
+            $feature->sanitize();
+            $featureOption = (isset($options->fab_assets)) ? $options->fab_assets : $default->fab_assets;
+            $feature->setOptions( $featureOption );
+            $options->fab_assets = $feature->transform();
+        }
+
+        /** Sanitize & Transform Order */
+        if ( isset( $params['fab_design'] ) ) {
+            $feature = $features['features']['core_design'];
+            $featureOption = (isset($options->fab_design)) ? $options->fab_design : $default->fab_design;
+            $feature->setOptions( $featureOption );
+            $feature->sanitize();
+            $options->fab_design = $feature->transform();
+        }
+
+        /** Sanitize & Transform Order */
+        if ( isset( $params['fab_order'] ) ) {
+            $feature = $features['features']['core_order'];
+            $feature->sanitize();
+            $options->fab_order = $feature->transform();
+        }
+
+        /** Sanitize & Transform Feature */
+        if ( isset( $params['fab_hooks'] ) ) {
+            $feature = $features['features']['core_hooks'];
+            $feature->sanitize();
+            $options->fab_hooks = $feature->getParams();
+        }
+
+        /** Save config */
+        $this->WP->update_option( 'fab_config', $options );
+    }
 
 	/**
 	 * Get Lists of registered features, controller, & APIs

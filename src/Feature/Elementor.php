@@ -21,7 +21,6 @@ class Elementor extends Feature {
 	 * @pattern prototype
 	 */
 	public function __construct( $plugin ) {
-		parent::__construct( $plugin );
 		$this->key         = 'elementor';
 		$this->name        = 'Elementor';
 		$this->description = 'Elementor core hooks';

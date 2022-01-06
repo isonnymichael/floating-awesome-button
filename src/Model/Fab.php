@@ -113,6 +113,7 @@ class Fab extends Model {
 		/** Data */
 		$order = array();
 		$items = array();
+        $scrolltotop = false;
 
 		/** Grab Data - Ordered Data */
 		$fab_order = $this->Plugin->getConfig()->options->fab_order;
@@ -143,9 +144,7 @@ class Fab extends Model {
 		/** Filter by Location */
 		$tmp = array();
 		foreach ( $items as &$item ) {
-			if ( ! isset( $item->ID ) ) {
-				continue;
-			}
+			if ( ! isset( $item->ID ) ) { continue; }
 			$item = new FABItem( $item->ID ); // Grab FAB Item.
 			if ( $item->getStatus() !== 'publish' ) {
 				continue;
@@ -153,6 +152,7 @@ class Fab extends Model {
 			if ( isset( $args['builder'] ) && ! in_array( $item->getBuilder(), $args['builder'] ) ) {
 				continue;
 			}
+            if( $item->getType()==='scrolltotop' ){ $scrolltotop = $item; }
 			if ( ! isset( $order[ $item->getID() ] ) ) {
 				$order[ $item->getID() ] = count( $order ); }
 			if ( isset( $args['validateLocation'] ) &&
@@ -180,6 +180,7 @@ class Fab extends Model {
 		return array(
 			'order' => array_flip( $order ),
 			'items' => $items,
+            'scrolltotop' => $scrolltotop,
 		);
 	}
 

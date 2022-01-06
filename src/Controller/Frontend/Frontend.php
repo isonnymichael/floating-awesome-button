@@ -98,7 +98,7 @@ class Frontend extends Base {
 				'screen'  => FAB_SCREEN,
 				'path'    => FAB_PATH,
 				'premium' => $this->Helper->isPremiumPlan(),
-				'options' => (object) ( (array) $config + (array) $default ),
+				'options' => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
 				'default' => $default,
                 'to_display' => $fab_to_display,
 			)
@@ -132,10 +132,13 @@ class Frontend extends Base {
 		}
 
 		/** Grab Data */
-		$options        = $this->Plugin->getConfig()->options;
+        $default = $this->Plugin->getConfig()->default;
+		$options = $this->Plugin->getConfig()->options;
         $Fab = $this->Plugin->getModels()['Fab'];
         $args = $this->fab_to_display_args;
-		$fab_to_display = $Fab->get_lists_of_fab( $args )['items'];
+        $lists = $Fab->get_lists_of_fab( $args );
+		$fab_to_display = $lists['items'];
+        $fab_scroll_to_top = $lists['scrolltotop'];
 
 		if ( ! is_admin() && $fab_to_display ) {
 			/** Show FAB Button */
@@ -149,7 +152,7 @@ class Frontend extends Base {
 					),
 				)
 			);
-			$view->setData( compact( 'post', 'fab_to_display', 'options' ) );
+			$view->setData( compact( 'post', 'fab_to_display', 'fab_scroll_to_top', 'options', 'default' ) );
 			$view->setOptions( array( 'shortcode' => false ) );
 			$view->build();
 
@@ -195,8 +198,8 @@ class Frontend extends Base {
 		foreach ( $widgets as $widget ) {
 			register_sidebar(
 				array(
-					'name'          => __( $widget->getTitle(), 'fab-widget-' . $widget->getSlug() ),
-					'id'            => 'fab-widget-' . $widget->getSlug(),
+					'name'          => __( $widget->getTitle(), sprintf( 'fab-widget-%s',  $widget->getSlug() ) ),
+					'id'            => sprintf( 'fab-widget-%s',  $widget->getSlug() ),
 					'before_widget' => '<div id="%1$s" class="widget fab-container %2$s">',
 					'after_widget'  => '</div>',
 					'before_title'  => '<h3 class="widgettitle">',

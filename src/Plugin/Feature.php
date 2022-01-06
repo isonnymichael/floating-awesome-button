@@ -55,11 +55,14 @@ class Feature {
 	 * @var    object   $plugin     Feature configuration
 	 * @pattern prototype
 	 */
-	public function __construct( \Fab\Plugin $plugin ) {
+	public function __construct() {
 		$this->options            = (object) array();
 		$this->params             = (object) array();
 		$this->hide_on_production = false;
-		$this->Plugin             = $plugin;
+		$this->Plugin             = \Fab\Plugin::getInstance();
+		$this->Form               = $this->Plugin->getForm();
+		$this->Helper             = $this->Plugin->getHelper();
+		$this->WP                 = $this->Plugin->getWP();
 	}
 
 	/**

@@ -20,14 +20,6 @@ class Helper {
     use Helper\Plan;
 
     /**
-     * Hook constructor
-     * @return void
-     */
-    public function __construct(\Fab\Plugin $plugin){
-        $this->Plugin = $plugin;
-    }
-
-    /**
      * Define const which will be used within the plugin
      * @param   object   $plugin     Wordpress plugin object
      * @return void

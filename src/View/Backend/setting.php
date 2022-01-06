@@ -18,16 +18,23 @@
 					<div id="setting-<?php echo esc_attr( $key ); ?>" class="bg-white shadow-sm rounded-lg px-6 py-2 mb-4 z-0">
 
 						<div class="px-1 py-4">
-							<div class="flex items-center relative pb-4">
-								<div class="text-gray-600 inline-block p-2 mr-4 text-center transition focus:outline-none waves-effect">
-									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-									</svg>
-								</div>
-								<h2 class="text-gray-600 text-2xl">
-									<?php echo esc_attr( $feature->getName() ); ?>
-								</h2>
-							</div>
+                            <div class="pb-4">
+                                <div class="flex items-center relative ">
+                                    <div class="text-gray-600 inline-block p-2 mr-4 text-center transition focus:outline-none waves-effect">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-gray-600 text-2xl">
+                                        <?php echo esc_attr( $feature->getName() ); ?>
+                                    </h2>
+                                </div>
+                                <?php if( $feature->getDescription() ): ?>
+                                    <div class="text-gray-400 mt-2 field-info">
+                                        <em><?php echo do_shortcode( $feature->getDescription() ); ?></em>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
 							<?php $this->loadContent( 'Backend/Settings/.' . esc_attr( $featureSlug ) ); ?>
 
@@ -105,7 +112,7 @@
 <!--Clear Config Modal-->
 <div id="clear-config" style="display:none;">
 	<form method="POST" id="clear-config-form">
-		<input type="hidden" name="clear-config" value="1">
+        <?php wp_nonce_field( 'clear-config', 'clear-config' ); ?>
 		Are you sure you want to reset the setting?
 	</form>
 </div>

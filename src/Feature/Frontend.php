@@ -20,7 +20,6 @@ class Frontend extends Feature {
      * @pattern prototype
      */
     public function __construct($plugin){
-        parent::__construct($plugin);
         $this->key = 'core_frontend';
         $this->name = 'Frontend';
         $this->description = 'Handles plugin frontend core function';

@@ -58,6 +58,32 @@ class Design extends Feature {
                 'id'   => 'custom',
                 'text' => 'Custom',
             ),
+        ),
+        'sizing' => array(
+            array(
+                'id' => 'px',
+                'text' => 'PX'
+            ),
+            array(
+                'id' => 'em',
+                'text' => 'EM'
+            ),
+            array(
+                'id' => '%',
+                'text' => '%'
+            ),
+            array(
+                'id' => 'rem',
+                'text' => 'REM'
+            ),
+            array(
+                'id' => 'vw',
+                'text' => 'VW'
+            ),
+            array(
+                'id' => 'vh',
+                'text' => 'VH'
+            ),
         )
 	);
 
@@ -129,11 +155,10 @@ class Design extends Feature {
 	 * @pattern prototype
 	 */
 	public function __construct( $plugin ) {
-		parent::__construct( $plugin );
 		$this->WP          = $plugin->getWP();
 		$this->key         = 'core_design';
 		$this->name        = 'Design';
-		$this->description = 'Handles plugin core design';
+		$this->description = 'Floating Awesome Button Design';
 	}
 
 	/**

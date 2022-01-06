@@ -15,7 +15,19 @@ namespace Fab\Module;
 use FAB\Plugin;
 use Fab\View;
 
-class FABModuleSearch {
+class FABModuleSearch extends FABModule {
+
+    /**
+     * Module construect
+     *
+     * @return void
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->key         = 'module_search';
+        $this->name        = 'Search';
+        $this->description = 'Popup search';
+    }
 
     /** Render Module */
     public function render(){
