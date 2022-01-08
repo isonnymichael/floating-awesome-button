@@ -2,9 +2,9 @@
 Contributors: agung2001
 Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
-Tested up to: 5.8.2
+Tested up to: 5.8.3
 Requires PHP: 5.6
-Stable tag: 1.4.18
+Stable tag: 1.4.19
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -98,6 +98,9 @@ who had helped provides and develop these libraries
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.4.19 =
+* HOTFIX: Scroll to top not changing it shapes
 
 = 1.4.18 =
 * Create new module scroll to top

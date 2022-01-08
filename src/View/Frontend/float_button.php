@@ -19,7 +19,7 @@ $FACCount = 0; /** Hide Element if FAB FAC, if no element need to be showing (Sc
 		<?php echo ( $buttonAnimation !== 'ripple' ) ? sprintf( 'animate__animated animate__%s', esc_attr( $buttonAnimation ) ) : ''; ?>">
         <?php if($fab_scroll_to_top): ?>
             <div id="fab-scroll-to-top"
-                 class="fab-scroll-to-top fab-links <?php echo ($buttonShape) ? esc_attr( sprintf('fab-template-shape-%s', $buttonShape) ) : ''; ?> cursor-pointer animate__animated"
+                 class="fab-standalone fab-scroll-to-top fab-links <?php echo ($buttonShape) ? esc_attr( sprintf('fab-template-shape-%s', $buttonShape) ) : ''; ?> cursor-pointer animate__animated"
                  <?php echo sprintf( ' data-id="%s" ', esc_attr( $fab_scroll_to_top->getID() ) ); ?> >
                 <em class="<?php echo empty( esc_attr( $fab_scroll_to_top->getIconClass() ) ) ? 'fas fa-chevron-up' : esc_attr( $fab_scroll_to_top->getIconClass() ); ?>"></em>
                 <div class="bg-shape"></div>
@@ -136,10 +136,9 @@ $FACCount = 0; /** Hide Element if FAB FAC, if no element need to be showing (Sc
                 echo esc_attr( $styles );
 
                 /** FAB Button Styling Custom Shape */
-                $clipShape = ['bevel', 'circle', 'message', 'octagon', 'pentagon', 'rebbet', 'rhombus', 'square', 'star', 'triangle'];
-                if(in_array($buttonShape, $clipShape)){
+                if($buttonTemplate==='shape'){
                     $styles = sprintf( 'background: %s !important;  ', $buttonColor);
-                    $styles = sprintf('div.fab .bg-shape{ %s }', $styles);
+                    $styles = sprintf('div.fab .bg-shape { %s }', $styles);
                     echo esc_attr($styles);
                 }
 
