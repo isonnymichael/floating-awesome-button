@@ -18,7 +18,9 @@ use Fab\Metabox\FABMetaboxDesign;
 use Fab\Metabox\FABMetaboxTrigger;
 use Fab\Module\FABModuleAuthLogin;
 use Fab\Module\FABModuleAuthLogout;
+use Fab\Module\FABModuleReadingBar;
 use Fab\Module\FABModuleScrollToTop;
+use Fab\Module\FABModuleAnchorLink;
 use Fab\Module\FABModuleSearch;
 
 class FABItem {
@@ -197,10 +199,12 @@ class FABItem {
 		$this->locations = ( $this->locations ) ? json_decode( $this->locations, true ) : array();
 
         /** Module */
-        if( $this->type === 'scrolltotop' ){ $this->module = new FABModuleScrollToTop(); }
+        if( $this->type === 'anchor_link' ){ $this->module = new FABModuleAnchorLink(); }
+        elseif( $this->type === 'readingbar' ){ $this->module = new FABModuleReadingBar(); }
+        elseif( $this->type === 'scrolltotop' ){ $this->module = new FABModuleScrollToTop(); }
 
 		/** Grab Link */
-		if ( $this->type === 'link' ) {
+		if ( $this->type === 'link' || $this->type === 'anchor_link' ) {
 			$this->link         = $this->WP->get_post_meta( $this->ID, FABMetaboxSetting::$post_metas['link']['meta_key'], true );
 			$this->link         = ( $this->link && is_string( $this->link ) ) ? $this->link : '';
 			$this->linkBehavior = $this->WP->get_post_meta( $this->ID, FABMetaboxSetting::$post_metas['link_behavior']['meta_key'], true );

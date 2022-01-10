@@ -15,6 +15,10 @@
             <?php if($data['items']){ ?>
                 <div id="fab-order" class="w-full">
                     <?php foreach ( $data['items'] as $fab ) : ?>
+                        <?php
+                            /** Custom Button Type */
+                            if(in_array( $fab->getType(), ['readingbar', 'scrolltotop'] )) continue;
+                        ?>
                         <div data-id="<?php echo esc_attr( $fab->getID() ); ?>"
                             class="bg-white fab-item shadow-sm hover:shadow-md border border-gray-200 rounded-lg px-6 py-4 mb-2 cursor-grab">
                             <div class="inline-block">

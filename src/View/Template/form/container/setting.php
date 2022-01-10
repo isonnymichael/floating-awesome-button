@@ -1,5 +1,9 @@
 <!--.grid, Field Modal Size-->
-<div class="grid grid-cols-5 gap-4 py-4">
+<?php
+    $containerClass = isset($args['class']['container']) ? $args['class']['container'] : 'grid grid-cols-5 gap-4 py-4';
+    $containerClass .=  isset($args['label']['id']) ? esc_attr( sprintf(' fab-option-container-%s', $args['label']['id']) ) : '';
+?>
+<div class="<?php echo esc_attr( $containerClass ); ?>">
     <div class="font-medium text-gray-600 pt-2">
         <label <?php echo isset($args['label']['id']) ? esc_attr( sprintf('for="field_%s"', $args['label']['id'] ) ) : ''; ?>>
             <?php echo esc_attr( $args['label']['text'] ); ?>

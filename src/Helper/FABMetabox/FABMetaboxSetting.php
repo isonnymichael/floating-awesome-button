@@ -17,34 +17,52 @@ class FABMetaboxSetting extends Metabox {
 
 	/** FAB Metabox Settings */
 	public static $types = array(
-		array(
-			'text'     => 'Auth',
-			'children' => array(
-				array(
-					'id'   => 'auth_login',
-					'text' => 'Login',
-				),
-				array(
-					'id'   => 'auth_logout',
-					'text' => 'Logout',
-				),
-			),
-		),
-		array(
-			'id'   => 'link',
-			'text' => 'Link',
-		),
-		array(
-			'id'   => 'modal',
-			'text' => 'Modal',
-		),
-		array(
-			'id'   => 'search',
-			'text' => 'Search',
-		),
         array(
-            'id'   => 'scrolltotop',
-            'text' => 'Scroll To Top',
+            'text' => 'Bar & Button',
+            'children' => array(
+                array(
+                    'id'   => 'readingbar',
+                    'text' => 'Reading Bar',
+                ),
+                array(
+                    'id'   => 'scrolltotop',
+                    'text' => 'Scroll To Top',
+                ),
+            )
+        ),
+        array(
+            'text' => 'Link',
+            'children' => array(
+                array(
+                    'id'   => 'link',
+                    'text' => 'Link',
+                ),
+                array(
+                    'id'   => 'anchor_link',
+                    'text' => 'Anchor Link',
+                ),
+            )
+        ),
+        array(
+            'text'     => 'Modal & Popup',
+            'children' => array(
+                array(
+                    'id'   => 'auth_login',
+                    'text' => 'Login',
+                ),
+                array(
+                    'id'   => 'auth_logout',
+                    'text' => 'Logout',
+                ),
+                array(
+                    'id'   => 'modal',
+                    'text' => 'Simple Modal',
+                ),
+                array(
+                    'id'   => 'search',
+                    'text' => 'Search',
+                ),
+            ),
         ),
 		array(
 			'text'     => 'Widget',

@@ -21,52 +21,34 @@ $fab_design = ( isset( $options->fab_design ) ) ?
         'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Color' )
     ));
 
+    /** Tooltip - Enable/Disable */
+    $optionContainer = array( 'id' => 'option_design_tooltip' );
+    ob_start();
+    $this->Form->switch( 'fab_design[tooltip][enable]', array(
+        'id' => $optionContainer['id'],
+        'label' => array( 'text' => 'Enable/Disable' ),
+        'value' => $fab_design->tooltip->enable,
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Tooltip' )
+    ));
+
+    $this->Form->Heading('Icon');
+
+    /** Icon - Class */
+    $optionContainer = array( 'id' => 'option_design_template_icon' );
+    ob_start();
+    $this->Form->text( 'fab_design[template][icons][class]', array(
+        'id' => $optionContainer['id'],
+        'value' => isset( $fab_design->template->icons->class ) ? $fab_design->template->icons->class : 'fas fa-ellipsis-h',
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Class' ),
+        'info' => 'Please refer to <code><a href="https://fontawesome.com/v5.15/icons/" target="_blank">Font Awesome</a></code> to see the icon class'
+    ));
+
 ?>
 
-<div class="grid grid-cols-5 gap-4 py-4">
-    <div class="font-medium text-gray-600 pt-2">
-        Tooltip
-    </div>
-    <div class="col-span-4">
-        <div class="flex mb-4">
-            <label for="switch_option_design_tooltip" class="flex cursor-pointer">
-                <div class="relative">
-                    <input
-                            type="checkbox"
-                            id="switch_option_design_tooltip"
-                            class="option_settings switch sr-only"
-                            data-option="field_option_design_tooltip_enable"
-                        <?php echo ( esc_attr( $fab_design->tooltip->enable ) ) ? 'checked' : ''; ?>
-                    >
-                    <div class="block bg-gray-300 w-10 h-6 rounded-full"></div>
-                    <div class="fab absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
-                </div>
-            </label>
-            <input type="hidden" name="fab_design[tooltip][enable]" id="field_option_design_tooltip_enable" value="<?php echo esc_attr( $fab_design->tooltip->enable ); ?>">
-            <span class="pl-2" style="padding-top:2px;">Enable/Disable</span>
-        </div>
-    </div>
-</div>
-
-<h2 class="text-lg py-4 my-4 border-b border-gray-200">Icon</h2>
-<div class="grid grid-cols-5 gap-4 py-4">
-    <div class="font-medium text-gray-600 pt-2">
-        <label for="field_option_design_template_icon">Class</label>
-    </div>
-    <div class="col-span-4">
-        <input type="text" id="field_option_design_template_icon"
-               name="fab_design[template][icons][class]"
-               class="field_option_design_template_icon border border-gray-200 py-2 px-3 text-grey-darkest w-full"
-               value="<?php echo isset( $fab_design->template->icons->class ) ? esc_attr( $fab_design->template->icons->class ) : 'fas fa-ellipsis-h'; ?>">
-        <div class="text-gray-400 mt-2">
-            <em class="field-info">
-                Please refer to
-                <code><a href="https://fontawesome.com/v5.15/icons/" target="_blank">Font Awesome</a></code>
-                to see the icon class
-            </em>
-        </div>
-    </div>
-</div>
 <div class="grid grid-cols-5 gap-4 py-4">
     <div class="font-medium text-gray-600 pt-2">
         <label for="field_option_design_template_color">Color</label>

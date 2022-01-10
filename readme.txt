@@ -4,24 +4,26 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.8.3
 Requires PHP: 5.6
-Stable tag: 1.4.19
+Stable tag: 1.4.21
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
-Floating Awesome Button (FAB) is customizable sticky action button that can help you display custom content (modal, shortcodes, widgets, links, etc).
+Floating Awesome Button (FAB) is customizable sticky action button that can help you display custom content (popup, shortcodes, widgets, links, etc).
 
 == Description ==
 
-https://www.youtube.com/watch?v=jsnru8BA778
+https://www.youtube.com/watch?v=-nUEic-EVXY
 
 Floating Awesome Button (FAB) is customizable action button that can help you :
 
 * Adding quick contact links (SMS, Email, and Call)
 * Adding multiple social media links (Facebook, Instagram, TikTok, etc)
 * Adding auth link (Login, Logout, Lost password)
-* Displaying custom content (Offers, Opt-in, Promo, etc)
-* Displaying custom authentication modal (Register & Login)
-* Displaying custom shortcode in a modal
+* Add scroll to top, back to top, anchor link button
+* Add custom design reading progress bar
+* Displaying custom popup (Offers, Opt-in, Promo, etc)
+* Displaying custom authentication popup (Register & Login)
+* Displaying custom shortcode in a popup
 * Displaying product catalogue (Woocommerce)
 * Displaying forms (Newsletter, Booking, Membership, Payment, etc)
 * Integration with widgets in modal (Table of content, Social Sharing, etc)
@@ -32,6 +34,8 @@ Floating Awesome Button (FAB) is customizable action button that can help you :
 https://www.youtube.com/watch?v=ifNfoV5_6Bk
 
 https://www.youtube.com/watch?v=TYxBG2iPvl4
+
+https://www.youtube.com/watch?v=jsnru8BA778
 
 https://www.youtube.com/watch?v=pg_R3ov-D3M&t=21s
 
@@ -47,18 +51,17 @@ More Tutorial in YouTube :
 * 1500+ Support FontAwesome Icons
 * Beautiful User Interface (UI)
 * Sortable action button
-* Ability to resize modal/popup
-* Ability to change FAB position (Left, Center, Right)
-* Ability to change FAB template (Color & Icon)
-* Ability to change FAB shape - 10+ Shapes (Bevel, Circle, Message, Octagon, Pentagon, etc)
-* Modal Navigation (Draggable, BackgroundDismiss, EscapeKey, Maximize Button, etc)
+* Ability to personalize action buttons (Position, Color, Icons, & Shapes)
+* Multiple button positions (Left, Center, Right)
+* Multiple button shapes 10+ Shapes (Bevel, Circle, Message, Octagon, Pentagon, etc)
+* Multiple popup navigation (Draggable, BackgroundDismiss, EscapeKey, Maximize Button, etc)
 
 = Pro Version =
 * **PRO** Ability custom filter by (Custom Post Type & Pages)
-* **PRO** Ability to change fab & modal animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)
+* **PRO** Ability to change fab & popup animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)
 * **PRO** Ability to change FAB design & layout (Color, Icon, Responsiveness)
 * **PRO** Map modal with custom hotkey (Ctrl, Shift, Alt, Function Key, & Combined) (258+ Hotkeys)
-* **PRO** Ability to change modal theme (Blank, Window Light, Window Dark, many more)
+* **PRO** Ability to change popup theme (Blank, Window Light, Window Dark, many more)
 
 = 3rd Party Plugins Support =
 * [Contact Form 7](https://wordpress.org/plugins/contact-form-7)
@@ -98,6 +101,11 @@ who had helped provides and develop these libraries
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.4.21 =
+* Add reading progress bar module
+* Add anchor link module
+* Optimize floating button code for performance
 
 = 1.4.19 =
 * HOTFIX: Scroll to top not changing it shapes
