@@ -4,16 +4,13 @@
  *
  * @package FAB
  */
-
-use Fab\View;
 ?>
 
 <!-- START: ".fab-container" -->
 <div class="fab-container metabox-triggers">
     <?php
-        $view = new View( $this->Plugin );
-        $view->setTemplate( 'backend.optiontab' );
-        $view->setSections(
+        $this->setTemplate( 'backend.optiontab' );
+        $this->setSections(
             array(
                 'Backend.Metabox.tab-trigger.trigger' => array(
                     'name'   => 'Trigger',
@@ -26,12 +23,12 @@ use Fab\View;
                 ),
             )
         );
-        $view->setData(array(
+        $this->setData(array(
             'fab' => $fab,
             'optionTab' => 'optionTabTrigger',
         ));
-        $view->setOptions( array( 'shortcode' => false ) );
-        $view->build();
+        $this->setOptions( array( 'shortcode' => false ) );
+        $this->build();
     ?>
 </div>
 <!-- END: ".fab-container" -->

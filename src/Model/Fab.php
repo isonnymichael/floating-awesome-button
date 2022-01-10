@@ -113,7 +113,10 @@ class Fab extends Model {
 		/** Data */
 		$order = array();
 		$items = array();
-        $scrolltotop = false;
+		$custom = array(
+            'readingbar' => false,
+            'scrolltotop' => false
+        );
 
 		/** Grab Data - Ordered Data */
 		$fab_order = $this->Plugin->getConfig()->options->fab_order;
@@ -152,7 +155,9 @@ class Fab extends Model {
 			if ( isset( $args['builder'] ) && ! in_array( $item->getBuilder(), $args['builder'] ) ) {
 				continue;
 			}
-            if( $item->getType()==='scrolltotop' ){ $scrolltotop = $item; }
+            if( in_array($item->getType(), array_keys($custom)) ){ /** Grab Custom Module */
+                $custom[ $item->getType() ] = $item;
+            }
 			if ( ! isset( $order[ $item->getID() ] ) ) {
 				$order[ $item->getID() ] = count( $order ); }
 			if ( isset( $args['validateLocation'] ) &&
@@ -180,7 +185,7 @@ class Fab extends Model {
 		return array(
 			'order' => array_flip( $order ),
 			'items' => $items,
-            'scrolltotop' => $scrolltotop,
+            'custom' => $custom
 		);
 	}
 

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3224e6c4df935554b1fa23b27df80005
+class ComposerStaticInit8f17f5612ff77d491cf3afe69f428b4b
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -46,8 +46,10 @@ class ComposerStaticInit3224e6c4df935554b1fa23b27df80005
         'Fab\\Model\\Fab' => __DIR__ . '/../..' . '/src/Model/Fab.php',
         'Fab\\Model\\Model' => __DIR__ . '/../..' . '/src/Plugin/Model.php',
         'Fab\\Module\\FABModule' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModule.php',
+        'Fab\\Module\\FABModuleAnchorLink' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleAnchorLink.php',
         'Fab\\Module\\FABModuleAuthLogin' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleAuthLogin.php',
         'Fab\\Module\\FABModuleAuthLogout' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleAuthLogout.php',
+        'Fab\\Module\\FABModuleReadingBar' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleReadingBar.php',
         'Fab\\Module\\FABModuleScrollToTop' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleScrollToTop.php',
         'Fab\\Module\\FABModuleSearch' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleSearch.php',
         'Fab\\Plugin' => __DIR__ . '/../..' . '/src/Plugin/Plugin.php',
@@ -86,7 +88,7 @@ class ComposerStaticInit3224e6c4df935554b1fa23b27df80005
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit3224e6c4df935554b1fa23b27df80005::$classMap;
+            $loader->classMap = ComposerStaticInit8f17f5612ff77d491cf3afe69f428b4b::$classMap;
 
         }, null, ClassLoader::class);
     }

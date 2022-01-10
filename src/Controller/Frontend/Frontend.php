@@ -99,7 +99,6 @@ class Frontend extends Base {
 				'path'    => FAB_PATH,
 				'premium' => $this->Helper->isPremiumPlan(),
 				'options' => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
-				'default' => $default,
                 'to_display' => $fab_to_display,
 			)
 		);
@@ -138,7 +137,7 @@ class Frontend extends Base {
         $args = $this->fab_to_display_args;
         $lists = $Fab->get_lists_of_fab( $args );
 		$fab_to_display = $lists['items'];
-        $fab_scroll_to_top = $lists['scrolltotop'];
+        $fab_custom_module = $lists['custom'];
 
 		if ( ! is_admin() && $fab_to_display ) {
 			/** Show FAB Button */
@@ -146,13 +145,13 @@ class Frontend extends Base {
 			$view->setTemplate( 'frontend.blank' );
 			$view->setSections(
 				array(
-					'Frontend.float_button' => array(
+					'Frontend.button' => array(
 						'name'   => 'Float Button',
 						'active' => true,
 					),
 				)
 			);
-			$view->setData( compact( 'post', 'fab_to_display', 'fab_scroll_to_top', 'options', 'default' ) );
+			$view->setData( compact( 'post', 'fab_to_display', 'fab_custom_module', 'options', 'default' ) );
 			$view->setOptions( array( 'shortcode' => false ) );
 			$view->build();
 

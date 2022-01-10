@@ -4,18 +4,14 @@
  *
  * @package FAB
  */
-
-use Fab\View;
-
 ?>
 
 <!-- START: ".fab-container" -->
 <div class="fab-container metabox-design">
 
     <?php
-        $view = new View( $this->Plugin );
-        $view->setTemplate( 'backend.optiontab' );
-        $view->setSections(
+        $this->setTemplate( 'backend.optiontab' );
+        $this->setSections(
             array(
                 'Backend.Metabox.tab-design.button' => array(
                     'name'   => 'Button',
@@ -29,13 +25,13 @@ use Fab\View;
                 ),
             )
         );
-        $view->setData(array(
+        $this->setData(array(
             'fab' => $fab,
             'options' => $options,
             'optionTab' => 'optionTabDesign',
         ));
-        $view->setOptions( array( 'shortcode' => false ) );
-        $view->build();
+        $this->setOptions( array( 'shortcode' => false ) );
+        $this->build();
     ?>
 
 </div>

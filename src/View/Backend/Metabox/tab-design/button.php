@@ -68,6 +68,8 @@ $fab_design = ( isset( $options->fab_design ) ) ?
 
     <?php endif; ?>
 
+<?php endif; ?>
+
     <?php
 
         /** Button Color */
@@ -82,16 +84,12 @@ $fab_design = ( isset( $options->fab_design ) ) ?
             'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Color' )
         ));
 
+        $this->Form->Heading('Icon',array(
+            'info' => 'Icon Configuration'
+        ));
+
     ?>
 
-<?php endif; ?>
-
-<div class="py-4 my-4 border-b border-gray-200">
-    <span class="text-lg">Icon</span>
-    <div class="text-gray-400">
-        <em class="field-info">Icon configuration</em>
-    </div>
-</div>
 <!--.grid, Field Icon Class-->
 <div class="grid grid-cols-5 gap-4 py-4">
     <div class="font-medium text-gray-600 pt-2">
@@ -112,55 +110,51 @@ $fab_design = ( isset( $options->fab_design ) ) ?
 </div>
 <!--.grid, Field Icon Class-->
 
-<?php if ( $this->Helper->isPremiumPlan() ) : ?>
-    <!--.grid, Color-->
-    <div class="grid grid-cols-5 gap-4 py-4">
-        <div class="font-medium text-gray-600 pt-2">
-            Color
-        </div>
-        <div class="col-span-4">
-            <input type="text"
-                   id="field_option_design_template_icon_color"
-                   class="colorpicker" name="fab_design_template[icon][color]"
-                   value="<?php echo ( $fab->getTemplate()['icon']['color'] ) ? esc_attr( $fab->getTemplate()['icon']['color'] ) : '' ?>">
-        </div>
+<!--.grid, Color-->
+<div class="grid grid-cols-5 gap-4 py-4">
+    <div class="font-medium text-gray-600 pt-2">
+        Color
     </div>
-    <!--.grid-->
-<?php endif; ?>
+    <div class="col-span-4">
+        <input type="text"
+               id="field_option_design_template_icon_color"
+               class="colorpicker" name="fab_design_template[icon][color]"
+               value="<?php echo ( $fab->getTemplate()['icon']['color'] ) ? esc_attr( $fab->getTemplate()['icon']['color'] ) : '' ?>">
+    </div>
+</div>
+<!--.grid-->
 
-<?php if ( $this->Helper->isPremiumPlan() ) : ?>
-    <div class="py-4 my-4 border-b border-gray-200">
-        <span class="text-lg">Tooltip</span>
-        <div class="text-gray-400">
-            <em class="field-info">Tooltip configuration</em>
-        </div>
+<div class="py-4 my-4 border-b border-gray-200">
+    <span class="text-lg">Tooltip</span>
+    <div class="text-gray-400">
+        <em class="field-info">Tooltip configuration</em>
     </div>
+</div>
 
-    <!--.grid, Color-->
-    <div class="grid grid-cols-5 gap-4 py-4">
-        <div class="font-medium text-gray-600 pt-2">
-            Background Color
-        </div>
-        <div class="col-span-4">
-            <input type="text"
-                   id="field_option_design_template_tooltip_color"
-                   class="colorpicker" name="fab_design_tooltip[color]"
-                   value="<?php echo ( $fab->getTooltip()['color'] ) ? esc_attr( $fab->getTooltip()['color'] ) : '' ?>">
-        </div>
+<!--.grid, Color-->
+<div class="grid grid-cols-5 gap-4 py-4">
+    <div class="font-medium text-gray-600 pt-2">
+        Background Color
     </div>
-    <!--.grid-->
+    <div class="col-span-4">
+        <input type="text"
+               id="field_option_design_template_tooltip_color"
+               class="colorpicker" name="fab_design_tooltip[color]"
+               value="<?php echo ( $fab->getTooltip()['color'] ) ? esc_attr( $fab->getTooltip()['color'] ) : '' ?>">
+    </div>
+</div>
+<!--.grid-->
 
-    <!--.grid, Color-->
-    <div class="grid grid-cols-5 gap-4 py-4">
-        <div class="font-medium text-gray-600 pt-2">
-            Font Color
-        </div>
-        <div class="col-span-4">
-            <input type="text"
-                   id="field_option_design_template_tooltip_font_color"
-                   class="colorpicker" name="fab_design_tooltip[font][color]"
-                   value="<?php echo ( $fab->getTooltip()['font']['color'] ) ? esc_attr( $fab->getTooltip()['font']['color'] ) : '' ?>">
-        </div>
+<!--.grid, Color-->
+<div class="grid grid-cols-5 gap-4 py-4">
+    <div class="font-medium text-gray-600 pt-2">
+        Font Color
     </div>
-    <!--.grid-->
-<?php endif; ?>
+    <div class="col-span-4">
+        <input type="text"
+               id="field_option_design_template_tooltip_font_color"
+               class="colorpicker" name="fab_design_tooltip[font][color]"
+               value="<?php echo ( $fab->getTooltip()['font']['color'] ) ? esc_attr( $fab->getTooltip()['font']['color'] ) : '' ?>">
+    </div>
+</div>
+<!--.grid-->
