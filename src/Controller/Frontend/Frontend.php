@@ -18,11 +18,6 @@ use Fab\Metabox\FABMetaboxSetting;
 
 class Frontend extends Base {
 
-    /** FAB To Display Args */
-    protected $fab_to_display_args = array(
-        'validateLocation' => true,
-    );
-
 	/**
 	 * Frontend constructor
 	 *
@@ -80,12 +75,24 @@ class Frontend extends Base {
 	 * @var     array   $hook_suffix     The current admin page
 	 */
 	public function frontend_enequeue( $hook_suffix ) {
+        /** Default Variables */
 		define( 'FAB_SCREEN', json_encode( $this->WP->getScreen() ) );
 		$default = $this->Plugin->getConfig()->default;
 		$config  = $this->Plugin->getConfig()->options;
+
+        /** Get FAB for JS Manipulation */
         $fab_to_display = $this->Plugin->getModels()['Fab'];
-        $fab_to_display = $fab_to_display->get_lists_of_fab( $this->fab_to_display_args )['items'];
+        $fab_to_display = $fab_to_display->get_lists_of_fab( array(
+            'validateLocation' => true
+        ) )['items'];
         foreach($fab_to_display as &$fab){ $fab = $fab->getVars(); }
+
+        /** Get Features for JS Manipulation */
+        $features = $this->Plugin->getFeatures();
+        foreach($features as $key => &$feature){
+            $feature = $feature->getOptions();
+            if(!$feature) unset($features[$key]);
+        }
 
 		/** Load Inline Script */
 		$this->WP->wp_enqueue_script( 'fab-local', 'local/fab.js', array(), '', true );
@@ -100,6 +107,7 @@ class Frontend extends Base {
 				'premium' => $this->Helper->isPremiumPlan(),
 				'options' => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
                 'to_display' => $fab_to_display,
+                'features' => $features
 			)
 		);
 
@@ -134,12 +142,15 @@ class Frontend extends Base {
         $default = $this->Plugin->getConfig()->default;
 		$options = $this->Plugin->getConfig()->options;
         $Fab = $this->Plugin->getModels()['Fab'];
-        $args = $this->fab_to_display_args;
+        $args = array(
+            'validateLocation' => true,
+            'filtercustommodule' => true,
+        );
         $lists = $Fab->get_lists_of_fab( $args );
 		$fab_to_display = $lists['items'];
         $fab_custom_module = $lists['custom'];
 
-		if ( ! is_admin() && $fab_to_display ) {
+		if ( ! is_admin() && ( $fab_to_display || $fab_custom_module) ) {
 			/** Show FAB Button */
 			$view = new View( $this->Plugin );
 			$view->setTemplate( 'frontend.blank' );

@@ -47,68 +47,57 @@ $fab_design = ( isset( $options->fab_design ) ) ?
         'info' => 'Please refer to <code><a href="https://fontawesome.com/v5.15/icons/" target="_blank">Font Awesome</a></code> to see the icon class'
     ));
 
+    /** Icon Color */
+    $optionContainer = array( 'id' => 'option_design_icon_color' );
+    ob_start();
+    $this->Form->text( 'fab_design[template][icons][color]', array(
+        'id' => $optionContainer['id'],
+        'class' => array('input' => 'field_option_design_template_color colorpicker'),
+        'value' => isset( $fab_design->template->icons->color ) ? $fab_design->template->icons->color : '#fff',
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Color' )
+    ));
+
+    $this->Form->Heading('Layout');
+
+    /** Layout - Position */
+    $optionContainer = array( 'id' => 'option_design_layout_position' );
+    ob_start();
+    $this->Form->select( 'fab_design[layout][position]', array(), array(
+        'id' => $optionContainer['id'],
+        'class' => array('input' => 'select2 field_option_design_layout_position'),
+        'value' => isset( $fab_design->layout->position ) ? $fab_design->layout->position : 'left',
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Position' )
+    ));
+
+    $this->Form->Heading('Template');
+
+    /** Template - Name */
+    $optionContainer = array( 'id' => 'option_design_template_name' );
+    ob_start();
+    $this->Form->select( 'fab_design[template][name]', array(), array(
+        'id' => $optionContainer['id'],
+        'class' => array('input' => 'select2 field_option_design_template_name'),
+        'value' => isset( $fab_design->template->name ) ? $fab_design->template->name : 'classic',
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Name' )
+    ));
+
+    /** Template - Shape */
+    $optionContainer = array( 'id' => 'option_design_template_shape' );
+    ob_start();
+    $this->Form->select( 'fab_design[template][shape]', array(), array(
+        'id' => $optionContainer['id'],
+        'class' => array('input' => 'select2 field_option_design_template_shape'),
+        'value' => isset( $fab_design->template->shape ) ? $fab_design->template->shape : 'none',
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Shape' ),
+        'info' => 'Please refer to <code><a href="https://bennettfeely.com/clippy/" target="_blank">Clippy</a></code> to see the shape'
+    ));
+
 ?>
-
-<div class="grid grid-cols-5 gap-4 py-4">
-    <div class="font-medium text-gray-600 pt-2">
-        <label for="field_option_design_template_color">Color</label>
-    </div>
-    <div class="col-span-4">
-        <input type="text" id="field_option_design_template_color"
-               name="fab_design[template][icons][color]"
-               class="field_option_design_template_color colorpicker"
-               value="<?php echo isset( $fab_design->template->icons->color ) ? esc_attr( $fab_design->template->icons->color ) : '#fff'; ?>">
-    </div>
-</div>
-
-<!--Start: Layout-->
-<h2 class="text-lg py-4 my-4 border-b border-gray-200">Layout</h2>
-<div class="grid grid-cols-5 gap-4 py-4">
-	<div class="font-medium text-gray-600 pt-2">
-		<label for="field_option_design_layout_position">Position</label>
-	</div>
-	<div class="col-span-4">
-		<select id="field_option_design_layout_position"
-				name="fab_design[layout][position]"
-				class="field_option_design_layout_position select2"
-				data-selected="<?php echo isset( $fab_design->layout->position ) ? esc_attr( $fab_design->layout->position ) : ''; ?>">
-		</select>
-	</div>
-</div>
-<!--End: Layout-->
-
-<h2 class="text-lg py-4 my-4 border-b border-gray-200">Template</h2>
-<!--Start: Template-->
-    <div class="grid grid-cols-5 gap-4 py-4">
-        <div class="font-medium text-gray-600 pt-2">
-            <label for="field_option_design_template_name">Name</label>
-        </div>
-        <div class="col-span-4">
-            <select id="field_option_design_template_name"
-                    name="fab_design[template][name]"
-                    class="field_option_design_template_name select2"
-                    data-selected="<?php echo isset( $fab_design->template->name ) ? esc_attr( $fab_design->template->name ) : 'classic'; ?>">
-            </select>
-        </div>
-    </div>
-
-    <div class="grid grid-cols-5 gap-4 py-4">
-        <div class="font-medium text-gray-600 pt-2">
-            <label for="field_option_design_template_shape">Shape</label>
-        </div>
-        <div class="col-span-4">
-            <select id="field_option_design_template_shape"
-                    name="fab_design[template][shape]"
-                    class="field_option_design_template_shape select2"
-                    data-selected="<?php echo isset( $fab_design->template->shape ) ? esc_attr( $fab_design->template->shape ) : 'none'; ?>">
-            </select>
-            <div class="text-gray-400 mt-2">
-                <em class="field-info">
-                    Please refer to
-                    <code><a href="https://bennettfeely.com/clippy/" target="_blank">Clippy</a></code>
-                    to see the shape
-                </em>
-            </div>
-        </div>
-    </div>
-<!--End: Template-->

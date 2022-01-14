@@ -22,6 +22,7 @@ use Fab\Module\FABModuleReadingBar;
 use Fab\Module\FABModuleScrollToTop;
 use Fab\Module\FABModuleAnchorLink;
 use Fab\Module\FABModuleSearch;
+use Fab\View;
 
 class FABItem {
 
@@ -178,6 +179,14 @@ class FABItem {
         $this->animation = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['animation']['meta_key'], true );
         $this->animation = ( $this->animation ) ? $this->animation : FABMetaboxDesign::$input['fab_design_animation']['default'];
 
+        /** Module */
+        if( 'anchor_link' === $this->type ){ $this->module = new FABModuleAnchorLink(); }
+        elseif ( 'auth_login' === $this->type ) { $this->module = new FABModuleAuthLogin(); }
+        elseif ( 'auth_logout' === $this->type ){ $this->module = new FABModuleAuthLogout(); }
+        elseif( 'readingbar' === $this->type ){ $this->module = new FABModuleReadingBar(); }
+        elseif( 'scrolltotop' === $this->type ){ $this->module = new FABModuleScrollToTop(); }
+        elseif ( 'search' === $this->type ){ $this->module = new FABModuleSearch(); }
+
 		/** Responsive */
 		$this->responsive = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['responsive']['meta_key'], true );
 		$this->responsive = ( $this->responsive ) ? $this->responsive : FABMetaboxDesign::$input['fab_design_responsive']['default'];
@@ -197,11 +206,6 @@ class FABItem {
 		/** Location */
 		$this->locations = $this->WP->get_post_meta( $this->ID, FABMetaboxLocation::$post_metas['locations']['meta_key'], true );
 		$this->locations = ( $this->locations ) ? json_decode( $this->locations, true ) : array();
-
-        /** Module */
-        if( $this->type === 'anchor_link' ){ $this->module = new FABModuleAnchorLink(); }
-        elseif( $this->type === 'readingbar' ){ $this->module = new FABModuleReadingBar(); }
-        elseif( $this->type === 'scrolltotop' ){ $this->module = new FABModuleScrollToTop(); }
 
 		/** Grab Link */
 		if ( $this->type === 'link' || $this->type === 'anchor_link' ) {
@@ -316,23 +320,16 @@ class FABItem {
 	 * @return void
 	 */
 	public function render() {
-		if ( 'auth_login' === $this->getType() ) {
-			$module = new FABModuleAuthLogin();
-			$module->render();
-		} elseif ( 'auth_logout' === $this->getType() ) {
-			$module = new FABModuleAuthLogout();
-			$module->render();
-		} elseif ( 'modal' === $this->getType() ) {
-			$this->render_content();
-		} elseif ( 'modal_widget' === $this->getType() ) {
-			$this->render_content();
-			$this->render_widget();
-		} elseif ( 'search' === $this->getType() ) {
-			$module = new FABModuleSearch();
-			$module->render();
-		} elseif ( 'widget' === $this->getType() ) {
-			$this->render_widget();
-		}
+        if ( 'modal' === $this->type ) {
+            $this->render_content();
+        } elseif ( 'modal_widget' === $this->type ) {
+            $this->render_content();
+            $this->render_widget();
+        } elseif ( 'widget' === $this->type ) {
+            $this->render_widget();
+        } elseif( $this->module && method_exists( $this->module, 'render' ) ){
+            $this->module->render();
+        }
 	}
 
 	/**
@@ -350,7 +347,13 @@ class FABItem {
 		}
 
 		/** Output the content */
-		echo do_shortcode( $content );
+        View::RenderStatic(
+            sprintf('Template/modal/layout/%s',
+                isset($this->getModal()->getLayout()['id']) ?
+                    $this->getModal()->getLayout()['id'] : 'stacked'
+            ),
+            array( 'fab_item' => $this, 'content' => $content )
+        );
 	}
 
 	/**

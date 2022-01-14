@@ -110,13 +110,18 @@ class BackendPage extends Base {
 	/*** Handle Page Submission */
 	public function page_setting_submission( $slug, $features ) {
 		if ( isset( $_GET['page'] ) && $_GET['page'] == $slug ) {
-			if ( $_POST && isset( $_POST['clear-config'] ) ) { /** Clear Config */
-                $this->page_setting_submission_clearconfig();
-            } elseif ( $_POST && isset( $_POST['module-config'] ) ) { /** Module Config */
-                $this->page_setting_submission_module();
-			} elseif ( $_POST ) { /** Save Setting */
-                $this->page_setting_submission_setting($features);
-			}
+            if($_POST){
+                if (isset( $_POST['clear-config'] ) ) { /** Clear Config */
+                    $this->page_setting_submission_clearconfig();
+                } elseif (isset( $_POST['module-config'] ) ) { /** Module Config */
+                    $this->page_setting_submission_module();
+                } else { /** Save Setting */
+                    $this->page_setting_submission_setting($features);
+                }
+
+                header(sprintf( 'Location: %s?page=floating-awesome-button-setting', $_SERVER['PHP_SELF'] ) );
+                die;
+            }
 		}
 	}
 
@@ -128,6 +133,10 @@ class BackendPage extends Base {
         $this->WP->update_option( 'fab_config', $this->Plugin->getConfig()->default );
         foreach($modules as $module){
             $this->WP->delete_option( sprintf('fab_%s', $module->getKey() ) );
+        }
+        $features = $this->page_setting_features()['features'];
+        foreach($features as $feature){
+            $this->WP->delete_option( sprintf( 'fab_%s', $feature->getKey() ) );
         }
     }
 
@@ -156,7 +165,7 @@ class BackendPage extends Base {
         }
 
         /** Sanitize & Transform Assets */
-        if ( isset( $params['fab_assets'] ) ) {
+        if ( isset( $params['fab_assets'] ) && isset( $features['features']['core_asset'] ) ) {
             $feature = $features['features']['core_asset'];
             $feature->sanitize();
             $featureOption = (isset($options->fab_assets)) ? $options->fab_assets : $default->fab_assets;
@@ -189,6 +198,21 @@ class BackendPage extends Base {
 
         /** Save config */
         $this->WP->update_option( 'fab_config', $options );
+
+
+        /**
+         * Modular Configuration Features Update
+         */
+
+        /** Sanitize & Transform Feature */
+        if ( isset( $params['fab_core_miscellaneous'] ) ) {
+            $feature = $features['features']['core_miscellaneous'];
+            $feature->sanitize();
+            $this->WP->update_option(
+                'fab_core_miscellaneous',
+                (array) $feature->transform()
+            );
+        }
     }
 
 	/**

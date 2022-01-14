@@ -71,6 +71,7 @@ class MetaboxDesign extends Base {
             'defaultOptions' => [
                 'size' => array( 'type' => Design::$size['type'] ),
                 'theme' => Modal::$theme,
+                'layout' => Modal::$layout,
                 'template' => Design::$template,
             ],
         ));

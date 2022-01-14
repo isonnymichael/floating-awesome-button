@@ -166,6 +166,7 @@ class Plugin {
 		$this->loadFeatures();
 		$this->loadHooks( 'Controller' );
 		$this->loadHooks( 'Api' );
+        $this->loadModulesHooks();
         $this->setDefaultOption();
 	}
 
@@ -227,9 +228,44 @@ class Plugin {
 			$feature                              = '\\Fab\\Feature\\' . $name;
 			$feature                              = new $feature( $this );
 			$this->features[ $feature->getKey() ] = $feature;
+            if( method_exists($feature, 'loadHooks') ) {
+                foreach ( $feature->getHooks() as $hook ) { $hook->run(); }
+            }
 		}
 		ksort( $this->features );
 	}
+
+    /**
+     * Load Modules Hook
+     */
+    public function loadModulesHooks(){
+        $modules = [];
+        $allow = array( '.', '..', '.DS_Store', 'index.php' );
+        foreach($this->Helper->getDirFiles( $this->path['plugin_path'] . 'src/Helper/FABModule' ) as $module){
+            if ( in_array( basename( $module ), $allow ) ) continue;
+            $name = basename( $module, '.php' );
+            $class = '\\Fab\\Module\\' . $name;
+            if( method_exists($class, 'loadHooks') ) {
+                $modules[ $name ] = new $class();
+                foreach ( $modules[ $name ]->getHooks() as $hook ) { $hook->run(); }
+            }
+        }
+    }
+
+    /**
+     * Get FAB Modules
+     */
+    public function getModules(){
+        $modules = [];
+        $allow = array( '.', '..', '.DS_Store', 'index.php' );
+        foreach($this->Helper->getDirFiles( $this->path['plugin_path'] . 'src/Helper/FABModule' ) as $module){
+            if ( in_array( basename( $module ), $allow ) ) continue;
+            $name = basename( $module, '.php' );
+            $class = '\\Fab\\Module\\' . $name;
+            $modules[ $name ] = new $class();
+        }
+        return $modules;
+    }
 
 	/**
 	 * Load registered hooks in a controller
@@ -287,21 +323,6 @@ class Plugin {
 		}
 		return self::$instance;
 	}
-
-    /**
-     * Get FAB Modules
-     */
-    public function getModules(){
-        $modules = [];
-        $allow = array( '.', '..', '.DS_Store', 'index.php', 'FABModule.php' );
-        foreach($this->Helper->getDirFiles( $this->path['plugin_path'] . 'src/Helper/FABModule' ) as $module){
-            if ( in_array( basename( $module ), $allow ) ) continue;
-            $name = basename( $module, '.php' );
-            $class = '\\Fab\\Module\\' . $name;
-            $modules[ $name ] = new $class();
-        }
-        return $modules;
-    }
 
     /**
      * Set default config

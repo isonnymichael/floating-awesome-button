@@ -33,10 +33,12 @@ class Fab extends Model {
 
 		/** Create a post type */
 		parent::__construct( $plugin );
-		$this->args['public']             = true;
+        $this->args['labels'] = ['name' => strtoupper($this->name)];
+		$this->args['public'] = true;
 		$this->args['publicly_queryable'] = true; /** Needed to enable Elementor */
-		$this->args['menu_icon']          = json_decode( FAB_PATH )->plugin_url . '/assets/img/icon.png';
-		$this->args['has_archive']        = false;
+		$this->args['menu_icon'] = json_decode( FAB_PATH )->plugin_url . '/assets/img/icon.png';
+		$this->args['has_archive'] = false;
+        $this->args['supports'] = array('title', 'editor', 'thumbnail');
 
 		/** @backend */
 		$action = new Action();
@@ -147,26 +149,36 @@ class Fab extends Model {
 		/** Filter by Location */
 		$tmp = array();
 		foreach ( $items as &$item ) {
+            /** Data Validation */
 			if ( ! isset( $item->ID ) ) { continue; }
+
+            /** FAB Item */
 			$item = new FABItem( $item->ID ); // Grab FAB Item.
-			if ( $item->getStatus() !== 'publish' ) {
-				continue;
-			}
-			if ( isset( $args['builder'] ) && ! in_array( $item->getBuilder(), $args['builder'] ) ) {
-				continue;
-			}
-            if( in_array($item->getType(), array_keys($custom)) ){ /** Grab Custom Module */
+
+            /** FAB Item Args Validation */
+			if ( $item->getStatus() !== 'publish' ) { continue; }
+			if ( isset( $args['builder'] ) && ! in_array( $item->getBuilder(), $args['builder'] ) ) { continue; }
+
+            /** FAB Item Grab Custom Module */
+            if( in_array($item->getType(), array_keys($custom)) ){
                 $custom[ $item->getType() ] = $item;
+                if ( isset( $args['filtercustommodule'] ) ) { continue; }
             }
-			if ( ! isset( $order[ $item->getID() ] ) ) {
-				$order[ $item->getID() ] = count( $order ); }
+
+            /** FAB Item Location */
 			if ( isset( $args['validateLocation'] ) &&
 				! empty( $item->getLocations() ) &&
 				! $item->isToBeDisplayed()
 			) {
 				continue; // Check location rules.
 			}
-			$tmp[] = $item; // tmp location.
+
+            /** Order */
+			if ( ! isset( $order[ $item->getID() ] ) ) {
+				$order[ $item->getID() ] = count( $order ); }
+
+            /** Grab Location */
+			$tmp[] = $item;
 		}
 		unset( $item );
 		$items = $tmp;

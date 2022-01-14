@@ -3,9 +3,9 @@
 $fab_item = reset($fab_to_display);
 
 /** Responsive */
-$responsiveClass  = ( $fab_item->getResponsive()['device']['mobile'] ) ? 'block ' : 'hidden ';
-$responsiveClass .= ( $fab_item->getResponsive()['device']['tablet'] ) ? 'sm:block ' : 'sm:hidden ';
-$responsiveClass .= ( $fab_item->getResponsive()['device']['desktop'] ) ? 'lg:block ' : 'lg:hidden ';
+$responsiveClass  = ( $fab_item->getResponsive()['device']['mobile'] ) ? 'flex ' : 'hidden ';
+$responsiveClass .= ( $fab_item->getResponsive()['device']['tablet'] ) ? 'sm:flex ' : 'sm:hidden ';
+$responsiveClass .= ( $fab_item->getResponsive()['device']['desktop'] ) ? 'lg:flex ' : 'lg:hidden ';
 ?>
 <div class="fab
     <?php echo ( $options->fab_animation->elements->fab !== 'ripple' ) ? sprintf( 'animate__animated animate__%s', esc_attr( $options->fab_animation->elements->fab ) ) : ''; ?>">
@@ -32,7 +32,7 @@ $responsiveClass .= ( $fab_item->getResponsive()['device']['desktop'] ) ? 'lg:bl
         ?>
        class="fab-links cursor-pointer <?php echo sprintf( 'fab-link-type-%s', esc_attr( $fab_item->getType() ) ) ?> <?php echo esc_attr( $responsiveClass ); ?> <?php echo esc_attr( $shapeClass ); ?>"
     >
-        <?php if($options->fab_design->tooltip->enable): ?> <span class="fab-tooltip"><?php echo esc_attr( get_the_title( $fab_item->getID() ) ); ?></span> <?php endif;?>
+        <?php if($options->fab_design->tooltip->enable): ?> <span class="fab-tooltip font-sans"><?php echo esc_attr( get_the_title( $fab_item->getID() ) ); ?></span> <?php endif;?>
         <em class="<?php echo empty( esc_attr( $fab_item->getIconClass() ) ) ? 'fas fa-chevron-up' : esc_attr( $fab_item->getIconClass() ); ?>"></em>
         <div class="bg-shape"></div>
     </a>

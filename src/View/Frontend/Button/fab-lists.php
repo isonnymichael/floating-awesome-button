@@ -26,7 +26,7 @@
            class="fab-links cursor-pointer <?php echo sprintf( 'fab-link-type-%s', esc_attr( $fab_item->getType() ) ) ?> <?php echo esc_attr( $responsiveClass ); ?> <?php echo esc_attr( $shapeClass ); ?>"
         >
             <div class="bg-shape"></div>
-            <?php if($options->fab_design->tooltip->enable): ?> <span class="fab-tooltip"><?php echo esc_attr( get_the_title( $fab_item->getID() ) ); ?></span> <?php endif;?>
+            <?php if($options->fab_design->tooltip->enable): ?> <span class="fab-tooltip font-sans"><?php echo esc_attr( get_the_title( $fab_item->getID() ) ); ?></span> <?php endif;?>
             <em
                     title="<?php echo esc_attr( get_the_title( $fab_item->getID() ) ); ?>"
                     class="<?php echo empty( esc_attr( $fab_item->getIconClass() ) ) ? 'fas fa-circle' : esc_attr( $fab_item->getIconClass() ); ?>"

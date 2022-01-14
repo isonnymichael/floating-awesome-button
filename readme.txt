@@ -4,30 +4,30 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.8.3
 Requires PHP: 5.6
-Stable tag: 1.4.21
+Stable tag: 1.4.23
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
-Floating Awesome Button (FAB) is customizable sticky action button that can help you display custom content (popup, shortcodes, widgets, links, etc).
+Floating Awesome Button (FAB) is a customizable sticky action button that can help you display custom content (popup, shortcodes, widgets, links, etc).
 
 == Description ==
 
 https://www.youtube.com/watch?v=-nUEic-EVXY
 
-Floating Awesome Button (FAB) is customizable action button that can help you :
+Floating Awesome Button (FAB) is a customizable action button that can help you :
 
-* Adding quick contact links (SMS, Email, and Call)
-* Adding multiple social media links (Facebook, Instagram, TikTok, etc)
-* Adding auth link (Login, Logout, Lost password)
-* Add scroll to top, back to top, anchor link button
-* Add custom design reading progress bar
-* Displaying custom popup (Offers, Opt-in, Promo, etc)
-* Displaying custom authentication popup (Register & Login)
-* Displaying custom shortcode in a popup
-* Displaying product catalogue (Woocommerce)
-* Displaying forms (Newsletter, Booking, Membership, Payment, etc)
-* Integration with widgets in modal (Table of content, Social Sharing, etc)
-* Embed videos, audio, podcast (YouTube, Twitch, TikTok, Vimeo, Soundcloud, etc)
+* Adding quick contact links (SMS, Email, and Call) 👍
+* Adding multiple social media links (Facebook, Instagram, TikTok, etc) 👍
+* Adding auth link (Login, Logout, Lost password) 👍
+* Add scroll to top, back to top, anchor link button 👍
+* Add custom design reading progress bar 👍
+* Displaying custom popup (Offers, Opt-in, Promo, etc) 👍
+* Displaying custom authentication popup (Register & Login) 👍
+* Displaying custom shortcode in a popup 👍
+* Displaying product catalog (Woocommerce) 👍
+* Displaying forms (Newsletter, Booking, Membership, Payment, etc) 👍
+* Integration with widgets in a modal (Table of content, Social Sharing, etc) 👍
+* Embed videos, audio, podcast (YouTube, Twitch, TikTok, Vimeo, Soundcloud, etc) 👍
 
 = Tutorial =
 
@@ -35,72 +35,79 @@ https://www.youtube.com/watch?v=ifNfoV5_6Bk
 
 https://www.youtube.com/watch?v=TYxBG2iPvl4
 
-https://www.youtube.com/watch?v=jsnru8BA778
+https://www.youtube.com/watch?v=T29sWABf32I
 
-https://www.youtube.com/watch?v=pg_R3ov-D3M&t=21s
+More Tutorial on YouTube :
 
-More Tutorial in YouTube :
-
-* [Documentation](https://www.youtube.com/watch?v=MMuhc9pcYew&list=PLnwuifVLRkaXBV9IBTPZeLtduzCdt5cFh)
-* [Tutorial](https://www.youtube.com/watch?v=CkSspyM9yjQ&list=PLnwuifVLRkaXH9I-QAAReVoEv9DClViPG)
-* [Cases](https://www.youtube.com/watch?v=QAyGqtpFLeI&list=PLnwuifVLRkaUukXin193wQxOk9ID1DRMF)
-* [Reacts](https://www.youtube.com/watch?v=htImWcDDZqA&list=PLnwuifVLRkaWw5oazR_i96YtMRHYNDMOq)
+* 🎥 [Documentation](https://www.youtube.com/watch?v=MMuhc9pcYew&list=PLnwuifVLRkaXBV9IBTPZeLtduzCdt5cFh)
+* 🎥 [Tutorial](https://www.youtube.com/watch?v=CkSspyM9yjQ&list=PLnwuifVLRkaXH9I-QAAReVoEv9DClViPG)
+* 🎥 [Cases](https://www.youtube.com/watch?v=QAyGqtpFLeI&list=PLnwuifVLRkaUukXin193wQxOk9ID1DRMF)
+* 🎥 [Reacts](https://www.youtube.com/watch?v=htImWcDDZqA&list=PLnwuifVLRkaWw5oazR_i96YtMRHYNDMOq)
 
 = Features =
-* **Unlimited** custom floating action button
-* 1500+ Support FontAwesome Icons
-* Beautiful User Interface (UI)
-* Sortable action button
-* Ability to personalize action buttons (Position, Color, Icons, & Shapes)
-* Multiple button positions (Left, Center, Right)
-* Multiple button shapes 10+ Shapes (Bevel, Circle, Message, Octagon, Pentagon, etc)
-* Multiple popup navigation (Draggable, BackgroundDismiss, EscapeKey, Maximize Button, etc)
+* 🤓 **Unlimited** custom floating action button
+* 🤓 1500+ Support FontAwesome Icons
+* 🤓 Beautiful User Interface (UI)
+* 🤓 Sortable action button
+* 🤓 Ability to personalize action buttons (Position, Color, Icons, & Shapes)
+* 🤓 Multiple button positions (Left, Center, Right)
+* 🤓 Multiple buttons shapes 10+ Shapes (Bevel, Circle, Message, Octagon, Pentagon, etc)
+* 🤓 Multiple popup navigation (Draggable, BackgroundDismiss, EscapeKey, Maximize Button, etc)
+* 🤓 Supports Google reCaptcha v2 and v3
 
 = Pro Version =
-* **PRO** Ability custom filter by (Custom Post Type & Pages)
-* **PRO** Ability to change fab & popup animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)
-* **PRO** Ability to change FAB design & layout (Color, Icon, Responsiveness)
-* **PRO** Map modal with custom hotkey (Ctrl, Shift, Alt, Function Key, & Combined) (258+ Hotkeys)
-* **PRO** Ability to change popup theme (Blank, Window Light, Window Dark, many more)
+* 🤯 **PRO** Ability custom filter by (Custom Post Type & Pages)
+* 🤯 **PRO** Ability to change fab & popup animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)
+* 🤯 **PRO** Ability to change FAB design & layout (Color, Icon, Responsiveness)
+* 🤯 **PRO** Map modal with a custom hotkey (Ctrl, Shift, Alt, Function Key, & Combined) (258+ Hotkeys)
+* 🤯 **PRO** Ability to change popup theme (Blank, Window Light, Window Dark, many more)
 
 = 3rd Party Plugins Support =
-* [Contact Form 7](https://wordpress.org/plugins/contact-form-7)
-* [Easy Table of Content](https://wordpress.org/plugins/easy-table-of-contents)
-* [Elementor](https://wordpress.org/plugins/elementor)
-* [Gravity Form](https://www.gravityforms.com)
-* [WPForms](https://wordpress.org/plugins/wpforms-lite/)
+* 🧩 [Contact Form 7](https://wordpress.org/plugins/contact-form-7)
+* 🧩 [Easy Table of Content](https://wordpress.org/plugins/easy-table-of-contents)
+* 🧩 [Elementor](https://wordpress.org/plugins/elementor)
+* 🧩 [Gravity Form](https://www.gravityforms.com)
+* 🧩 [WPForms](https://wordpress.org/plugins/wpforms-lite/)
 
 = Sharing is Caring =
 
-Thanks for using our plugin, your rating and feedback help us grow!
-If you enjoy it please feel free to spread the words ;)
+Thanks for using our plugin, your rating and feedback help us grow! ⭐️⭐️⭐️⭐️
+If you enjoy it please feel free to spread the words 👊 😚 👍
 
 = Credits =
 
-This plugin is heavily using these free & open source libraries
-all the credits goes to these peoples and communities
-who had helped provides and develop these libraries
+This plugin is heavily using these free & open-source libraries
+all the credits go to these peoples and communities
+who had helped provide and develop these libraries
 
-* Compiler: [GruntJS](https://gruntjs.com/)
-* Languages : [SASS Lang](https://sass-lang.com/)
-* Languages : [TypeScript Lang](https://www.typescriptlang.org/)
-* Libraries : [Animate.css](https://github.com/daneden/animate.css)
-* Libraries : [Fontawesome](https://fontawesome.com/)
-* Libraries : [jQuery Confirm](https://craftpip.github.io/jquery-confirm/)
-* Libraries : [jQuery Hotkeys](https://github.com/jeresig/jquery.hotkeys)
-* Libraries : [jQuery Select2](https://github.com/select2/select2)
-* Framework : [TailwindCSS](https://tailwindcss.com/)
-* QA & Test : [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
-* QA & Test : [Wordpress CodeSniffer](https://github.com/WordPress/WordPress-Coding-Standards)
-* QA & Test : [Selenium](https://www.selenium.dev/)
-* Vendors : [Composer](https://getcomposer.org/)
-* Vendors : [NPM](https://www.npmjs.com/)
+* 📟 Compiler: [GruntJS](https://gruntjs.com/)
+* 📟 Languages : [SASS Lang](https://sass-lang.com/)
+* 📟 Languages : [TypeScript Lang](https://www.typescriptlang.org/)
+* 📟 Libraries : [Animate.css](https://github.com/daneden/animate.css)
+* 📟 Libraries : [Fontawesome](https://fontawesome.com/)
+* 📟 Libraries : [jQuery Confirm](https://craftpip.github.io/jquery-confirm/)
+* 📟 Libraries : [jQuery Hotkeys](https://github.com/jeresig/jquery.hotkeys)
+* 📟 Libraries : [jQuery Select2](https://github.com/select2/select2)
+* 📟 Framework : [TailwindCSS](https://tailwindcss.com/)
+* 📟 QA & Test : [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+* 📟 QA & Test : [Wordpress CodeSniffer](https://github.com/WordPress/WordPress-Coding-Standards)
+* 📟 QA & Test : [Selenium](https://www.selenium.dev/)
+* 📟 Vendors : [Composer](https://getcomposer.org/)
+* 📟 Vendors : [NPM](https://www.npmjs.com/)
 
 == Installation ==
-* You can install the plugin from the Wordpress Plugin Repositories or
+* You can install the plugin from the WordPress Plugin Repositories or
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.4.23 =
+* Add supports for google reCaptcha v2 and v3
+* Add modal layout and featured image
+
+= 1.4.22 =
+* HOTFIX: Template shape not changing
+* HOTFIX: Contact Form 7 ajax not working
 
 = 1.4.21 =
 * Add reading progress bar module

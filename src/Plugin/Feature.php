@@ -11,7 +11,7 @@ namespace Fab\Feature;
  * @subpackage Fab\Includes
  */
 
-class Feature {
+class Feature extends \Fab\Controller\Controller {
 
 	/**
 	 * Feature key
@@ -56,14 +56,44 @@ class Feature {
 	 * @pattern prototype
 	 */
 	public function __construct() {
+        parent::__construct(\Fab\Plugin::getInstance());
 		$this->options            = (object) array();
 		$this->params             = (object) array();
 		$this->hide_on_production = false;
-		$this->Plugin             = \Fab\Plugin::getInstance();
 		$this->Form               = $this->Plugin->getForm();
-		$this->Helper             = $this->Plugin->getHelper();
-		$this->WP                 = $this->Plugin->getWP();
 	}
+
+    /** Generate Options HTML in Backend */
+    public function generateOptionsHTML($options, $parentKey = array()){
+        foreach($options as $key => $option):
+            if(isset( $option['children'] )) {
+                $args = array();
+                if(isset($option['info'])) $args['info'] = $option['info'];
+                $this->Form->Heading( $option['text'], $args);
+                $parentKey[] = $key;
+                $parentKey[] = 'children';
+                $this->generateOptionsHTML( $option['children'], $parentKey );
+            } else {
+                /** Option */
+                $optionContainer = array( 'id' => sprintf('module_option_%s', $key) );
+                ob_start();
+                $singleKey = $parentKey;
+                $singleKey[] = $key; $singleKey[] = 'value';
+                $name = sprintf('fab_%s%s', $this->getKey(), sprintf('[%s]', implode('][', $singleKey)) );
+                $args = $option;
+                $args['id'] = $optionContainer['id'];
+                if( isset($option['class']) ) $args['class'] = $option['class'];
+                if( $option['type']==='number' ){ $this->Form->number( $name, $args ); }
+                elseif( $option['type']==='switch' ){ $this->Form->switch( $name, $args ); }
+                elseif( $option['type']==='select' ){ $this->Form->select( $name, $option['options'], $args ); }
+                elseif( $option['type']==='text' ){ $this->Form->text( $name, $args ); }
+                /** Container */
+                $args = array( 'label' => array( 'id' => $optionContainer['id'], 'text' => $option['text'] ) );
+                if( isset($option['info']) ) $args['info'] = $option['info'];
+                $this->Form->container( 'setting', ob_get_clean(), $args);
+            }
+        endforeach;
+    }
 
 	/**
 	 * @return string
@@ -134,5 +164,10 @@ class Feature {
 	public function setParams( $params ): void {
 		$this->params = $params;
 	}
+
+    /** Grab All Assigned Variables */
+    public function getVars() {
+        return get_object_vars( $this );
+    }
 
 }
