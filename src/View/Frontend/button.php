@@ -17,13 +17,6 @@
                 $this->build();
             }
 
-            /** Remove Custom Module from Display */
-            foreach($fab_to_display as $key => $fab_item){
-                if(in_array( $fab_item->getType(), ['readingbar', 'scrolltotop'] )){
-                    unset($fab_to_display[$key]);
-                }
-            }
-
             /** Floating Awesome Button */
             $FACCount = count($fab_to_display);
             if($FACCount===1){

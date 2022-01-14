@@ -84,9 +84,9 @@ class FABMetaboxDesign extends Metabox {
         /** Layout */
         'fab_modal_layout'  => array(
             'default' => array(
+                'id' => 'stacked',
                 'background' => array(
-                    'color' => '',
-                    'opacity' => '0.5',
+                    'color' => ''
                 ),
                 'content' => array(
                     'margin' => array(
@@ -103,7 +103,10 @@ class FABMetaboxDesign extends Metabox {
                         'left' => '1',
                         'sizing' => 'rem',
                     ),
-                    'overflow' => '',
+                ),
+                'overlay' => array(
+                    'color' => '',
+                    'opacity' => '0.5',
                 ),
             ),
         ),
@@ -172,7 +175,6 @@ class FABMetaboxDesign extends Metabox {
         $plugin   = \Fab\Plugin::getInstance();
         $this->params['fab_modal_navigation'] = $plugin->getHelper()->transformBooleanValue( $this->params['fab_modal_navigation'] );
 		$this->params['fab_design_responsive'] = $plugin->getHelper()->transformBooleanValue( $this->params['fab_design_responsive'] );
-        $this->params['fab_modal_layout']['content']['overflow'] = $plugin->getHelper()->transformBooleanValue( $this->params['fab_modal_layout']['content']['overflow'] );
 	}
 
 	/** Save data to database */

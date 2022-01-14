@@ -36,7 +36,10 @@
                                 <?php endif; ?>
                             </div>
 
-							<?php $this->loadContent( 'Backend/Settings/.' . esc_attr( $featureSlug ) ); ?>
+                            <?php
+                                $this->addData(compact('feature'));
+                                $this->loadContent('Backend/Settings/.' . esc_attr($featureSlug));
+                            ?>
 
 						</div>
 					</div>

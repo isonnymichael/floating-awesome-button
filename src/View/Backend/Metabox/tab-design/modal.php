@@ -1,18 +1,33 @@
-<?php if ( $this->Helper->isPremiumPlan() ) : ?>
-    <!--.grid, Field Modal Theme-->
-    <div class="grid grid-cols-5 gap-4 py-4">
-        <div class="font-medium text-gray-600 pt-2">
-            Theme
-        </div>
-        <div class="col-span-4">
-            <select id="field_option_design_modal_theme"
-                    name="fab_modal_theme[id]"
-                    class="field_option_design_modal_theme select2"
-                    data-selected="<?php echo isset( $fab->getModal()->getTheme()['id'] ) ? esc_attr( $fab->getModal()->getTheme()['id'] ) : 'blank'; ?>">
-            </select>
-        </div>
-    </div><!--.grid-->
-<?php endif; ?>
+<?php
+    if ( $this->Helper->isPremiumPlan() ) :
+
+        /** Modal Theme */
+        $optionContainer = array( 'id' => 'option_design_modal_theme' );
+        ob_start();
+            $this->Form->select( 'fab_modal_theme[id]', array(), array(
+                'id' => $optionContainer['id'],
+                'class' => array('input' => 'select2 field_option_design_modal_theme'),
+                'value' => isset( $fab->getModal()->getTheme()['id'] ) ? $fab->getModal()->getTheme()['id'] : 'blank',
+            ));
+        $this->Form->container( 'setting', ob_get_clean(), array(
+            'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Theme' )
+        ));
+
+    endif;
+
+    /** Modal Layout */
+    $optionContainer = array( 'id' => 'option_design_modal_layout_id' );
+    ob_start();
+    $this->Form->select( 'fab_modal_layout[id]', array(), array(
+        'id' => $optionContainer['id'],
+        'class' => array('input' => 'select2 field_option_design_modal_layout_id'),
+        'value' => isset( $fab->getModal()->getLayout()['id'] ) ? $fab->getModal()->getLayout()['id'] : 'stacked',
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Layout' )
+    ));
+
+?>
 
 <!--.grid, Field Modal Size-->
 <div class="grid grid-cols-5 gap-4 py-4">
@@ -134,33 +149,21 @@
     </div>
 </div><!--.grid-->
 
-<div class="grid grid-cols-5 gap-4 py-4">
-    <div class="font-medium text-gray-600 pt-2">
-        Content
-    </div>
-    <div class="col-span-4">
-        <div class="flex">
-            <label for="switch_design_content_overflow" class="flex cursor-pointer">
-                <div class="relative">
-                    <input
-                            type="checkbox"
-                            id="switch_design_content_overflow"
-                            class="option_settings switch sr-only"
-                            data-option="fab_modal_layout_content_overflow"
-                        <?php echo ( $fab->getModal()->getLayout()['content']['overflow'] ) ? 'checked' : ''; ?>
-                    >
-                    <div class="block bg-gray-300 w-10 h-6 rounded-full"></div>
-                    <div class="fab absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
-                </div>
-            </label>
-            <input type="hidden" id="fab_modal_layout_content_overflow" name="fab_modal_layout[content][overflow]"
-                   class="border border-gray-200 py-2 px-3 text-grey-darkest"
-                   value="<?php echo ( $fab->getModal()->getLayout()['content']['overflow'] ) ? 'true' : ''; ?>" />
-            <span class="pl-2" style="padding-top:2px;">Overflow</span>
-        </div>
-    </div>
-</div>
-<!--.grid-->
+<?php
+
+    /** Background Color */
+    $optionContainer = array( 'id' => 'modal_layout_background_color' );
+    ob_start();
+    $this->Form->text( 'fab_modal_layout[background][color]', array(
+        'id' => $optionContainer['id'],
+        'class' => array('input' => 'colorpicker'),
+        'value' => isset( $fab->getModal()->getLayout()['background']['color'] ) ? $fab->getModal()->getLayout()['background']['color'] : '',
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Background Color' )
+    ));
+
+?>
 
 <?php if ( $this->Helper->isPremiumPlan() ) : ?>
     <div class="py-4 my-4 border-b border-gray-200">
@@ -200,39 +203,38 @@
     </div>
 <?php endif; ?>
 
-<div class="py-4 my-4 border-b border-gray-200">
-    <span class="text-lg">Background</span>
-    <div class="text-gray-400">
-        <em class="field-info">Modal background layer</em>
-    </div>
-</div>
+<?php
 
-<!--.grid, Color-->
-<div class="grid grid-cols-5 gap-4 py-4">
-    <div class="font-medium text-gray-600 pt-2">
-        Color
-    </div>
-    <div class="col-span-4">
-        <input type="text"
-               id="fab_modal_layout_background_color"
-               class="colorpicker" name="fab_modal_layout[background][color]"
-               value="<?php echo isset($fab->getModal()->getLayout()['background']['color']) ? esc_attr( $fab->getModal()->getLayout()['background']['color'] ) : ''; ?>">
-    </div>
-</div>
-<!--.grid-->
+    $this->Form->Heading('Overlay', array(
+        'info' => 'Modal overlay'
+    ));
+
+    /** Overlay Color */
+    $optionContainer = array( 'id' => 'modal_layout_overlay_color' );
+    ob_start();
+    $this->Form->text( 'fab_modal_layout[overlay][color]', array(
+        'id' => $optionContainer['id'],
+        'class' => array('input' => 'colorpicker'),
+        'value' => isset( $fab->getModal()->getLayout()['overlay']['color'] ) ? $fab->getModal()->getLayout()['overlay']['color'] : '',
+    ));
+    $this->Form->container( 'setting', ob_get_clean(), array(
+        'label' => array( 'id' => $optionContainer['id'] , 'text' => 'Background Color' )
+    ));
+
+?>
 
 <!--.grid, Opacity-->
 <div class="grid grid-cols-5 gap-4 py-4">
     <div class="font-medium text-gray-600 pt-2">
         Opacity
-        (<spand id="fab_modal_layout_background_opacity_label"><?php echo isset($fab->getModal()->getLayout()['background']['opacity']) ? esc_attr( $fab->getModal()->getLayout()['background']['opacity'] ) : '0.5'; ?></spand>)
+        (<spand id="fab_modal_layout_overlay_opacity_label"><?php echo isset($fab->getModal()->getLayout()['overlay']['opacity']) ? esc_attr( $fab->getModal()->getLayout()['overlay']['opacity'] ) : '0.5'; ?></spand>)
     </div>
     <div class="col-span-4">
         <input type="range"
-               id="fab_modal_layout_background_opacity"
-               class="slider" name="fab_modal_layout[background][opacity]" min="0" max="1" step="0.1"
-               onChange="window.FAB_PLUGIN.triggerSettingSliderLabel(this)" onmousemove="window.FAB_PLUGIN.triggerSettingSliderLabel(this)"
-               value="<?php echo isset($fab->getModal()->getLayout()['background']['opacity']) ? esc_attr( $fab->getModal()->getLayout()['background']['opacity'] ) : '0.5'; ?>">
+           id="fab_modal_layout_overlay_opacity"
+           class="slider" name="fab_modal_layout[overlay][opacity]" min="0" max="1" step="0.1"
+           onChange="window.FAB_PLUGIN.triggerSettingSliderLabel(this)" onmousemove="window.FAB_PLUGIN.triggerSettingSliderLabel(this)"
+           value="<?php echo isset($fab->getModal()->getLayout()['overlay']['opacity']) ? esc_attr( $fab->getModal()->getLayout()['overlay']['opacity'] ) : '0.5'; ?>">
     </div>
 </div>
 <!--.grid-->

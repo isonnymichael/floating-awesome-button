@@ -29,7 +29,6 @@ class FABModuleAuthLogin extends FABModule {
         $this->description = 'Popup Auth Login';
     }
 
-
     /** Render Module */
     public function render(){
         $view = new View( Plugin::getInstance() );

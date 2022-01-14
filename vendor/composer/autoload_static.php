@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8f17f5612ff77d491cf3afe69f428b4b
+class ComposerStaticInitea9c6f15b7727c98175097bc455b6de5
 {
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -29,6 +29,7 @@ class ComposerStaticInit8f17f5612ff77d491cf3afe69f428b4b
         'Fab\\Feature\\Feature' => __DIR__ . '/../..' . '/src/Plugin/Feature.php',
         'Fab\\Feature\\Frontend' => __DIR__ . '/../..' . '/src/Feature/Frontend.php',
         'Fab\\Feature\\Hooks' => __DIR__ . '/../..' . '/src/Feature/Hooks.php',
+        'Fab\\Feature\\Miscellaneous' => __DIR__ . '/../..' . '/src/Feature/Miscellaneous.php',
         'Fab\\Feature\\Modal' => __DIR__ . '/../..' . '/src/Feature/Modal.php',
         'Fab\\Feature\\Order' => __DIR__ . '/../..' . '/src/Feature/Order.php',
         'Fab\\Form' => __DIR__ . '/../..' . '/src/Plugin/Form.php',
@@ -45,7 +46,7 @@ class ComposerStaticInit8f17f5612ff77d491cf3afe69f428b4b
         'Fab\\Metabox\\FABMetaboxTrigger' => __DIR__ . '/../..' . '/src/Helper/FABMetabox/FABMetaboxTrigger.php',
         'Fab\\Model\\Fab' => __DIR__ . '/../..' . '/src/Model/Fab.php',
         'Fab\\Model\\Model' => __DIR__ . '/../..' . '/src/Plugin/Model.php',
-        'Fab\\Module\\FABModule' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModule.php',
+        'Fab\\Module\\FABModule' => __DIR__ . '/../..' . '/src/Helper/FAB/FABModule.php',
         'Fab\\Module\\FABModuleAnchorLink' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleAnchorLink.php',
         'Fab\\Module\\FABModuleAuthLogin' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleAuthLogin.php',
         'Fab\\Module\\FABModuleAuthLogout' => __DIR__ . '/../..' . '/src/Helper/FABModule/FABModuleAuthLogout.php',
@@ -88,7 +89,7 @@ class ComposerStaticInit8f17f5612ff77d491cf3afe69f428b4b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit8f17f5612ff77d491cf3afe69f428b4b::$classMap;
+            $loader->classMap = ComposerStaticInitea9c6f15b7727c98175097bc455b6de5::$classMap;
 
         }, null, ClassLoader::class);
     }

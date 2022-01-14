@@ -13,6 +13,26 @@ namespace Fab\Feature;
 
 class Modal extends Feature {
 
+    /** FAB Modal Theme */
+    public static $layout = array(
+        array(
+            'id'   => 'background_image',
+            'text' => 'Background Image',
+        ),
+        array(
+            'id'   => 'grid',
+            'text' => 'Grid',
+        ),
+        array(
+            'id'   => 'overflow',
+            'text' => 'Overflow',
+        ),
+        array(
+            'id'   => 'stacked',
+            'text' => 'Stacked',
+        ),
+    );
+
 	/** FAB Modal Theme */
 	public static $theme = array(
 		array(
