@@ -4,7 +4,7 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.8.3
 Requires PHP: 5.6
-Stable tag: 1.4.23
+Stable tag: 1.4.24
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -12,7 +12,7 @@ Floating Awesome Button (FAB) is a customizable sticky action button that can he
 
 == Description ==
 
-https://www.youtube.com/watch?v=-nUEic-EVXY
+https://www.youtube.com/watch?v=Cof-KJAFIWE
 
 Floating Awesome Button (FAB) is a customizable action button that can help you :
 
@@ -71,7 +71,8 @@ More Tutorial on YouTube :
 
 = Sharing is Caring =
 
-Thanks for using our plugin, your rating and feedback help us grow! ⭐️⭐️⭐️⭐️
+⭐⭐️⭐️⭐️⭐️
+Thanks for using our plugin, your rating and feedback help us grow!
 If you enjoy it please feel free to spread the words 👊 😚 👍
 
 = Credits =
@@ -88,6 +89,7 @@ who had helped provide and develop these libraries
 * 📟 Libraries : [jQuery Confirm](https://craftpip.github.io/jquery-confirm/)
 * 📟 Libraries : [jQuery Hotkeys](https://github.com/jeresig/jquery.hotkeys)
 * 📟 Libraries : [jQuery Select2](https://github.com/select2/select2)
+* 📟 Framework : [Svelte](https://svelte.dev/)
 * 📟 Framework : [TailwindCSS](https://tailwindcss.com/)
 * 📟 QA & Test : [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 * 📟 QA & Test : [Wordpress CodeSniffer](https://github.com/WordPress/WordPress-Coding-Standards)
@@ -100,6 +102,10 @@ who had helped provide and develop these libraries
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.4.24 =
+* Migrate PHP based script to component based script using Svelte JS
+* HOTFIX: Tooltip line height and position
 
 = 1.4.23 =
 * Add supports for google reCaptcha v2 and v3

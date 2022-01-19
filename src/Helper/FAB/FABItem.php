@@ -251,8 +251,8 @@ class FABItem {
 					$post->post_type, // Source Value.
 					$location['value'] // Compared Value.
 				);
-			} elseif ( isset( $post->ID ) && is_single() && strpos( $location['type'], 'single_' ) !== false ) { // Matched by ID, single
-				$condition['passed'] = $this->match_operator_and_value(
+			} elseif ( isset( $post->ID ) && is_singular() && strpos( $location['type'], 'single_' ) !== false ) { // Matched by ID, single
+                $condition['passed'] = $this->match_operator_and_value(
 					$location['operator'], // Operator ==, !=.
 					$post->ID, // Source Value, Current Post ID.
 					intval( $location['value'] ) // Compared Value, Page ID.
