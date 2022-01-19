@@ -38,7 +38,7 @@ $fab_design = ( isset( $options->fab_design ) ) ?
     /** Icon - Class */
     $optionContainer = array( 'id' => 'option_design_template_icon' );
     ob_start();
-    $this->Form->text( 'fab_design[template][icons][class]', array(
+    $this->Form->text( 'fab_design[template][icon][class]', array(
         'id' => $optionContainer['id'],
         'value' => isset( $fab_design->template->icons->class ) ? $fab_design->template->icons->class : 'fas fa-ellipsis-h',
     ));
@@ -50,7 +50,7 @@ $fab_design = ( isset( $options->fab_design ) ) ?
     /** Icon Color */
     $optionContainer = array( 'id' => 'option_design_icon_color' );
     ob_start();
-    $this->Form->text( 'fab_design[template][icons][color]', array(
+    $this->Form->text( 'fab_design[template][icon][color]', array(
         'id' => $optionContainer['id'],
         'class' => array('input' => 'field_option_design_template_color colorpicker'),
         'value' => isset( $fab_design->template->icons->color ) ? $fab_design->template->icons->color : '#fff',

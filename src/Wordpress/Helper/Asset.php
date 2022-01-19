@@ -67,10 +67,11 @@ trait Asset {
 	 * @var   bool      $media      The media for which this stylesheet has been defined.
 	 */
 	public function wp_enqueue_style( $handle, $src = '', $deps = array(), $ver = false, $media = 'all' ) {
-		$path = json_decode( FAB_PATH )->plugin_url . 'assets/';
-		if ( ! strpos( $src, '//' ) ) {
-			$src = $path . $src;
-		}
+        if ( ! strpos( $src, '//' ) ) {
+            $file = sprintf('%sassets/%s', json_decode( FAB_PATH )->plugin_path, $src);
+            $src = sprintf('%sassets/%s', json_decode( FAB_PATH )->plugin_url, $src);
+            if(!file_exists($file)) return;
+        }
 		wp_enqueue_style( $handle, $src, $deps, $ver, $media );
 	}
 
@@ -84,10 +85,11 @@ trait Asset {
 	 * @var   bool      $in_footer      Whether to enqueue the script before </body> instead of in the <head>
 	 */
 	public function wp_enqueue_script( $handle, $src = '', $deps = array(), $ver = false, $in_footer = false ) {
-		$path = json_decode( FAB_PATH )->plugin_url . 'assets/';
 		if ( ! strpos( $src, '//' ) ) {
-			$src = $path . $src;
-		}
+            $file = sprintf('%sassets/%s', json_decode( FAB_PATH )->plugin_path, $src);
+            $src = sprintf('%sassets/%s', json_decode( FAB_PATH )->plugin_url, $src);
+            if(!file_exists($file)) return;
+        }
 		wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 	}
 

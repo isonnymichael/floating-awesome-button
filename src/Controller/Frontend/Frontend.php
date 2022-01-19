@@ -53,6 +53,7 @@ class Frontend extends Base {
 		$action->setHook( 'wp_footer' );
 		$action->setCallback( 'fab_loader' );
 		$action->setDescription( 'Display the html element from view Frontend/float_button.php' );
+		$action->setPriority( 10 );
 		$action->setFeature( $plugin->getFeatures()['core_frontend'] );
 		$this->hooks[] = $action;
 
@@ -123,6 +124,13 @@ class Frontend extends Base {
 		/** Load Plugin Assets */
 		$this->WP->wp_enqueue_style( 'fab', 'build/css/frontend.min.css' );
 		$this->WP->wp_enqueue_script( 'fab', 'build/js/frontend/plugin.min.js', array(), '', true );
+
+        /** Load Plugin Components */
+        $components = ['fab', 'readingbar'];
+        foreach($components as $component){
+            $this->WP->wp_enqueue_style( sprintf('%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
+            $this->WP->wp_enqueue_script(sprintf('%s-component', $component), sprintf('build/components/%s/bundle.js', $component), array(), '1.0', true);
+        }
 	}
 
 	/**
@@ -134,7 +142,7 @@ class Frontend extends Base {
 		global $post;
 
 		/** Ignore in Pages */
-		if ( is_single() && isset( $post->post_type ) && $post->post_type === 'fab' ) {
+		if ( is_singular() && isset( $post->post_type ) && $post->post_type === 'fab' ) {
 			return;
 		}
 
@@ -148,7 +156,6 @@ class Frontend extends Base {
         );
         $lists = $Fab->get_lists_of_fab( $args );
 		$fab_to_display = $lists['items'];
-        $fab_custom_module = $lists['custom'];
 
 		if ( ! is_admin() && ( $fab_to_display || $fab_custom_module) ) {
 			/** Show FAB Button */
@@ -162,7 +169,7 @@ class Frontend extends Base {
 					),
 				)
 			);
-			$view->setData( compact( 'post', 'fab_to_display', 'fab_custom_module', 'options', 'default' ) );
+			$view->setData( compact( 'post', 'fab_to_display', 'options', 'default' ) );
 			$view->setOptions( array( 'shortcode' => false ) );
 			$view->build();
 
