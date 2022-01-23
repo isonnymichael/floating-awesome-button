@@ -1,7 +1,7 @@
 <div class="fab-container">
 
 	<div class="header bg-white shadow-sm rounded-lg mt-6 mr-4">
-		<nav class="flex flex-wrap items-center px-4 py-2 border-b-1 border-gray-100" role="navigation">
+		<nav class="flex flex-wrap items-center px-4 py-2" role="navigation">
 
 			<div class="text-white flex-shrink flex items-center relative rounded-lg bg-white py-2 px-4 mr-4 md:mr-8">
 				<div class="w-4 h-4 bg-primary-600 rounded-full"></div>
@@ -12,7 +12,7 @@
 
 			<div class="md:w-auto md:flex-grow md:flex md:items-center absolute display-inline-block float-right right-0">
 				<ul class="fab-menu-desktop nav-tab-wrapper <?php echo ( isset( $disableTab ) ) ? '' : 'nav-tab-general'; ?> <?php echo isset( $active ) ? 'tab-active' : ''; ?>
-				hidden sm:inline-flex flex-row cursor-pointer mx-4 pt-3">
+				hidden sm:inline-flex flex-row cursor-pointer mx-4 mt-3 p-2">
 					<?php foreach ( $this->sections as $path => $section ) : ?>
 						<?php
 							extract( $this->sectionLoopLogic( $path, $section ) );

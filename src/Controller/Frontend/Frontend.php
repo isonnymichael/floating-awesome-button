@@ -147,8 +147,6 @@ class Frontend extends Base {
 		}
 
 		/** Grab Data */
-        $default = $this->Plugin->getConfig()->default;
-		$options = $this->Plugin->getConfig()->options;
         $Fab = $this->Plugin->getModels()['Fab'];
         $args = array(
             'validateLocation' => true,
@@ -157,7 +155,7 @@ class Frontend extends Base {
         $lists = $Fab->get_lists_of_fab( $args );
 		$fab_to_display = $lists['items'];
 
-		if ( ! is_admin() && ( $fab_to_display || $fab_custom_module) ) {
+        if ( ! is_admin() && ( $fab_to_display) ) {
 			/** Show FAB Button */
 			$view = new View( $this->Plugin );
 			$view->setTemplate( 'frontend.blank' );
@@ -169,8 +167,6 @@ class Frontend extends Base {
 					),
 				)
 			);
-			$view->setData( compact( 'post', 'fab_to_display', 'options', 'default' ) );
-			$view->setOptions( array( 'shortcode' => false ) );
 			$view->build();
 
 			/** Show Modal - Only Default */

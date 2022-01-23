@@ -214,7 +214,13 @@ class FABItem {
 			$this->linkBehavior = $this->WP->get_post_meta( $this->ID, FABMetaboxSetting::$post_metas['link_behavior']['meta_key'], true );
 		} elseif ( $this->type === 'auth_logout' ) {
 			$this->link = wp_logout_url( home_url() );
-		}
+		} elseif ( $this->type === 'latest_post_link' ) {
+            $post = wp_get_recent_posts(array(
+                'numberposts' => '1',
+                'post_status' => 'publish'
+            ));
+            if(isset($post[0])) $this->link = get_permalink($post[0]['ID']);
+        }
 
 		/** Extra Function */
 		$this->match(); // Auto Match Location.

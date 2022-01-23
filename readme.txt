@@ -4,7 +4,7 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.8.3
 Requires PHP: 5.6
-Stable tag: 1.4.24
+Stable tag: 1.4.25
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -102,6 +102,10 @@ who had helped provide and develop these libraries
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.4.25 =
+* Add External Link Hook Support
+* Add New Button Type Latest Post Link
 
 = 1.4.24 =
 * Migrate PHP based script to component based script using Svelte JS
