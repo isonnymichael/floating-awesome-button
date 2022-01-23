@@ -41,6 +41,10 @@ class FABMetaboxSetting extends Metabox {
                     'id'   => 'anchor_link',
                     'text' => 'Anchor Link',
                 ),
+                array(
+                    'id'   => 'latest_post_link',
+                    'text' => 'Latest Post',
+                ),
             )
         ),
         array(
