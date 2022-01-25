@@ -61,7 +61,7 @@ class MetaboxLocation extends Base {
 	 */
 	public function backend_enequeue_metabox_location( $hook_suffix ) {
 		/** Grab Data */
-		global $post;
+		global $post, $wp_roles;
 		if ( ! isset( $post->post_type ) || $post->post_type != 'fab' ) {
 			return;
 		}
@@ -71,8 +71,10 @@ class MetaboxLocation extends Base {
 		$locations = $fab->getLocations();
 		foreach ( $locations as &$location ) {
 			if ( strpos($location['type'], 'single_') !== false ) {
-				$location['value'] = get_post( $location['value'] );
-			}
+                $location['value'] = get_post($location['value']);
+            } elseif ( strpos($location['type'], 'taxonomy_') !== false ) {
+                $location['value'] = get_term($location['value']);
+            }
 		}
 
 		/** Add Inline Script */
@@ -88,17 +90,32 @@ class MetaboxLocation extends Base {
 					),
 					'objects'
 				),
+                'post_taxonomies' => get_taxonomies(
+                    array(
+                        'public' => true,
+                        'show_in_rest' => true,
+                    ),
+                'objects'
+                ),
 				'excludes_post_types' => array( 'attachment' ),
 				'data'                => compact( 'locations' ),
 				'defaultOptions'      => array(
                     'operator' => FABMetaboxLocation::$operator,
                     'logic' => FABMetaboxLocation::$logic,
+                    'user' => [
+                        'roles' => array_keys($wp_roles->roles)
+                    ],
                 ),
 			)
 		);
 
 		/** Enqueue */
 		$this->WP->wp_enqueue_script( 'fab-location', 'build/js/backend/metabox-location.min.js', array(), '', true );
+
+        /** Load Component */
+        $component = 'metabox-location';
+        $this->WP->wp_enqueue_style( sprintf('%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
+        $this->WP->wp_enqueue_script(sprintf('%s-component', $component), sprintf('build/components/%s/bundle.js', $component), array(), '1.0', true);
 	}
 
 	/**

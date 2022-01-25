@@ -4,7 +4,7 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.8.3
 Requires PHP: 5.6
-Stable tag: 1.4.25
+Stable tag: 1.5.0
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -56,9 +56,9 @@ More Tutorial on YouTube :
 * 🤓 Supports Google reCaptcha v2 and v3
 
 = Pro Version =
-* 🤯 **PRO** Ability custom filter by (Custom Post Type & Pages)
+* 🤯 **PRO** Ability custom filter by (Custom Post Type, Posts, Taxonomies & Terms, User Session, User Roles)
 * 🤯 **PRO** Ability to change fab & popup animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)
-* 🤯 **PRO** Ability to change FAB design & layout (Color, Icon, Responsiveness)
+* 🤯 **PRO** Ability to change FAB design & layout (Responsiveness)
 * 🤯 **PRO** Map modal with a custom hotkey (Ctrl, Shift, Alt, Function Key, & Combined) (258+ Hotkeys)
 * 🤯 **PRO** Ability to change popup theme (Blank, Window Light, Window Dark, many more)
 
@@ -102,6 +102,10 @@ who had helped provide and develop these libraries
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.5.0 =
+* Add support location rules for user roles & post taxonomies
+* Migrate metabox location rules to svelte
 
 = 1.4.25 =
 * Add External Link Hook Support

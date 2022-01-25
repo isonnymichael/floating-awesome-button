@@ -252,11 +252,18 @@ class FABItem {
 			/** Rule Check */
 			$condition['passed'] = false;
 			if ( isset( $post->post_type ) && 'post_type' == $location['type'] ) { // Matched by post type.
-				$condition['passed'] = $this->match_operator_and_value(
-					$location['operator'], // Operator ==, !=.
-					$post->post_type, // Source Value.
-					$location['value'] // Compared Value.
-				);
+                $condition['passed'] = $this->match_operator_and_value(
+                    $location['operator'], // Operator ==, !=.
+                    $post->post_type, // Source Value.
+                    $location['value'] // Compared Value.
+                );
+			} elseif ( isset( $post->ID ) && strpos( $location['type'], 'taxonomy_' ) !== false ) { // Matched by post taxonomy
+                $terms = wp_get_post_terms( $post->ID, str_replace('taxonomy_','',$location['type']), array('fields' => 'ids') );
+                $condition['passed'] = $this->match_operator_and_value(
+                    '==', // Operator always == to check logged in or not.
+                    in_array($location['value'], $terms), // Source Value, Current User Role.
+                    ( $location['operator'] === '==' ) ? true : false // Compared Value
+                );
 			} elseif ( isset( $post->ID ) && is_singular() && strpos( $location['type'], 'single_' ) !== false ) { // Matched by ID, single
                 $condition['passed'] = $this->match_operator_and_value(
 					$location['operator'], // Operator ==, !=.
@@ -267,8 +274,14 @@ class FABItem {
 				$condition['passed'] = $this->match_operator_and_value(
 					'==', // Operator always == to check logged in or not.
 					is_user_logged_in(), // Source Value, Current User Role.
-					( $location['operator'] === '==' ) ? true : false // Compared Value, Page ID.
+					( $location['operator'] === '==' ) ? true : false // Compared Value
 				);
+			} elseif ( 'user_role' == $location['type'] ) { // Matched by User Role
+                $condition['passed'] = $this->match_operator_and_value(
+                    '==', // Operator always == to check logged in or not.
+                    in_array($location['value'], wp_get_current_user()->roles), // Source Value, Current User Role.
+                    ( $location['operator'] === '==' ) ? true : false // Compared Value
+                );
 			}
 
 			/** Store Validations */
