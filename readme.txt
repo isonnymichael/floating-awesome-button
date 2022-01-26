@@ -2,9 +2,9 @@
 Contributors: agung2001
 Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
-Tested up to: 5.8.3
+Tested up to: 5.9.0
 Requires PHP: 5.6
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -102,6 +102,10 @@ who had helped provide and develop these libraries
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.5.1 =
+* HOTFIX: Anchor link scroll position
+* HOTFIX: Single scroll to top button only not showing
 
 = 1.5.0 =
 * Add support location rules for user roles & post taxonomies
