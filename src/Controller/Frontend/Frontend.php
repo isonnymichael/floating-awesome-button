@@ -155,21 +155,21 @@ class Frontend extends Base {
         $lists = $Fab->get_lists_of_fab( $args );
 		$fab_to_display = $lists['items'];
 
-        if ( ! is_admin() && ( $fab_to_display) ) {
-			/** Show FAB Button */
-			$view = new View( $this->Plugin );
-			$view->setTemplate( 'frontend.blank' );
-			$view->setSections(
-				array(
-					'Frontend.button' => array(
-						'name'   => 'Float Button',
-						'active' => true,
-					),
-				)
-			);
-			$view->build();
+        /** Show FAB Button */
+        $view = new View( $this->Plugin );
+        $view->setTemplate( 'frontend.blank' );
+        $view->setSections(
+            array(
+                'Frontend.button' => array(
+                    'name'   => 'Float Button',
+                    'active' => true,
+                ),
+            )
+        );
+        $view->build();
 
-			/** Show Modal - Only Default */
+        if ( ! is_admin() && ( $fab_to_display ) ) {
+            /** Show Modal - Only Default */
 			$args['builder'] = array( 'default' );
 			$fab_to_display  = $Fab->get_lists_of_fab( $args )['items'];
 			$view            = clone $view;
