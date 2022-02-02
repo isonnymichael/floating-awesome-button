@@ -31,17 +31,7 @@ class FABModuleAuthLogout extends FABModule {
 
     /** Render Module */
     public function render(){
-        $view = new View( Plugin::getInstance() );
-        $view->setTemplate( 'frontend.blank' );
-        $view->setSections(
-            array(
-                'Frontend.Module.logout' => array(
-                    'name'   => 'Logout',
-                    'active' => true,
-                ),
-            )
-        );
-        $view->build();
+        View::RenderStatic('Frontend.Module.logout');
     }
 
 }

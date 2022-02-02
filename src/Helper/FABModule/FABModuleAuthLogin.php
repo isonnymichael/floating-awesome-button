@@ -31,17 +31,7 @@ class FABModuleAuthLogin extends FABModule {
 
     /** Render Module */
     public function render(){
-        $view = new View( Plugin::getInstance() );
-        $view->setTemplate( 'frontend.blank' );
-        $view->setSections(
-            array(
-                'Frontend.Module.login' => array(
-                    'name'   => 'Login',
-                    'active' => true,
-                ),
-            )
-        );
-        $view->build();
+        View::RenderStatic('Frontend.Module.login');
     }
 
 }
