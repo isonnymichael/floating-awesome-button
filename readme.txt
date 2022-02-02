@@ -4,7 +4,7 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.9.0
 Requires PHP: 5.6
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -48,7 +48,7 @@ More Tutorial on YouTube :
 * 🤓 **Unlimited** custom floating action button
 * 🤓 1500+ Support FontAwesome Icons
 * 🤓 Beautiful User Interface (UI)
-* 🤓 Sortable action button
+* 🤓 Customizable Ajax Search Modal Popup
 * 🤓 Ability to personalize action buttons (Position, Color, Icons, & Shapes)
 * 🤓 Multiple button positions (Left, Center, Right)
 * 🤓 Multiple buttons shapes 10+ Shapes (Bevel, Circle, Message, Octagon, Pentagon, etc)
@@ -102,6 +102,9 @@ who had helped provide and develop these libraries
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
 == Changelog ==
+
+= 1.5.2 =
+* Integrate ajax search component
 
 = 1.5.1 =
 * HOTFIX: Anchor link scroll position
@@ -226,3 +229,9 @@ who had helped provide and develop these libraries
 == Upgrade Notice ==
 
 == Frequently Asked Questions ==
+
+= Troubleshoot Search Modal Popup (Ajax Search)? =
+This plugin is uses WP REST API for search modal popup
+If you have any trouble when setting up the plugin please make sure :
+1. Your WP REST API is enabled, check your security plugin if there is any setting that is disabling it.
+2. Make sure your permalinks is set to `Post name` (admin, settings, permalinks, choose "Post Name")

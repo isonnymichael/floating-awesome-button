@@ -138,21 +138,11 @@ class Elementor extends Base {
             'builder' => array('elementor')
         ) )['items'];
 
+        /** Show FAB Button */
         if ( ! is_admin() && $fab_to_display ) {
-            /** Show FAB Button */
-            $view = new View( $this->Plugin );
-            $view->setTemplate( 'frontend.blank' );
-            $view->setSections(
-                array(
-                    'Frontend.modal' => array(
-                        'name'   => 'Float Button',
-                        'active' => true,
-                    ),
-                )
+            View::RenderStatic('Frontend.modal',
+                compact( 'post', 'fab_to_display' )
             );
-            $view->setData( compact( 'post', 'fab_to_display' ) );
-            $view->setOptions( array( 'shortcode' => false ) );
-            $view->build();
         }
     }
 

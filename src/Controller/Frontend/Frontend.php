@@ -86,7 +86,9 @@ class Frontend extends Base {
         $fab_to_display = $fab_to_display->get_lists_of_fab( array(
             'validateLocation' => true
         ) )['items'];
-        foreach($fab_to_display as &$fab){ $fab = $fab->getVars(); }
+        foreach($fab_to_display as &$fab){
+            $fab = $fab->getVars();
+        }
 
         /** Get Features for JS Manipulation */
         $features = $this->Plugin->getFeatures();
@@ -106,6 +108,7 @@ class Frontend extends Base {
 				'screen'  => FAB_SCREEN,
 				'path'    => FAB_PATH,
 				'premium' => $this->Helper->isPremiumPlan(),
+                'rest_url'=> esc_url_raw( rest_url() ),
 				'options' => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
                 'to_display' => $fab_to_display,
                 'features' => $features
@@ -125,7 +128,13 @@ class Frontend extends Base {
 		$this->WP->wp_enqueue_style( 'fab', 'build/css/frontend.min.css' );
 		$this->WP->wp_enqueue_script( 'fab', 'build/js/frontend/plugin.min.js', array(), '', true );
 
-        /** Load Plugin Components */
+        /** Load Components */
+        foreach($fab_to_display as $component){
+            $this->WP->wp_enqueue_style( sprintf('%s-component', $component['type']), sprintf('build/components/%s/bundle.css', $component['type']) );
+            $this->WP->wp_enqueue_script(sprintf('%s-component', $component['type']), sprintf('build/components/%s/bundle.js', $component['type']), array(), '1.0', true);
+        }
+
+        /** Load Special Plugin Components */
         $components = ['fab', 'readingbar'];
         foreach($components as $component){
             $this->WP->wp_enqueue_style( sprintf('%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
@@ -156,33 +165,15 @@ class Frontend extends Base {
 		$fab_to_display = $lists['items'];
 
         /** Show FAB Button */
-        $view = new View( $this->Plugin );
-        $view->setTemplate( 'frontend.blank' );
-        $view->setSections(
-            array(
-                'Frontend.button' => array(
-                    'name'   => 'Float Button',
-                    'active' => true,
-                ),
-            )
-        );
-        $view->build();
+        View::RenderStatic('Frontend.button');
 
+        /** Show Modal - Only Default */
         if ( ! is_admin() && ( $fab_to_display ) ) {
-            /** Show Modal - Only Default */
 			$args['builder'] = array( 'default' );
 			$fab_to_display  = $Fab->get_lists_of_fab( $args )['items'];
-			$view            = clone $view;
-			$view->setSections(
-				array(
-					'Frontend.modal' => array(
-						'name'   => 'Modal',
-						'active' => true,
-					),
-				)
-			);
-			$view->setData( compact( 'post', 'fab_to_display' ) );
-			$view->build();
+            View::RenderStatic('Frontend.modal',
+                compact( 'post', 'fab_to_display' )
+            );
 		}
 	}
 

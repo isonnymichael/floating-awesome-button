@@ -204,7 +204,7 @@ class View {
 
     /** Static View Render - Used For (Options, Metafields, etc) */
     public static function RenderStatic($path, $data = array()){
-        extract( $data );
+        if(!empty($data)) extract( $data );
         require sprintf(
             '%s%s.php',
             json_decode( FAB_PATH )->view_path,

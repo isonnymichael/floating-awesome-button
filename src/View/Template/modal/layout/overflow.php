@@ -6,7 +6,6 @@
         <div class="featured-img-container flex-none w-1/2 relative">
             <img src="<?php echo esc_url($featuredImage); ?>"
                  alt="<?php echo $fab_item->getTitle() ?> Cover"
-                 class="absolute w-1/2 inset-0 object-cover"
                  style="width:100%; height:100%; "
             />
         </div>
