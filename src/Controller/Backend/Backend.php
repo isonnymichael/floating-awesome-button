@@ -113,6 +113,7 @@ class Backend extends Base {
         wp_enqueue_style( 'wp-color-picker' );
 
 		/** Load Inline Script */
+        $options = (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) );
 		$this->WP->wp_enqueue_script( 'fab-local', 'local/fab.js', array(), '', true );
 		$this->WP->wp_localize_script(
 			'fab-local',
@@ -121,9 +122,11 @@ class Backend extends Base {
 				'name'           => FAB_NAME,
 				'version'        => FAB_VERSION,
 				'screen'         => FAB_SCREEN,
-				'path'           => FAB_PATH,
+				'path'           => json_decode(FAB_PATH),
 				'premium'        => $this->Helper->isPremiumPlan(),
-				'options'        => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
+				'production'     => $this->Plugin->getConfig()->production,
+				'description'    => $this->Plugin->getConfig()->description,
+				'options'        => $options,
 				'defaultOptions' => array(
                     'layout' => Design::$layout,
                     'template' => Design::$template

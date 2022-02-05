@@ -46,7 +46,7 @@ class BackendPage extends Base {
 	public function page_setting() {
 		/** Grab Data */
         $plugin = \Fab\Plugin::getInstance();
-		$slug     = sprintf( '%s-setting', $this->Plugin->getSlug() );
+		$slug = sprintf( '%s-setting', $this->Plugin->getSlug() );
 		$features = $this->page_setting_features();
 
         /** Ignored setting in production */
@@ -62,21 +62,13 @@ class BackendPage extends Base {
 
         /** Section */
         $sections                    = array();
-        $sections['Backend.setting'] = array(
-            'name'   => 'Setting',
-            'active' => true,
-        );
         if ( ! $this->Plugin->getConfig()->production ) {
             $sections['Backend.feature'] = array( 'name' => 'Feature' );
         }
-        $sections['Backend.module'] = array(
-            'name' => 'Module',
-        );
-        $sections['Backend.about'] = array( 'name' => 'About' );
 
         /** Set View */
         $view = new View( $this->Plugin );
-        $view->setTemplate( 'backend.default' );
+        $view->setTemplate( 'backend.setting' );
         $view->setSections( $sections );
         $view->addData(
             array(
@@ -104,7 +96,51 @@ class BackendPage extends Base {
         $page->setView( $view );
         $page->build();
 
+        /** Data Normalization Before Send to Component */
+        /** Section */
+        $sections['Backend.setting'] = array( 'name'   => 'Setting', 'active' => true );
+        $sections['Backend.module'] = array( 'name' => 'Module' );
+        $sections['Backend.about'] = array( 'name' => 'About' );
+        $nav = array();
+        foreach($sections as $key => $section){
+            $section['slug'] = str_replace('Backend.','', $key);
+            $nav[] = $section;
+        }
+        /** Modules */
+        $modules = array();
+        foreach($plugin->getModules() as $module) $modules[] = $module->getVars();
+        /** Features */
+        foreach($features['features'] as &$feature){ $feature = $feature->getVars(); }
+        /** Get FAB for JS Manipulation */
+        $fab_lists = $this->Plugin->getModels()['Fab'];
+        $fab_lists = $fab_lists->get_lists_of_fab();
+        foreach($fab_lists['items'] as &$fab){ $fab = $fab->getVars(); }
 
+        /** Localize Script */
+        $this->WP->wp_enqueue_script( 'fab-local', 'local/fab.js', array(), '', true );
+        $this->WP->wp_localize_script(
+            'fab-local',
+            'FAB_SETTING',
+            array(
+                'status' => false,
+                'config' => $this->Plugin->getConfig(),
+                'sections' => $nav,
+                'modules' => $modules,
+                'fab_lists' => $fab_lists,
+                'features' => $features['features'],
+                'nonce' => array(
+                    'clear' => wp_create_nonce('clear-config'),
+                    'module' => wp_create_nonce('module-config')
+                ),
+                'url' => array(
+                    'upgrade' => $this->Helper->getUpgradeURL()
+                )
+            )
+        );
+
+        /** Load Component */
+        $this->WP->wp_enqueue_style( 'fab-setting-component', 'build/components/setting/bundle.css' );
+        $this->WP->wp_enqueue_script( 'fab-setting-component', 'build/components/setting/bundle.js', array(), '1.0', true);
 	}
 
 	/*** Handle Page Submission */

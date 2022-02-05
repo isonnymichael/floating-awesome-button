@@ -1,1 +1,0 @@
-<?php $feature->generateOptionsHTML( $feature->getOptions() ); ?>
