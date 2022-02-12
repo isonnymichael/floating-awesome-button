@@ -80,6 +80,8 @@ class Frontend extends Base {
 		define( 'FAB_SCREEN', json_encode( $this->WP->getScreen() ) );
 		$default = $this->Plugin->getConfig()->default;
 		$config  = $this->Plugin->getConfig()->options;
+        $options = (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) );
+        $fabTypes = array();
 
         /** Get FAB for JS Manipulation */
         $fab_to_display = $this->Plugin->getModels()['Fab'];
@@ -87,6 +89,8 @@ class Frontend extends Base {
             'validateLocation' => true
         ) )['items'];
         foreach($fab_to_display as &$fab){
+            $fabTypes[$fab->getType()] = $fab->getType();
+            if($fab->getModal()) $fabTypes['modal'] = 'modal';
             $fab = $fab->getVars();
         }
 
@@ -109,7 +113,7 @@ class Frontend extends Base {
 				'path'    => FAB_PATH,
 				'premium' => $this->Helper->isPremiumPlan(),
                 'rest_url'=> esc_url_raw( rest_url() ),
-				'options' => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
+				'options' => $options,
                 'to_display' => $fab_to_display,
                 'features' => $features
 			)
@@ -140,6 +144,10 @@ class Frontend extends Base {
             $this->WP->wp_enqueue_style( sprintf('%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
             $this->WP->wp_enqueue_script(sprintf('%s-component', $component), sprintf('build/components/%s/bundle.js', $component), array(), '1.0', true);
         }
+
+        /** Special Template/Styles */
+        if($options->fab_design->template->name==='shape'){ $this->WP->wp_enqueue_style( 'fab-shapes', sprintf('build/css/fab-shapes.min.css', $component) ); }
+        if(isset($fabTypes['modal'])){ $this->WP->wp_enqueue_style( 'fab-modal', sprintf('build/css/fab-modal.min.css', $component) ); }
 	}
 
 	/**

@@ -4,7 +4,7 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.9.0
 Requires PHP: 5.6
-Stable tag: 1.5.3
+Stable tag: 1.5.5
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -66,6 +66,7 @@ More Tutorial on YouTube :
 * 🧩 [Contact Form 7](https://wordpress.org/plugins/contact-form-7)
 * 🧩 [Easy Table of Content](https://wordpress.org/plugins/easy-table-of-contents)
 * 🧩 [Elementor](https://wordpress.org/plugins/elementor)
+* 🧩 [Gutenberg](https://wordpress.org/plugins/gutenberg/)
 * 🧩 [Gravity Form](https://www.gravityforms.com)
 * 🧩 [WPForms](https://wordpress.org/plugins/wpforms-lite/)
 
@@ -101,13 +102,21 @@ who had helped provide and develop these libraries
 * You can install the plugin from the WordPress Plugin Repositories or
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
 
+To see a complete release versions of the plugins you can go to :
+* 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
+
 == Changelog ==
 
+= 1.5.5 =
+* Add Gutenberg Support
+* Migrate backend metabox design to components
+* Optimize frontend asset delivery
+
 = 1.5.3 =
-- HOTFIX: Enable/Disable Tooltip
-- HOTFIX: FAB Shape not changing
-- HOTFIX: Grecaptcha on mobile
-- Migrate backend setting to components
+* HOTFIX: Enable/Disable Tooltip
+* HOTFIX: FAB Shape not changing
+* HOTFIX: Grecaptcha on mobile
+* Migrate backend setting to components
 
 = 1.5.2 =
 * Integrate ajax search component

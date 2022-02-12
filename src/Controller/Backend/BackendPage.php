@@ -31,11 +31,26 @@ class BackendPage extends Base {
 		$action = new Action();
 		$action->setComponent( $this );
 		$action->setHook( 'admin_menu' );
-		$action->setCallback( 'page_setting' );
+		$action->setCallback( 'admin_menu_setting' );
 		$action->setMandatory( true );
 		$action->setFeature( $plugin->getFeatures()['core_backend'] );
 		$this->hooks[] = $action;
 	}
+
+    public function admin_menu_setting(){
+        /** Grab Data */
+        $slug = sprintf( '%s-setting', $this->Plugin->getSlug() );
+
+        /** Set Page */
+        $page = new SubmenuPage();
+        $page->setParentSlug( 'options-general.php' );
+        $page->setPageTitle( FAB_NAME );
+        $page->setMenuTitle( FAB_NAME );
+        $page->setCapability( 'manage_options' );
+        $page->setMenuSlug( $slug );
+        $page->setFunction( array( $this, 'page_setting' ) );
+        $page->build();
+    }
 
 	/**
 	 * Page Setting
@@ -84,17 +99,7 @@ class BackendPage extends Base {
             )
         );
         $view->setOptions( array( 'shortcode' => false ) );
-
-        /** Set Page */
-        $page = new SubmenuPage();
-        $page->setParentSlug( 'options-general.php' );
-        $page->setPageTitle( FAB_NAME );
-        $page->setMenuTitle( FAB_NAME );
-        $page->setCapability( 'manage_options' );
-        $page->setMenuSlug( $slug );
-        $page->setFunction( array( $page, 'loadView' ) );
-        $page->setView( $view );
-        $page->build();
+        $view->build();
 
         /** Data Normalization Before Send to Component */
         /** Section */

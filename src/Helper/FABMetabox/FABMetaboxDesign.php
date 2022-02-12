@@ -51,10 +51,11 @@ class FABMetaboxDesign extends Metabox {
         'fab_design_template'  => array(
             'default' => array(
                 'color' => '',
-                'shape'  => 'none',
                 'icon' => array(
                     'color' => '',
                 ),
+                'shape'  => 'none',
+                'grouped'  => true,
             ),
         ),
         /** Tooltip */
