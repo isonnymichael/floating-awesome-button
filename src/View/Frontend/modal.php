@@ -15,6 +15,13 @@
 		</div>
 	</div>
     <style>
+        .jconfirm-fab-modal-<?php echo esc_attr( $fab_item->getID() ); ?> .jconfirm-content-pane {
+            <?php
+                $overflow = ($fab_item->getModal()->getLayout()['id']==='overflow') ? 'overflow: visible !important;' : '';
+                echo esc_attr($overflow);
+            ?>
+        }
+
         .jconfirm-fab-modal-<?php echo esc_attr( $fab_item->getID() ); ?> .jconfirm-content {
             <?php
                 /** Background */

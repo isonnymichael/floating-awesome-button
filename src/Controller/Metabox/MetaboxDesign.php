@@ -66,6 +66,10 @@ class MetaboxDesign extends Base {
             return;
         }
 
+        /** Grab Data */
+        $fab = new FABItem( $post->ID );
+        $fab = $fab->getVars();
+
         /** Add Inline Script */
         $this->WP->wp_localize_script( 'fab-local', 'FAB_METABOX_DESIGN', array(
             'defaultOptions' => [
@@ -74,10 +78,16 @@ class MetaboxDesign extends Base {
                 'layout' => Modal::$layout,
                 'template' => Design::$template,
             ],
+            'data' => compact('fab')
         ));
 
         /** Enqueue */
         $this->WP->wp_enqueue_script( 'fab-design', 'build/js/backend/metabox-design.min.js', array(), '', true );
+
+        /** Load Component */
+        $component = 'metabox-design';
+        $this->WP->wp_enqueue_style( sprintf('%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
+        $this->WP->wp_enqueue_script(sprintf('%s-component', $component), sprintf('build/components/%s/bundle.js', $component), array(), '1.0', true);
     }
 
     /**
@@ -103,29 +113,9 @@ class MetaboxDesign extends Base {
      * @param       object $post      global $post object
      */
     public function metabox_design_callback() {
-        global $post;
-
-        $default = $this->Plugin->getConfig()->default;
-        $config  = $this->Plugin->getConfig()->options;
-
-        /** Set View */
-        $view = new View( $this->Plugin );
-        $view->setTemplate( 'backend.blank' );
-        $view->setSections(
-            array(
-                'Backend.Metabox.design' => array(
-                    'name'   => '',
-                    'active' => true,
-                ),
-            )
+        View::RenderStatic(
+            'Backend.Metabox.design', array()
         );
-        $view->setData(
-            array(
-                'fab' => new FABItem( $post->ID ),
-                'options' => (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) ),
-            )
-        );
-        $view->build();
     }
 
 }

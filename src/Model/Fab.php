@@ -38,6 +38,7 @@ class Fab extends Model {
 		$this->args['publicly_queryable'] = true; /** Needed to enable Elementor */
 		$this->args['menu_icon'] = json_decode( FAB_PATH )->plugin_url . '/assets/img/icon.png';
 		$this->args['has_archive'] = false;
+		$this->args['show_in_rest'] = true;
         $this->args['supports'] = array('title', 'editor', 'thumbnail');
 
 		/** @backend */
