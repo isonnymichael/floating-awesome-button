@@ -44,6 +44,8 @@ class FABMetaboxDesign extends Metabox {
 				),
 			),
 		),
+        /** Standalone */
+        'fab_design_standalone'   => array( 'default' => false ),
         /** Size */
         'fab_design_size_type'   => array( 'default' => '' ),
         'fab_design_size_custom' => array( 'default' => '' ),
@@ -131,6 +133,7 @@ class FABMetaboxDesign extends Metabox {
 		'responsive'  => array( 'meta_key' => 'fab_design_responsive' ), // Responsive.
 		'size_type'   => array( 'meta_key' => 'fab_design_size_type' ), // Size.
 		'size_custom' => array( 'meta_key' => 'fab_design_size_custom' ), // Size.
+		'standalone'  => array( 'meta_key' => 'fab_design_standalone' ), // Standalone.
 		'template' => array( 'meta_key' => 'fab_design_template' ), // Template.
 		'tooltip' => array( 'meta_key' => 'fab_design_tooltip' ), // Tooltip.
 

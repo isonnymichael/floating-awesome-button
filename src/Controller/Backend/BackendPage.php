@@ -160,8 +160,7 @@ class BackendPage extends Base {
                     $this->page_setting_submission_setting($features);
                 }
 
-                header(sprintf( 'Location: %s?page=floating-awesome-button-setting', $_SERVER['PHP_SELF'] ) );
-                die;
+                View::RenderStatic('Element/reload');
             }
 		}
 	}
