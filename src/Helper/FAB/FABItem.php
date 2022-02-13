@@ -68,6 +68,12 @@ class FABItem {
 	 */
 	protected $size = array();
 
+    /**
+     * @access   protected
+     * @var      bool    $standalone    standalone
+     */
+    protected $standalone = false;
+
 	/**
 	 * @access   protected
 	 * @var      string    $type    type
@@ -190,6 +196,11 @@ class FABItem {
 		/** Responsive */
 		$this->responsive = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['responsive']['meta_key'], true );
 		$this->responsive = ( $this->responsive ) ? $this->responsive : FABMetaboxDesign::$input['fab_design_responsive']['default'];
+
+        /** Standalone */
+        $standalone = ['readingbar', 'scrolltotop'];
+        $this->standalone = (in_array($this->type, $standalone)) ? true : false;
+        $this->standalone = ($this->standalone===false) ? $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['standalone']['meta_key'], true ) : $this->standalone;
 
 		/** Trigger */
 		$this->trigger = $this->WP->get_post_meta( $this->ID, FABMetaboxTrigger::$post_metas['trigger']['meta_key'], true );
@@ -486,6 +497,22 @@ class FABItem {
 	public function setSize( array $size ): void {
 		$this->size = $size;
 	}
+
+    /**
+     * @return bool
+     */
+    public function isStandalone(): bool
+    {
+        return $this->standalone;
+    }
+
+    /**
+     * @param bool $standalone
+     */
+    public function setStandalone(bool $standalone): void
+    {
+        $this->standalone = $standalone;
+    }
 
 	/**
 	 * @return string
