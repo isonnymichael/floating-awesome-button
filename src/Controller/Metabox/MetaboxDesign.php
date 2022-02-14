@@ -69,6 +69,10 @@ class MetaboxDesign extends Base {
         /** Grab Data */
         $fab = new FABItem( $post->ID );
         $fab = $fab->getVars();
+//
+//        echo '<pre>';
+//        var_dump($fab);
+//        exit;
 
         /** Add Inline Script */
         $this->WP->wp_localize_script( 'fab-local', 'FAB_METABOX_DESIGN', array(
