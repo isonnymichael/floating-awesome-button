@@ -4,7 +4,7 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 5.0
 Tested up to: 5.9.0
 Requires PHP: 5.6
-Stable tag: 1.5.7
+Stable tag: 1.5.8
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -107,7 +107,7 @@ To see a complete release versions of the plugins you can go to :
 
 == Changelog ==
 
-= 1.5.7 =
+= 1.5.8 =
 * Add option standalone button
 * HOTFIX: FAB shapes single and group
 
