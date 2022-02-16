@@ -368,11 +368,14 @@ class FABItem {
 	 * @return void
 	 */
 	public function render_content( $content = '' ) {
+        global $wp_embed;
+
 		/** Render Elementor */
 		if ( $this->builder === 'elementor' ) {
 			$content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $this->getID() );
 		} else {
 			$content = get_post_field( 'post_content', $this->getID() ); // Get post content.
+            $content = $wp_embed->autoembed( do_blocks( $content ) );
 			$content = wp_kses_post( $content ); // Esc content.
 		}
 

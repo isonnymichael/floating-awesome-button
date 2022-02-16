@@ -1,10 +1,10 @@
 === Floating Awesome Button ===
 Contributors: agung2001
 Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
-Requires at least: 5.0
+Requires at least: 4.5
 Tested up to: 5.9.0
 Requires PHP: 5.6
-Stable tag: 1.5.8
+Stable tag: 1.5.9
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -25,6 +25,7 @@ Floating Awesome Button (FAB) is a customizable action button that can help you 
 * Displaying custom authentication popup (Register & Login) 👍
 * Displaying custom shortcode in a popup 👍
 * Displaying product catalog (Woocommerce) 👍
+* Displaying Gutenberg block & Elementor in a popup 👍
 * Displaying forms (Newsletter, Booking, Membership, Payment, etc) 👍
 * Integration with widgets in a modal (Table of content, Social Sharing, etc) 👍
 * Embed videos, audio, podcast (YouTube, Twitch, TikTok, Vimeo, Soundcloud, etc) 👍
@@ -35,7 +36,7 @@ https://www.youtube.com/watch?v=ifNfoV5_6Bk
 
 https://www.youtube.com/watch?v=TYxBG2iPvl4
 
-https://www.youtube.com/watch?v=T29sWABf32I
+https://www.youtube.com/watch?v=vQqF9YYF0Qo
 
 More Tutorial on YouTube :
 
@@ -106,6 +107,10 @@ To see a complete release versions of the plugins you can go to :
 * 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
 
 == Changelog ==
+
+= 1.5.9 =
+* Restructure CSS styles to use less space
+* Optimize gutenberg support (Autoembed & Render)
 
 = 1.5.8 =
 * Add option standalone button

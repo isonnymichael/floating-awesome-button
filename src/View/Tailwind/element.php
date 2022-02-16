@@ -15,4 +15,4 @@
 <div class="drop-shadow-md drop-shadow-xl drop-shadow-2xl"></div>
 <div class="overflow-visible"></div>
 <div class="sm:block md:block lg:block xl:block"></div>
-<div class="sm:hidden md:hidden lg:hidden xl:hidden"></div>
+<div class="hidden sm:hidden md:hidden lg:hidden xl:hidden"></div>
