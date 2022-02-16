@@ -91,6 +91,10 @@ class Design extends Feature {
     public static $template = array(
         'name' => array(
             array(
+                'id'   => 'hidden',
+                'text' => 'Hidden',
+            ),
+            array(
                 'id'   => 'classic',
                 'text' => 'Classic',
             ),
