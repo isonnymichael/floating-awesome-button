@@ -4,7 +4,7 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 4.5
 Tested up to: 5.9.0
 Requires PHP: 5.6
-Stable tag: 1.5.9
+Stable tag: 1.5.10
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -77,6 +77,8 @@ More Tutorial on YouTube :
 Thanks for using our plugin, your rating and feedback help us grow!
 If you enjoy it please feel free to spread the words 👊 😚 👍
 
+* 👋 👊 [Join Our Slack Community](https://wpfab.slack.com) 🦸‍ 👨‍🚀 🥷
+
 = Credits =
 
 This plugin is heavily using these free & open-source libraries
@@ -102,11 +104,12 @@ who had helped provide and develop these libraries
 == Installation ==
 * You can install the plugin from the WordPress Plugin Repositories or
 * Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
-
-To see a complete release versions of the plugins you can go to :
-* 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
+* To see a complete release versions of the plugins you can go to : 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
 
 == Changelog ==
+
+= 1.5.10 =
+* HOTFIX: FAB type link metabox design option not working
 
 = 1.5.9 =
 * Restructure CSS styles to use less space
