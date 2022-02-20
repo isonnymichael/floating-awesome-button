@@ -160,6 +160,7 @@ class FABItem {
 		/** Get Plugin Instance */
 		$plugin   = \Fab\Plugin::getInstance();
 		$this->WP = $plugin->getWP();
+        $this->Helper = $plugin->getHelper();
 		$options  = $plugin->getConfig()->options;
 
 		/** Construct Class */
@@ -182,8 +183,9 @@ class FABItem {
 		$this->hotkey          = ($this->hotkey==='none') ? '' : $this->hotkey;
 
         /** Animation */
+        $default = FABMetaboxDesign::$input['fab_design_animation']['default'];
         $this->animation = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['animation']['meta_key'], true );
-        $this->animation = ( $this->animation ) ? $this->animation : FABMetaboxDesign::$input['fab_design_animation']['default'];
+        $this->animation = ( $this->animation ) ? $this->Helper->ArrayMergeRecursive( (array) $default, (array) $this->animation ) : $default;
 
         /** Module */
         if( 'anchor_link' === $this->type ){ $this->module = new FABModuleAnchorLink(); }
@@ -194,8 +196,9 @@ class FABItem {
         elseif ( 'search' === $this->type ){ $this->module = new FABModuleSearch(); }
 
 		/** Responsive */
+        $default = FABMetaboxDesign::$input['fab_design_responsive']['default'];
 		$this->responsive = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['responsive']['meta_key'], true );
-		$this->responsive = ( $this->responsive ) ? $this->responsive : FABMetaboxDesign::$input['fab_design_responsive']['default'];
+		$this->responsive = ( $this->responsive ) ? $this->Helper->ArrayMergeRecursive( (array) $default, (array) $this->responsive ) : $default;
 
         /** Standalone */
         $standalone = ['readingbar', 'scrolltotop'];
@@ -203,16 +206,19 @@ class FABItem {
         $this->standalone = ($this->standalone===false) ? $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['standalone']['meta_key'], true ) : $this->standalone;
 
 		/** Trigger */
+        $default = FABMetaboxTrigger::$input['fab_trigger']['default'];
 		$this->trigger = $this->WP->get_post_meta( $this->ID, FABMetaboxTrigger::$post_metas['trigger']['meta_key'], true );
-		$this->trigger = ( $this->trigger ) ? $this->trigger : FABMetaboxTrigger::$input['fab_trigger']['default'];
+		$this->trigger = ( $this->trigger ) ? $this->Helper->ArrayMergeRecursive( (array) $default, (array) $this->trigger ) : $default;
 
         /** Template */
+        $default = FABMetaboxDesign::$input['fab_design_template']['default'];
         $this->template = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['template']['meta_key'], true );
-        $this->template = ( $this->template ) ? $this->template : FABMetaboxDesign::$input['fab_design_template']['default'];
+        $this->template = ( $this->template ) ? $this->Helper->ArrayMergeRecursive( (array) $default, (array) $this->template ) : $default;
 
         /** Tooltip */
+        $default = FABMetaboxDesign::$input['fab_design_tooltip']['default'];
         $this->tooltip = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['tooltip']['meta_key'], true );
-        $this->tooltip = ( $this->tooltip ) ? $this->tooltip : FABMetaboxDesign::$input['fab_design_tooltip']['default'];
+        $this->tooltip = ( $this->tooltip ) ? $this->Helper->ArrayMergeRecursive( (array) $default, (array) $this->tooltip ) : $default;
 
 		/** Location */
 		$this->locations = $this->WP->get_post_meta( $this->ID, FABMetaboxLocation::$post_metas['locations']['meta_key'], true );

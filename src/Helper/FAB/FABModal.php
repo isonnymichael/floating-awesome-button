@@ -54,6 +54,7 @@ class FABModal {
         /** Get Plugin Instance */
         $plugin   = \Fab\Plugin::getInstance();
         $this->WP = $plugin->getWP();
+        $this->Helper = $plugin->getHelper();
 
         /** Construct Class */
         $this->ID = $ID;
@@ -62,16 +63,19 @@ class FABModal {
         $type = $this->WP->get_post_meta( $this->ID, FABMetaboxSetting::$post_metas['type']['meta_key'], true );
         if($type != 'link'){
             /** Layout */
+            $default = FABMetaboxDesign::$input['fab_modal_layout']['default'];
             $this->layout = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['modal_layout']['meta_key'], true );
-            $this->layout = ( $this->layout ) ? $this->layout : FABMetaboxDesign::$input['fab_modal_layout']['default'];
+            $this->layout = ( $this->layout ) ? $this->Helper->ArrayMergeRecursive( (array) $default, (array) $this->layout ) : $default;
 
             /** Navigation */
+            $default = FABMetaboxDesign::$input['fab_modal_navigation']['default'];
             $this->navigation = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['modal_navigation']['meta_key'], true );
-            $this->navigation = ( $this->navigation ) ? $this->navigation : FABMetaboxDesign::$input['fab_modal_navigation']['default'];
+            $this->navigation = ( $this->navigation ) ? $this->Helper->ArrayMergeRecursive( (array) $default, (array) $this->navigation ) : $default;
 
             /** Theme */
+            $default = FABMetaboxDesign::$input['fab_modal_theme']['default'];
             $this->theme = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['modal_theme']['meta_key'], true );
-            $this->theme = ( $this->theme ) ? $this->theme : FABMetaboxDesign::$input['fab_modal_theme']['default'];
+            $this->theme = ( $this->theme ) ? $this->Helper->ArrayMergeRecursive( (array) $default, (array) $this->theme ) : $default;
         }
 
     }
