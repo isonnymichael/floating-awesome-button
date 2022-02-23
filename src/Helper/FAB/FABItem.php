@@ -386,11 +386,11 @@ class FABItem {
 		}
 
 		/** Output the content */
+        $layout = isset($this->getModal()->getLayout()['id']) ?
+            $this->getModal()->getLayout()['id'] : 'stacked';
+        $layout = ($layout === 'grid') ? 'grid-left' : $layout;
         View::RenderStatic(
-            sprintf('Template/modal/layout/%s',
-                isset($this->getModal()->getLayout()['id']) ?
-                    $this->getModal()->getLayout()['id'] : 'stacked'
-            ),
+            sprintf('Template/modal/layout/%s', $layout ),
             array( 'fab_item' => $this, 'content' => $content )
         );
 	}

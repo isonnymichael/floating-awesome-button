@@ -21,6 +21,10 @@ class FABMetaboxTrigger extends Metabox {
 			'id'   => 'none',
 			'text' => 'None',
 		),
+        array(
+            'id'   => 'adblock',
+            'text' => 'Adblock',
+        ),
 		array(
 			'id'   => 'exit_intent',
 			'text' => 'Exit Intent',

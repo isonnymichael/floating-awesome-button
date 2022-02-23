@@ -61,9 +61,11 @@ class MetaboxSetting extends Base {
 	public function backend_enequeue_metabox_setting( $hook_suffix ) {
 		/** Grab Data */
 		global $post;
-		if ( ! isset( $post->post_type ) || $post->post_type != 'fab' ) {
-			return;
-		}
+        $screen = $this->WP->getScreen();
+        $allowedPage = ['post.php', 'post-new.php'];
+        if ( !isset( $post->post_type ) || $post->post_type !== 'fab' || !in_array($screen->pagenow, $allowedPage) ) {
+            return;
+        }
 
         /** Add Inline Script */
         $this->WP->wp_localize_script( 'fab-local', 'FAB_METABOX_SETTING', array(

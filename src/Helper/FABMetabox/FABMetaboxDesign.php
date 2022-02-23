@@ -63,7 +63,7 @@ class FABMetaboxDesign extends Metabox {
         /** Tooltip */
         'fab_design_tooltip'  => array(
             'default' => array(
-                'color' => '',
+                'alwaysdisplay' => false,
                 'font' => array(
                     'color' => '',
                 ),

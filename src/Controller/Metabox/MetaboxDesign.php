@@ -62,7 +62,9 @@ class MetaboxDesign extends Base {
     public function backend_enequeue_metabox_design( $hook_suffix ) {
         /** Grab Data */
         global $post;
-        if ( ! isset( $post->post_type ) || $post->post_type != 'fab' ) {
+        $screen = $this->WP->getScreen();
+        $allowedPage = ['post.php', 'post-new.php'];
+        if ( !isset( $post->post_type ) || $post->post_type !== 'fab' || !in_array($screen->pagenow, $allowedPage) ) {
             return;
         }
 
@@ -113,9 +115,7 @@ class MetaboxDesign extends Base {
      * @param       object $post      global $post object
      */
     public function metabox_design_callback() {
-        View::RenderStatic(
-            'Backend.Metabox.design', array()
-        );
+        View::RenderStatic('Backend.Metabox.design');
     }
 
 }
