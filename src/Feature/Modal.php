@@ -20,8 +20,17 @@ class Modal extends Feature {
             'text' => 'Background Image',
         ),
         array(
-            'id'   => 'grid',
             'text' => 'Grid',
+            'children' => array(
+                array(
+                    'id'   => 'grid-left',
+                    'text' => 'Grid Left',
+                ),
+                array(
+                    'id'   => 'grid-right',
+                    'text' => 'Grid Right',
+                ),
+            ),
         ),
         array(
             'id'   => 'overflow',

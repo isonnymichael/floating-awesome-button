@@ -61,9 +61,15 @@ class MetaboxTrigger extends Base {
 	public function backend_enequeue_metabox_trigger( $hook_suffix ) {
 		/** Grab Data */
 		global $post;
-		if ( ! isset( $post->post_type ) || $post->post_type != 'fab' ) {
-			return;
-		}
+        $screen = $this->WP->getScreen();
+        $allowedPage = ['post.php', 'post-new.php'];
+        if ( !isset( $post->post_type ) || $post->post_type !== 'fab' || !in_array($screen->pagenow, $allowedPage) ) {
+            return;
+        }
+
+        /** Grab Data */
+        $fab = new FABItem( $post->ID );
+        $fab = $fab->getVars();
 
 		/** Add Inline Script */
 		$this->WP->wp_localize_script(
@@ -73,11 +79,17 @@ class MetaboxTrigger extends Base {
 				'defaultOptions' => array(
 					'types' => FABMetaboxTrigger::$types,
 				),
+                'data' => compact('fab')
 			)
 		);
 
 		/** Enqueue */
 		$this->WP->wp_enqueue_script( 'fab-trigger', 'build/js/backend/metabox-trigger.min.js', array(), '', true );
+
+        /** Load Component */
+        $component = 'metabox-trigger';
+        $this->WP->wp_enqueue_style( sprintf('%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
+        $this->WP->wp_enqueue_script(sprintf('%s-component', $component), sprintf('build/components/%s/bundle.js', $component), array(), '1.0', true);
 	}
 
 	/**
@@ -103,25 +115,7 @@ class MetaboxTrigger extends Base {
 	 * @param       object $post      global $post object
 	 */
 	public function metabox_triggers_callback() {
-		global $post;
-
-		/** Set View */
-		$view = new View( $this->Plugin );
-		$view->setTemplate( 'backend.blank' );
-		$view->setSections(
-			array(
-				'Backend.Metabox.trigger' => array(
-					'name'   => '',
-					'active' => true,
-				),
-			)
-		);
-		$view->setData(
-			array(
-				'fab' => new FABItem( $post->ID ),
-			)
-		);
-		$view->build();
+        View::RenderStatic('Backend.Metabox.trigger');
 	}
 
 }

@@ -62,9 +62,11 @@ class MetaboxLocation extends Base {
 	public function backend_enequeue_metabox_location( $hook_suffix ) {
 		/** Grab Data */
 		global $post, $wp_roles;
-		if ( ! isset( $post->post_type ) || $post->post_type != 'fab' ) {
-			return;
-		}
+        $screen = $this->WP->getScreen();
+        $allowedPage = ['post.php', 'post-new.php'];
+        if ( !isset( $post->post_type ) || $post->post_type !== 'fab' || !in_array($screen->pagenow, $allowedPage) ) {
+            return;
+        }
 
 		/** Grab Locations */
 		$fab       = new FABItem( $post->ID );

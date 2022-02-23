@@ -4,7 +4,7 @@ Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 4.5
 Tested up to: 5.9.0
 Requires PHP: 5.6
-Stable tag: 1.5.10
+Stable tag: 1.5.11
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -57,11 +57,12 @@ More Tutorial on YouTube :
 * 🤓 Supports Google reCaptcha v2 and v3
 
 = Pro Version =
-* 🤯 **PRO** Ability custom filter by (Custom Post Type, Posts, Taxonomies & Terms, User Session, User Roles)
+* 🤯 **PRO** Ability to custom filter by (Custom Post Type, Posts, Taxonomies & Terms, User Session, User Roles)
+* 🤯 **PRO** Ability to custom filter by Device (Desktop, Tablet, & Mobile)
 * 🤯 **PRO** Ability to change fab & popup animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)
-* 🤯 **PRO** Ability to change FAB design & layout (Responsiveness)
 * 🤯 **PRO** Map modal with a custom hotkey (Ctrl, Shift, Alt, Function Key, & Combined) (258+ Hotkeys)
 * 🤯 **PRO** Ability to change popup theme (Blank, Window Light, Window Dark, many more)
+* 🤯 **PRO** Ability to add Auto Trigger for Modal/Popup (Adblock Detection, Exit Intent, Time Delay)
 
 = 3rd Party Plugins Support =
 * 🧩 [Contact Form 7](https://wordpress.org/plugins/contact-form-7)
@@ -77,7 +78,7 @@ More Tutorial on YouTube :
 Thanks for using our plugin, your rating and feedback help us grow!
 If you enjoy it please feel free to spread the words 👊 😚 👍
 
-* 👋 👊 [Join Our Slack Community](https://wpfab.slack.com) 🦸‍ 👨‍🚀 🥷
+* 👋 👊 [Join Our Slack Community](https://wpfab.slack.com) 🦸👨‍🚀🥷
 
 = Credits =
 
@@ -86,6 +87,7 @@ all the credits go to these peoples and communities
 who had helped provide and develop these libraries
 
 * 📟 Compiler: [GruntJS](https://gruntjs.com/)
+* 📟 Compiler: [Webpack](https://webpack.js.org/)
 * 📟 Languages : [SASS Lang](https://sass-lang.com/)
 * 📟 Languages : [TypeScript Lang](https://www.typescriptlang.org/)
 * 📟 Libraries : [Animate.css](https://github.com/daneden/animate.css)
@@ -93,6 +95,7 @@ who had helped provide and develop these libraries
 * 📟 Libraries : [jQuery Confirm](https://craftpip.github.io/jquery-confirm/)
 * 📟 Libraries : [jQuery Hotkeys](https://github.com/jeresig/jquery.hotkeys)
 * 📟 Libraries : [jQuery Select2](https://github.com/select2/select2)
+* 📟 Libraries : [NPM Package - just-detect-adblock 🚫🕵](https://www.npmjs.com/package/just-detect-adblock)
 * 📟 Framework : [Svelte](https://svelte.dev/)
 * 📟 Framework : [TailwindCSS](https://tailwindcss.com/)
 * 📟 QA & Test : [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
@@ -107,6 +110,10 @@ who had helped provide and develop these libraries
 * To see a complete release versions of the plugins you can go to : 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
 
 == Changelog ==
+
+= 1.5.11 =
+* Add tooltip option always display for call to action button with text
+* Migrate css tooltip popup to tooltip labels
 
 = 1.5.10 =
 * HOTFIX: FAB type link metabox design option not working
