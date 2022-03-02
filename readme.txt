@@ -2,9 +2,9 @@
 Contributors: agung2001
 Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
 Requires at least: 4.5
-Tested up to: 5.9.0
+Tested up to: 5.9.1
 Requires PHP: 5.6
-Stable tag: 1.5.11
+Stable tag: 1.5.12
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -32,11 +32,11 @@ Floating Awesome Button (FAB) is a customizable action button that can help you 
 
 = Tutorial =
 
-https://www.youtube.com/watch?v=ifNfoV5_6Bk
+https://www.youtube.com/watch?v=vQqF9YYF0Qo
 
 https://www.youtube.com/watch?v=TYxBG2iPvl4
 
-https://www.youtube.com/watch?v=vQqF9YYF0Qo
+https://www.youtube.com/watch?v=8XJ25DI-q0g
 
 More Tutorial on YouTube :
 
@@ -78,7 +78,7 @@ More Tutorial on YouTube :
 Thanks for using our plugin, your rating and feedback help us grow!
 If you enjoy it please feel free to spread the words 👊 😚 👍
 
-* 👋 👊 [Join Our Slack Community](https://wpfab.slack.com) 🦸👨‍🚀🥷
+* 👋 👊 [Join Our Community](https://community.artistudio.xyz/) 🦸👨‍🚀🥷
 
 = Credits =
 
@@ -110,6 +110,9 @@ who had helped provide and develop these libraries
 * To see a complete release versions of the plugins you can go to : 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
 
 == Changelog ==
+
+= 1.5.12 =
+* Tailwindcss class integration update for modal template
 
 = 1.5.11 =
 * Add tooltip option always display for call to action button with text

@@ -165,6 +165,7 @@ class Backend extends Base {
 	public function plugin_row_meta_references( $plugin_meta, $plugin_file, $plugin_data, $status ) {
 		if ( strpos( $plugin_file, sprintf( '%s.php', $this->Plugin->getSlug() ) ) !== false ) {
 			$new_links = array(
+				'community' => '<a href="https://community.artistudio.xyz/" target="_blank">Community</a>',
 				'doc'    => '<a href="https://www.youtube.com/watch?v=MMuhc9pcYew&list=PLnwuifVLRkaXBV9IBTPZeLtduzCdt5cFh" target="_blank">Documentation</a>',
 				'tutorial' => '<a href="https://www.youtube.com/watch?v=CkSspyM9yjQ&list=PLnwuifVLRkaXH9I-QAAReVoEv9DClViPG" target="_blank">Tutorial</a>',
 			);
