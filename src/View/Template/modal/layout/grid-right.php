@@ -6,9 +6,10 @@
         $featuredImage = get_the_post_thumbnail_url($fab_item->getID(), 'large');
         if($featuredImage):
     ?>
-        <div class="featured-img-container flex-none sm:w-1/2 relative">
+        <div class="featured-img-container flex-none relative">
             <img src="<?php echo esc_url($featuredImage); ?>"
                  alt="<?php echo $fab_item->getTitle() ?> Cover"
+                 class="w-full sm:w-auto"
             />
         </div>
     <?php endif; ?>
