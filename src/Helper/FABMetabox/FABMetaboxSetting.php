@@ -21,6 +21,10 @@ class FABMetaboxSetting extends Metabox {
             'text' => 'Bar & Button',
             'children' => array(
                 array(
+                    'id'   => 'print',
+                    'text' => 'Print',
+                ),
+                array(
                     'id'   => 'readingbar',
                     'text' => 'Reading Bar',
                 ),
