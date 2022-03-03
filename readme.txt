@@ -1,44 +1,95 @@
 === Floating Awesome Button ===
 Contributors: agung2001
-Tags: float menu, sticky button, popup, optin, scroll to top, social sharing
+Tags: floating action button, float menu, popup, sticky button, scroll to top
 Requires at least: 4.5
 Tested up to: 5.9.1
 Requires PHP: 5.6
-Stable tag: 1.5.12
+Stable tag: 1.5.14
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
-Floating Awesome Button (FAB) is a customizable sticky action button that can help you display custom content (popup, shortcodes, widgets, links, etc).
+Floating Awesome Button (FAB) is a customizable sticky action button that can help you do various things like adding call to action, scroll to top, display custom content (popup, shortcodes, widgets, links, etc).
 
 == Description ==
 
-https://www.youtube.com/watch?v=Cof-KJAFIWE
+https://www.youtube.com/watch?v=JCjBY6M6aFQ
 
-Floating Awesome Button (FAB) is a customizable action button that can help you :
+Floating Awesome Button (FAB) is a customizable sticky action button that can help you do various things like adding call to action, scroll to top, display custom content (popup, shortcodes, widgets, links, etc).
 
-* Adding quick contact links (SMS, Email, and Call) 👍
-* Adding multiple social media links (Facebook, Instagram, TikTok, etc) 👍
-* Adding auth link (Login, Logout, Lost password) 👍
-* Add scroll to top, back to top, anchor link button 👍
-* Add custom design reading progress bar 👍
-* Displaying custom popup (Offers, Opt-in, Promo, etc) 👍
-* Displaying custom authentication popup (Register & Login) 👍
-* Displaying custom shortcode in a popup 👍
-* Displaying product catalog (Woocommerce) 👍
-* Displaying Gutenberg block & Elementor in a popup 👍
-* Displaying forms (Newsletter, Booking, Membership, Payment, etc) 👍
-* Integration with widgets in a modal (Table of content, Social Sharing, etc) 👍
-* Embed videos, audio, podcast (YouTube, Twitch, TikTok, Vimeo, Soundcloud, etc) 👍
+🤩 Add quick social media links & buttons :
 
-= Tutorial =
+* 👍 [Call to Action](https://www.youtube.com/watch?v=026SgKI9x38)
+* 👍 [Donation Button](https://www.youtube.com/watch?v=bkefF5wjN5k)
+* 👍 [Email Button](https://www.youtube.com/watch?v=bkefF5wjN5k)
+* 👍 Facebook Button
+* 👍 Instagram Button
+* 👍 [Latest Post Button](https://www.youtube.com/watch?v=OqdDRrYnxyE)
+* 👍 Login Button
+* 👍 Logout Button
+* 👍 Lost Password Button
+* 👍 [Phone/Call Button](https://www.youtube.com/watch?v=opI3X9b-F6M)
+* 👍 [Skype Button](https://www.youtube.com/watch?v=UAlWA3ngttY)
+* 👍 SMS Button
+* 👍 [Standalone Button](https://www.youtube.com/watch?v=6XShb-f40AM)
+* 👍 TikTok Button
+* 👍 [WhatsApp Button](https://www.youtube.com/watch?v=UsgPSlUDsfQ)
+
+https://www.youtube.com/watch?v=UsgPSlUDsfQ
+
+🤤 Navigation Button :
+
+* 👍 [Anchor Link](https://www.youtube.com/watch?v=QCnARDtJLso)
+* 👍 [Back to Top/Scroll to Top](https://www.youtube.com/watch?v=-nUEic-EVXY)
+* 👍 [Floating Elements](https://www.youtube.com/watch?v=OqdDRrYnxyE)
+* 👍 Print Button
+* 👍 [Reading Bar](https://www.youtube.com/watch?v=NKSGU0oKV9M)
+* 👍 [Sticky Menu](https://www.youtube.com/watch?v=QqeZjhVZ5T8)
+* 👍 [Smooth Scroll](https://www.youtube.com/watch?v=piQ9k04D63E)
+
+https://www.youtube.com/watch?v=-nUEic-EVXY
+
+😎 Custom Template Popup :
+
+* 👍 Booking Popup
+* 👍 [Covid 19 Popup](https://www.youtube.com/watch?v=cN0LeOuOe7c)
+* 👍 [Discount Popup](https://www.youtube.com/watch?v=ZsjSfeyeTRg)
+* 👍 Offers Popup
+* 👍 [Optin Popup](https://www.youtube.com/watch?v=jsnru8BA778)
+* 👍 Membership Popup
+* 👍 Newsletter Popup
+* 👍 Promo Popup
+* 👍 Payment Popup
+* 👍 [Subscribe Popup](https://www.youtube.com/watch?v=kW-SP9v9sdw)
+
+https://www.youtube.com/watch?v=ZsjSfeyeTRg
+
+😲 Special Function Popup :
+
+* 👍 [Ajax Search/Spotlight/Search Palette Popup](https://www.youtube.com/watch?v=vQqF9YYF0Qo)
+* 👍 [Contact Form Popup](https://www.youtube.com/watch?v=Cof-KJAFIWE)
+* 👍 [Dynamic Sidebars Popup](https://www.youtube.com/watch?v=iL30X15xx64)
+* 👍 [Image Popup](https://www.youtube.com/watch?v=XatEFOmzjEw)
+* 👍 [Login Popup](https://www.youtube.com/watch?v=j5jocrWN7ZE)
+* 👍 [Logout Popup](https://www.youtube.com/watch?v=JQecRL2NO24)
+* 👍 [Popup with Custom Overlay](https://www.youtube.com/watch?v=b3hW2zdmZdc)
+* 👍 [Popup with Maximize Button](https://www.youtube.com/watch?v=T29sWABf32I)
+* 👍 [Soundcloud Popup](https://www.youtube.com/watch?v=jdXyrungJVs)
+* 👍 [Spotify Popup](https://www.youtube.com/watch?v=WqV6y22M8Wc)
+* 👍 Shortcode Popup
+* 👍 [TikTok Popup](https://www.youtube.com/watch?v=ljCBjS6-jvw)
+* 👍 [Table of Content Popup](https://www.youtube.com/watch?v=vQqF9YYF0Qo)
+* 👍 [Twitch Stream Popup](https://www.youtube.com/watch?v=16ow8T8l-BA)
+* 👍 [Twitch Chat Popup](https://www.youtube.com/watch?v=DYTHbkan_yI)
+* 👍 [Widget Popup](https://www.youtube.com/watch?v=h-V5zTq4AL0)
+* 👍 Vimeo Popup
+* 👍 Woocommerce Product Catalog
+* 👍 [YouTube Popup](https://www.youtube.com/watch?v=XOaeGhpdpo0)
 
 https://www.youtube.com/watch?v=vQqF9YYF0Qo
 
-https://www.youtube.com/watch?v=TYxBG2iPvl4
+https://www.youtube.com/watch?v=Cof-KJAFIWE
 
-https://www.youtube.com/watch?v=8XJ25DI-q0g
-
-More Tutorial on YouTube :
+More Video & Tutorial on YouTube :
 
 * 🎥 [Documentation](https://www.youtube.com/watch?v=MMuhc9pcYew&list=PLnwuifVLRkaXBV9IBTPZeLtduzCdt5cFh)
 * 🎥 [Tutorial](https://www.youtube.com/watch?v=CkSspyM9yjQ&list=PLnwuifVLRkaXH9I-QAAReVoEv9DClViPG)
@@ -47,36 +98,50 @@ More Tutorial on YouTube :
 
 = Features =
 * 🤓 **Unlimited** custom floating action button
-* 🤓 1500+ Support FontAwesome Icons
+* 🤓 [1500+ Support FontAwesome Icons](https://www.youtube.com/watch?v=Cfn9lgWhb6I)
 * 🤓 Beautiful User Interface (UI)
-* 🤓 Customizable Ajax Search Modal Popup
-* 🤓 Ability to personalize action buttons (Position, Color, Icons, & Shapes)
+* 🤓 [Ability to personalize action buttons with theme](https://www.youtube.com/watch?v=ifNfoV5_6Bk)
 * 🤓 Multiple button positions (Left, Center, Right)
-* 🤓 Multiple buttons shapes 10+ Shapes (Bevel, Circle, Message, Octagon, Pentagon, etc)
-* 🤓 Multiple popup navigation (Draggable, BackgroundDismiss, EscapeKey, Maximize Button, etc)
-* 🤓 Supports Google reCaptcha v2 and v3
+* 🤓 [Multiple buttons shapes 10+ Shapes (Bevel, Circle, Message, Octagon, Pentagon, etc)](https://www.youtube.com/watch?v=Ptd1fuVclcc)
+* 🤓 [Multiple popup navigation (Draggable, BackgroundDismiss, EscapeKey, Maximize Button, etc)](https://www.youtube.com/watch?v=AuDZadffyrI)
 
 = Pro Version =
-* 🤯 **PRO** Ability to custom filter by (Custom Post Type, Posts, Taxonomies & Terms, User Session, User Roles)
-* 🤯 **PRO** Ability to custom filter by Device (Desktop, Tablet, & Mobile)
-* 🤯 **PRO** Ability to change fab & popup animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)
-* 🤯 **PRO** Map modal with a custom hotkey (Ctrl, Shift, Alt, Function Key, & Combined) (258+ Hotkeys)
-* 🤯 **PRO** Ability to change popup theme (Blank, Window Light, Window Dark, many more)
-* 🤯 **PRO** Ability to add Auto Trigger for Modal/Popup (Adblock Detection, Exit Intent, Time Delay)
+* 🤯 **PRO** Ability to custom filter by :
+    - [Custom Post Type](https://www.youtube.com/watch?v=M16abMeJRPQ)
+    - [Page/Post](https://www.youtube.com/watch?v=VorMrTgkFn8)
+    - [Taxonomies & Terms](https://www.youtube.com/watch?v=M16abMeJRPQ)
+    - [User Session](https://www.youtube.com/watch?v=7gsFW5Cl6Ws)
+    - User Roles
+* 🤯 **PRO** [Ability to custom filter by Device (Desktop, Tablet, & Mobile)](https://www.youtube.com/watch?v=HT16islaJ2Y)
+* 🤯 **PRO** [Ability to change fab & popup animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)](https://www.youtube.com/watch?v=wnnyf0FkONw)
+* 🤯 **PRO** [Map modal with a custom hotkey (Ctrl, Shift, Alt, Function Key, & Combined) (258+ Hotkeys)](https://www.youtube.com/watch?v=autoKC3mS3E)
+* 🤯 **PRO** Ability to change popup theme :
+    - [Blank](https://www.youtube.com/watch?v=7m05tpL9La8)
+    - [Window Light](https://www.youtube.com/watch?v=yD4q_RlttIY)
+    - [Window Dark](https://www.youtube.com/watch?v=OS1RKGB0d58)
+* 🤯 **PRO** Ability to add Auto Trigger for Modal/Popup :
+    - [Adblock](https://www.youtube.com/watch?v=8XJ25DI-q0g)
+    - [Cookie Control](https://www.youtube.com/watch?v=ieP1xlN8jw0)
+    - [Exit Intent](https://www.youtube.com/watch?v=wKQ9__CHOaU)
+    - [Time Delay](https://www.youtube.com/watch?v=dEYpclNzA88)
 
 = 3rd Party Plugins Support =
 * 🧩 [Contact Form 7](https://wordpress.org/plugins/contact-form-7)
-* 🧩 [Easy Table of Content](https://wordpress.org/plugins/easy-table-of-contents)
-* 🧩 [Elementor](https://wordpress.org/plugins/elementor)
-* 🧩 [Gutenberg](https://wordpress.org/plugins/gutenberg/)
+* 🧩 [Easy Table of Content](https://wordpress.org/plugins/easy-table-of-contents) | [🎥 Tutorial](https://www.youtube.com/watch?v=bE6GknsAfPU)
+* 🧩 [Elementor](https://wordpress.org/plugins/elementor) | [🎥 Tutorial](https://www.youtube.com/watch?v=MriyOTKFnrE)
+* 🧩 [Gutenberg](https://wordpress.org/plugins/gutenberg/) | [🎥 Tutorial](https://www.youtube.com/watch?v=JCjBY6M6aFQ)
 * 🧩 [Gravity Form](https://www.gravityforms.com)
 * 🧩 [WPForms](https://wordpress.org/plugins/wpforms-lite/)
+
+= 3rd Party API Support =
+* 🕹 [Google reCaptcha v2](https://www.youtube.com/watch?v=EYLaaqQd0xE)
+* 🕹 [Google reCaptcha v3](https://www.youtube.com/watch?v=RxCCZ1x9TNk)
 
 = Sharing is Caring =
 
 ⭐⭐️⭐️⭐️⭐️
 Thanks for using our plugin, your rating and feedback help us grow!
-If you enjoy it please feel free to spread the words 👊 😚 👍
+If you enjoy it please feel free to spread the words 👊 🥳 👍
 
 * 👋 👊 [Join Our Community](https://community.artistudio.xyz/) 🦸👨‍🚀🥷
 
@@ -88,6 +153,8 @@ who had helped provide and develop these libraries
 
 * 📟 Compiler: [GruntJS](https://gruntjs.com/)
 * 📟 Compiler: [Webpack](https://webpack.js.org/)
+* 📟 Framework : [Svelte](https://svelte.dev/)
+* 📟 Framework : [TailwindCSS](https://tailwindcss.com/)
 * 📟 Languages : [SASS Lang](https://sass-lang.com/)
 * 📟 Languages : [TypeScript Lang](https://www.typescriptlang.org/)
 * 📟 Libraries : [Animate.css](https://github.com/daneden/animate.css)
@@ -95,9 +162,7 @@ who had helped provide and develop these libraries
 * 📟 Libraries : [jQuery Confirm](https://craftpip.github.io/jquery-confirm/)
 * 📟 Libraries : [jQuery Hotkeys](https://github.com/jeresig/jquery.hotkeys)
 * 📟 Libraries : [jQuery Select2](https://github.com/select2/select2)
-* 📟 Libraries : [NPM Package - just-detect-adblock 🚫🕵](https://www.npmjs.com/package/just-detect-adblock)
-* 📟 Framework : [Svelte](https://svelte.dev/)
-* 📟 Framework : [TailwindCSS](https://tailwindcss.com/)
+* 📟 NPM : [just-detect-adblock 🚫🕵](https://www.npmjs.com/package/just-detect-adblock)
 * 📟 QA & Test : [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 * 📟 QA & Test : [Wordpress CodeSniffer](https://github.com/WordPress/WordPress-Coding-Standards)
 * 📟 QA & Test : [Selenium](https://www.selenium.dev/)
@@ -105,11 +170,25 @@ who had helped provide and develop these libraries
 * 📟 Vendors : [NPM](https://www.npmjs.com/)
 
 == Installation ==
+
+Instruction :
+
 * You can install the plugin from the WordPress Plugin Repositories or
-* Download the plugin and extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation
-* To see a complete release versions of the plugins you can go to : 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
+* Download the plugin and extract the zip file and just drop the contents in the **wp-content/plugins/** directory of your WordPress installation
+
+Tutorial :
+
+* 🎥 [How to Install WordPress Floating Awesome Button Plugin](https://www.youtube.com/watch?v=MMuhc9pcYew)
+
+Releases :
+
+* To see a complete release versions of the plugins you can go to :
+* 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
 
 == Changelog ==
+
+= 1.5.14 =
+* Modify readme.txt & add support for print button type
 
 = 1.5.12 =
 * Tailwindcss class integration update for modal template
@@ -267,8 +346,14 @@ who had helped provide and develop these libraries
 
 == Frequently Asked Questions ==
 
-= Troubleshoot Search Modal Popup (Ajax Search)? =
+= 🕵️‍ GDPR =
+* This plugin uses 3rd party tools for (Payments & Upgrades) it's called [freemius](https://freemius.com/)
+* To learn more about GDPR consent please this [article](https://freemius.com/blog/gdpr-wordpress-plugin-theme/)
+* We also use cookies internally to store popup session but it's not enable by default see this [video](https://www.youtube.com/watch?v=mqi29BcGUjQ) to learn more
+
+= 🔧 Troubleshoot Search Modal Popup (Ajax Search)? =
 This plugin is uses WP REST API for search modal popup
 If you have any trouble when setting up the plugin please make sure :
-1. Your WP REST API is enabled, check your security plugin if there is any setting that is disabling it.
-2. Make sure your permalinks is set to `Post name` (admin, settings, permalinks, choose "Post Name")
+
+* Your WP REST API is enabled, check your security plugin if there is any setting that is disabling it.
+* Make sure your permalinks is set to `Post name` (admin, settings, permalinks, choose "Post Name")

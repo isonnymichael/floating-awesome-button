@@ -61,7 +61,8 @@ class FABModal {
 
         /** Construct Modal Data */
         $type = $this->WP->get_post_meta( $this->ID, FABMetaboxSetting::$post_metas['type']['meta_key'], true );
-        if($type != 'link'){
+        $nonModalType = array('anchor_link', 'auth_logout', 'latest_post_link', 'link', 'print');
+        if(!in_array($type, $nonModalType)){
             /** Layout */
             $default = FABMetaboxDesign::$input['fab_modal_layout']['default'];
             $this->layout = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['modal_layout']['meta_key'], true );
