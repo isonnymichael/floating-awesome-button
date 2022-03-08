@@ -13,6 +13,7 @@
 
 <div class="inset-0"></div>
 <div class="p-5 p-10"></div>
+<div class="px-6"></div>
 <div class="sm:p-10 sm:pt-8"></div>
 <div class="mb-3 mb-5 mb-8"></div>
 
