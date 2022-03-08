@@ -1,89 +1,92 @@
-=== Floating Awesome Button ===
+=== Floating Awesome Button (Sticky Button & Popup) - CTA, Back to Top, Shortcodes, Widget, & More ===
 Contributors: agung2001
 Tags: floating action button, float menu, popup, sticky button, scroll to top
 Requires at least: 4.5
 Tested up to: 5.9.1
 Requires PHP: 5.6
-Stable tag: 1.5.14
+Stable tag: 1.5.15
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
-Floating Awesome Button (FAB) is a customizable sticky action button that can help you do various things like adding call to action, scroll to top, display custom content (popup, shortcodes, widgets, links, etc).
+Floating Awesome Button (FAB) is a customizable sticky action button that can help you do various things like adding call to action, scroll to top, display custom popup (blocks, shortcodes, widgets, links, etc).
 
 == Description ==
 
 https://www.youtube.com/watch?v=JCjBY6M6aFQ
 
-Floating Awesome Button (FAB) is a customizable sticky action button that can help you do various things like adding call to action, scroll to top, display custom content (popup, shortcodes, widgets, links, etc).
+Floating Awesome Button (FAB) is a customizable sticky action button that can help you do various things like adding call to action, scroll to top, display custom popup (blocks, shortcodes, widgets, links, etc).
 
 🤩 Add quick social media links & buttons :
 
-* 👍 [Call to Action](https://www.youtube.com/watch?v=026SgKI9x38)
-* 👍 [Donation Button](https://www.youtube.com/watch?v=bkefF5wjN5k)
-* 👍 [Email Button](https://www.youtube.com/watch?v=bkefF5wjN5k)
-* 👍 Facebook Button
-* 👍 Instagram Button
-* 👍 [Latest Post Button](https://www.youtube.com/watch?v=OqdDRrYnxyE)
-* 👍 Login Button
-* 👍 Logout Button
-* 👍 Lost Password Button
-* 👍 [Phone/Call Button](https://www.youtube.com/watch?v=opI3X9b-F6M)
-* 👍 [Skype Button](https://www.youtube.com/watch?v=UAlWA3ngttY)
-* 👍 SMS Button
-* 👍 [Standalone Button](https://www.youtube.com/watch?v=6XShb-f40AM)
-* 👍 TikTok Button
-* 👍 [WhatsApp Button](https://www.youtube.com/watch?v=UsgPSlUDsfQ)
+* 👍 Button : [Call to Action](https://www.youtube.com/watch?v=026SgKI9x38) - Simple Call to Action button.
+* 👍 Button : [Standalone CTA Button](https://www.youtube.com/watch?v=6XShb-f40AM) - Modifiable Button
+* 👍 Contact : [Email](https://www.youtube.com/watch?v=bkefF5wjN5k) contact link.
+* 👍 Contact : [Phone/Call](https://www.youtube.com/watch?v=opI3X9b-F6M) contact link.
+* 👍 Contact : [SMS](https://www.youtube.com/watch?v=Q90Ilxs2hXw) link.
+* 👍 Contact : [Skype](https://www.youtube.com/watch?v=UAlWA3ngttY) link.
+* 👍 Contact : [WhatsApp](https://www.youtube.com/watch?v=UsgPSlUDsfQ) link.
+* 👍 Link : [Donation](https://www.youtube.com/watch?v=bkefF5wjN5k) - Add donation link for your campaign.
+* 👍 Link : [Dropbox file share link](https://www.youtube.com/watch?v=Ddcr6yIECsc).
+* 👍 Link : [Google Drive file share link](https://www.youtube.com/watch?v=TFqt-EG6Kik).
+* 👍 Link : [Latest Post](https://www.youtube.com/watch?v=OqdDRrYnxyE) - Your latest blog post link.
+* 👍 Link : [Login](https://www.youtube.com/watch?v=j5jocrWN7ZE) - Your WordPress login link.
+* 👍 Link : [Logout](https://www.youtube.com/watch?v=JQecRL2NO24) - Secure WordPress logout link.
+* 👍 Link : Lost Password - Your WordPress lost password link.
+* 👍 Social Media : [Facebook](https://www.youtube.com/watch?v=ztSXRu96l-c) link for pages, profile & groups.
+* 👍 Social Media : [Instagram](https://www.youtube.com/watch?v=9M1zu4rGDSk) link.
+* 👍 Social Media : [Telegram](https://www.youtube.com/watch?v=bo7_EVYSF-k) link.
+* 👍 Social Media : [TikTok](https://www.youtube.com/watch?v=98Jh5w532VQ) link.
+* 👍 Social Media : [Twitter](https://www.youtube.com/watch?v=AFDgivEMF-Q) link.
+* 👍 Social Media : [Zoom](https://www.youtube.com/watch?v=OKfkETgVTFg) link.
 
 https://www.youtube.com/watch?v=UsgPSlUDsfQ
 
-🤤 Navigation Button :
+🤤 Navigation links & buttons :
 
-* 👍 [Anchor Link](https://www.youtube.com/watch?v=QCnARDtJLso)
-* 👍 [Back to Top/Scroll to Top](https://www.youtube.com/watch?v=-nUEic-EVXY)
-* 👍 [Floating Elements](https://www.youtube.com/watch?v=OqdDRrYnxyE)
-* 👍 Print Button
-* 👍 [Reading Bar](https://www.youtube.com/watch?v=NKSGU0oKV9M)
-* 👍 [Sticky Menu](https://www.youtube.com/watch?v=QqeZjhVZ5T8)
-* 👍 [Smooth Scroll](https://www.youtube.com/watch?v=piQ9k04D63E)
+* 👍 Button : [Back to Top/Scroll to Top](https://www.youtube.com/watch?v=-nUEic-EVXY)
+* 👍 Button : [Floating Elements](https://www.youtube.com/watch?v=OqdDRrYnxyE)
+* 👍 Button : Print
+* 👍 Link : [Anchor Link](https://www.youtube.com/watch?v=QCnARDtJLso)
+* 👍 Link : [Smooth Scroll](https://www.youtube.com/watch?v=piQ9k04D63E)
+* 👍 Navigation : [Reading Bar](https://www.youtube.com/watch?v=NKSGU0oKV9M)
+* 👍 Navigation : [Sticky Menu](https://www.youtube.com/watch?v=QqeZjhVZ5T8)
 
 https://www.youtube.com/watch?v=-nUEic-EVXY
 
 😎 Custom Template Popup :
 
-* 👍 Booking Popup
-* 👍 [Covid 19 Popup](https://www.youtube.com/watch?v=cN0LeOuOe7c)
-* 👍 [Discount Popup](https://www.youtube.com/watch?v=ZsjSfeyeTRg)
-* 👍 Offers Popup
-* 👍 [Optin Popup](https://www.youtube.com/watch?v=jsnru8BA778)
-* 👍 Membership Popup
-* 👍 Newsletter Popup
-* 👍 Promo Popup
-* 👍 Payment Popup
-* 👍 [Subscribe Popup](https://www.youtube.com/watch?v=kW-SP9v9sdw)
+* 👍 Contact & Optin : [Contact Form Popup](https://www.youtube.com/watch?v=Cof-KJAFIWE)
+* 👍 Contact & Optin : [Ebook Popup](https://www.youtube.com/watch?v=jsnru8BA778)
+* 👍 Contact & Optin : [Subscribe Popup](https://www.youtube.com/watch?v=kW-SP9v9sdw)
+* 👍 Notification : [Covid 19 Popup](https://www.youtube.com/watch?v=cN0LeOuOe7c)
+* 👍 Service & Payment : Booking Popup
+* 👍 Service & Payment : Membership Popup
+* 👍 Service & Payment : Payment Popup
+* 👍 Offers : [Discount Popup](https://www.youtube.com/watch?v=ZsjSfeyeTRg)
+* 👍 Offers : Promo Popup
 
 https://www.youtube.com/watch?v=ZsjSfeyeTRg
 
 😲 Special Function Popup :
 
-* 👍 [Ajax Search/Spotlight/Search Palette Popup](https://www.youtube.com/watch?v=vQqF9YYF0Qo)
-* 👍 [Contact Form Popup](https://www.youtube.com/watch?v=Cof-KJAFIWE)
-* 👍 [Dynamic Sidebars Popup](https://www.youtube.com/watch?v=iL30X15xx64)
-* 👍 [Image Popup](https://www.youtube.com/watch?v=XatEFOmzjEw)
-* 👍 [Login Popup](https://www.youtube.com/watch?v=j5jocrWN7ZE)
-* 👍 [Logout Popup](https://www.youtube.com/watch?v=JQecRL2NO24)
-* 👍 [Popup with Custom Overlay](https://www.youtube.com/watch?v=b3hW2zdmZdc)
-* 👍 [Popup with Maximize Button](https://www.youtube.com/watch?v=T29sWABf32I)
-* 👍 [Soundcloud Popup](https://www.youtube.com/watch?v=jdXyrungJVs)
-* 👍 [Spotify Popup](https://www.youtube.com/watch?v=WqV6y22M8Wc)
-* 👍 Shortcode Popup
-* 👍 [TikTok Popup](https://www.youtube.com/watch?v=ljCBjS6-jvw)
-* 👍 [Table of Content Popup](https://www.youtube.com/watch?v=vQqF9YYF0Qo)
-* 👍 [Twitch Stream Popup](https://www.youtube.com/watch?v=16ow8T8l-BA)
-* 👍 [Twitch Chat Popup](https://www.youtube.com/watch?v=DYTHbkan_yI)
-* 👍 [Widget Popup](https://www.youtube.com/watch?v=h-V5zTq4AL0)
-* 👍 Vimeo Popup
-* 👍 Woocommerce Product Catalog
-* 👍 [YouTube Popup](https://www.youtube.com/watch?v=XOaeGhpdpo0)
+* 👍 Custom : Shortcode Popup
+* 👍 Custom : [Widget Popup](https://www.youtube.com/watch?v=h-V5zTq4AL0)
+* 👍 Media : [Image Popup](https://www.youtube.com/watch?v=XatEFOmzjEw)
+* 👍 Media : [Soundcloud Popup](https://www.youtube.com/watch?v=jdXyrungJVs)
+* 👍 Media : [Spotify Popup](https://www.youtube.com/watch?v=WqV6y22M8Wc)
+* 👍 Media : [TikTok Popup](https://www.youtube.com/watch?v=ljCBjS6-jvw)
+* 👍 Media : [Twitch Stream Popup](https://www.youtube.com/watch?v=16ow8T8l-BA)
+* 👍 Media : [Twitch Chat Popup](https://www.youtube.com/watch?v=DYTHbkan_yI)
+* 👍 Media : Vimeo Popup
+* 👍 Media : [YouTube Popup](https://www.youtube.com/watch?v=XOaeGhpdpo0)
+* 👍 Navigation : [Ajax Search/Search Palette Popup](https://www.youtube.com/watch?v=vQqF9YYF0Qo)
+* 👍 Navigation : [Dynamic Sidebars Popup](https://www.youtube.com/watch?v=iL30X15xx64)
+* 👍 Navigation : [Login Popup](https://www.youtube.com/watch?v=j5jocrWN7ZE)
+* 👍 Navigation : [Logout Popup](https://www.youtube.com/watch?v=JQecRL2NO24)
+* 👍 Navigation : [Table of Content Popup](https://www.youtube.com/watch?v=vQqF9YYF0Qo)
+* 👍 Template : [Popup with Custom Overlay](https://www.youtube.com/watch?v=b3hW2zdmZdc)
+* 👍 Template : [Popup with Maximize Button](https://www.youtube.com/watch?v=T29sWABf32I)
+* 👍 Woocommerce : Product Catalog
 
 https://www.youtube.com/watch?v=vQqF9YYF0Qo
 
@@ -107,26 +110,26 @@ More Video & Tutorial on YouTube :
 
 = Pro Version =
 * 🤯 **PRO** Ability to custom filter by :
-    - [Custom Post Type](https://www.youtube.com/watch?v=M16abMeJRPQ)
-    - [Page/Post](https://www.youtube.com/watch?v=VorMrTgkFn8)
-    - [Taxonomies & Terms](https://www.youtube.com/watch?v=M16abMeJRPQ)
-    - [User Session](https://www.youtube.com/watch?v=7gsFW5Cl6Ws)
-    - User Roles
+    - [Custom Post Type](https://www.youtube.com/watch?v=M16abMeJRPQ) : Filter by any CPT.
+    - [Page/Post](https://www.youtube.com/watch?v=VorMrTgkFn8) : Filter by Page/Post.
+    - [Taxonomies & Terms](https://www.youtube.com/watch?v=M16abMeJRPQ) : Filter by (Categories, Tags, etc).
+    - [User Session](https://www.youtube.com/watch?v=7gsFW5Cl6Ws) : Filter by session (Logged in/out).
+    - User Roles : Filter by any user roles.
 * 🤯 **PRO** [Ability to custom filter by Device (Desktop, Tablet, & Mobile)](https://www.youtube.com/watch?v=HT16islaJ2Y)
 * 🤯 **PRO** [Ability to change fab & popup animation (Fade, Bounce, Zoom, Flip, etc) (25+ Animation)](https://www.youtube.com/watch?v=wnnyf0FkONw)
 * 🤯 **PRO** [Map modal with a custom hotkey (Ctrl, Shift, Alt, Function Key, & Combined) (258+ Hotkeys)](https://www.youtube.com/watch?v=autoKC3mS3E)
 * 🤯 **PRO** Ability to change popup theme :
-    - [Blank](https://www.youtube.com/watch?v=7m05tpL9La8)
-    - [Window Light](https://www.youtube.com/watch?v=yD4q_RlttIY)
-    - [Window Dark](https://www.youtube.com/watch?v=OS1RKGB0d58)
+    - [Blank](https://www.youtube.com/watch?v=7m05tpL9La8) : Simple blank theme.
+    - [Window Light](https://www.youtube.com/watch?v=yD4q_RlttIY) : Mac OS like window light popup theme.
+    - [Window Dark](https://www.youtube.com/watch?v=OS1RKGB0d58) : Mac OS like window dark popup theme.
 * 🤯 **PRO** Ability to add Auto Trigger for Modal/Popup :
-    - [Adblock](https://www.youtube.com/watch?v=8XJ25DI-q0g)
-    - [Cookie Control](https://www.youtube.com/watch?v=ieP1xlN8jw0)
-    - [Exit Intent](https://www.youtube.com/watch?v=wKQ9__CHOaU)
-    - [Time Delay](https://www.youtube.com/watch?v=dEYpclNzA88)
+    - [Adblock](https://www.youtube.com/watch?v=8XJ25DI-q0g) : Improve your site revenues from ads.
+    - [Cookie Control](https://www.youtube.com/watch?v=ieP1xlN8jw0) : Control cookies usage for GDPR compliance.
+    - [Exit Intent](https://www.youtube.com/watch?v=wKQ9__CHOaU) : Improve your conversion rates.
+    - [Time Delay](https://www.youtube.com/watch?v=dEYpclNzA88) : Auto trigger popup using time delay.
 
 = 3rd Party Plugins Support =
-* 🧩 [Contact Form 7](https://wordpress.org/plugins/contact-form-7)
+* 🧩 [Contact Form 7](https://wordpress.org/plugins/contact-form-7) | [🎥 Tutorial](https://www.youtube.com/watch?v=Cof-KJAFIWE)
 * 🧩 [Easy Table of Content](https://wordpress.org/plugins/easy-table-of-contents) | [🎥 Tutorial](https://www.youtube.com/watch?v=bE6GknsAfPU)
 * 🧩 [Elementor](https://wordpress.org/plugins/elementor) | [🎥 Tutorial](https://www.youtube.com/watch?v=MriyOTKFnrE)
 * 🧩 [Gutenberg](https://wordpress.org/plugins/gutenberg/) | [🎥 Tutorial](https://www.youtube.com/watch?v=JCjBY6M6aFQ)
@@ -151,23 +154,14 @@ This plugin is heavily using these free & open-source libraries
 all the credits go to these peoples and communities
 who had helped provide and develop these libraries
 
-* 📟 Compiler: [GruntJS](https://gruntjs.com/)
-* 📟 Compiler: [Webpack](https://webpack.js.org/)
-* 📟 Framework : [Svelte](https://svelte.dev/)
-* 📟 Framework : [TailwindCSS](https://tailwindcss.com/)
-* 📟 Languages : [SASS Lang](https://sass-lang.com/)
-* 📟 Languages : [TypeScript Lang](https://www.typescriptlang.org/)
-* 📟 Libraries : [Animate.css](https://github.com/daneden/animate.css)
-* 📟 Libraries : [Fontawesome](https://fontawesome.com/)
-* 📟 Libraries : [jQuery Confirm](https://craftpip.github.io/jquery-confirm/)
-* 📟 Libraries : [jQuery Hotkeys](https://github.com/jeresig/jquery.hotkeys)
-* 📟 Libraries : [jQuery Select2](https://github.com/select2/select2)
-* 📟 NPM : [just-detect-adblock 🚫🕵](https://www.npmjs.com/package/just-detect-adblock)
-* 📟 QA & Test : [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
-* 📟 QA & Test : [Wordpress CodeSniffer](https://github.com/WordPress/WordPress-Coding-Standards)
-* 📟 QA & Test : [Selenium](https://www.selenium.dev/)
-* 📟 Vendors : [Composer](https://getcomposer.org/)
-* 📟 Vendors : [NPM](https://www.npmjs.com/)
+* 📟 3rd Party Libraries : [Animate.css](https://github.com/daneden/animate.css), [Fontawesome](https://fontawesome.com/)
+* 📟 Compiler: [GruntJS](https://gruntjs.com/), [Webpack](https://webpack.js.org/)
+* 📟 Framework : [Svelte](https://svelte.dev/), [TailwindCSS](https://tailwindcss.com/)
+* 📟 Languages : [SASS](https://sass-lang.com/), [TypeScript](https://www.typescriptlang.org/)
+* 📟 jQuery : [jQuery Confirm](https://craftpip.github.io/jquery-confirm/), [jQuery Hotkeys](https://github.com/jeresig/jquery.hotkeys), [jQuery Select2](https://github.com/select2/select2)
+* 📟 NPM : [exit-intent-quattro](https://www.npmjs.com/package/exit-intent-quattro), [just-detect-adblock 🚫🕵](https://www.npmjs.com/package/just-detect-adblock)
+* 📟 QA & Test : [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer), [Selenium](https://www.selenium.dev/), [WPCS](https://github.com/WordPress/WordPress-Coding-Standards)
+* 📟 Vendors : [Composer](https://getcomposer.org/), [NPM](https://www.npmjs.com/)
 
 == Installation ==
 
@@ -187,7 +181,15 @@ Releases :
 
 == Changelog ==
 
-= 1.5.14 =
+= 1.5.15 (08.03.2022) =
+* Update font awesome version to 6.0.0
+* HOTFIX: Layout position center
+* HOTFIX: FAB edge unclickable
+* Upgrade tailwindcss to v3
+* Improve exit intent using exit-intent-quattro library
+* Had any problem [let us know!](https://community.artistudio.xyz/t/release-1-5-15/15) 😄👍
+
+= 1.5.14 (03.03.2022) =
 * Modify readme.txt & add support for print button type
 
 = 1.5.12 =
@@ -230,117 +232,7 @@ Releases :
 * Add support location rules for user roles & post taxonomies
 * Migrate metabox location rules to svelte
 
-= 1.4.25 =
-* Add External Link Hook Support
-* Add New Button Type Latest Post Link
-
-= 1.4.24 =
-* Migrate PHP based script to component based script using Svelte JS
-* HOTFIX: Tooltip line height and position
-
-= 1.4.23 =
-* Add supports for google reCaptcha v2 and v3
-* Add modal layout and featured image
-
-= 1.4.22 =
-* HOTFIX: Template shape not changing
-* HOTFIX: Contact Form 7 ajax not working
-
-= 1.4.21 =
-* Add reading progress bar module
-* Add anchor link module
-* Optimize floating button code for performance
-
-= 1.4.19 =
-* HOTFIX: Scroll to top not changing it shapes
-
-= 1.4.18 =
-* Create new module scroll to top
-* Add module option in backend setting page
-
-= 1.4.17 =
-* Adding action button tooltip
-* Restructure css shape code to be more efficient and lightweight
-
-= 1.4.16 =
-* Minor bug fix margin & padding target
-
-= 1.4.15 =
-* Add 10+ shapes (Bevel, Circle, Message, Octagon, Pentagon, etc)
-* Add more button options (Color & Shape)
-
-= 1.4.12 =
-* Add overflow content option
-* HOTFIX: Open link in new tab issue
-* HOTFIX: in & out animation browser compatibility issue
-* HOTFIX: navigation can't be disabled
-
-= 1.4.11 =
-* Add theme option (Blank, Window Light & Window Dark)
-* Add modal background option color & opacity
-
-= 1.4.9 =
-* Add margin & padding option
-* Add modal animation with animate.css
-* Change maximize button to fullscreen
-
-= 1.4.6 =
-* Add maximize navigation button
-* Add more animation (Modal, Button, Navigation)
-* Add more design option (Navigation)
-* Adjust Button Template Design
-* Add cookies setting for auto trigger
-* HOTFIX: Responsive design single button
-
-= 1.4.3 =
-* Add responsive option for button lists
-* HOTFIX: Exit intent trigger issues
-
-= 1.4.2 =
-* Add option to change default animation
-* Add option to change default icon
-* Add trigger option to (Exit Intent, Time Delay)
-
-= 1.3.10 =
-* Add option to change position
-* Add option to change color
-
-= 1.3.9 =
-* BUGFIX: Search module in linux server
-
-= 1.3.8 =
-* Add Auth (Login & Logout) Modal
-* Add ability to change individual FAB size
-
-= 1.3.7 =
-* Add Elementor Visual Builder Support
-
-= 1.3.6 =
-* Add mutation observer for dynamic content
-
-= 1.3.5 =
-* Fix combined key and hotkey info in modal
-
-= 1.3.4 =
-* Add more hotkeys Ctrl, Shift, Alt, & Combined Key
-
-= 1.3.2 =
-* Responsive size & Visibility Status
-
-= 1.3.1 =
-* Resizable modal
-
-= 1.2.4 =
-* Bug fixes button type
-
-= 1.2.3 =
-* Premium function key
-
-= 1.1.4 =
-* Add REST API support for multiple post types
-
-= 1.1.3 =
-* Initial release. First Version.
+For older changelog entries, please see the [additional changelog.txt  file](https://plugins.svn.wordpress.org/floating-awesome-button/trunk/changelog.txt) delivered with the plugin.
 
 == Upgrade Notice ==
 
