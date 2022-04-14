@@ -67,16 +67,26 @@ class MetaboxSetting extends Base {
             return;
         }
 
+        /** Grab Data */
+        $fab = new FABItem( $post->ID );
+        $fab = $fab->getVars();
+
         /** Add Inline Script */
         $this->WP->wp_localize_script( 'fab-local', 'FAB_METABOX_SETTING', array(
             'defaultOptions' => [
                 'types' => FABMetaboxSetting::$types,
                 'triggers' => FABMetaboxSetting::$triggers,
             ],
+            'data' => compact('fab')
         ));
 
 		/** Enqueue */
 		$this->WP->wp_enqueue_script( 'fab-setting', 'build/js/backend/metabox-setting.min.js', array(), '', true );
+
+        /** Load Component */
+        $component = 'metabox-setting';
+        $this->WP->wp_enqueue_style( sprintf('%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
+        $this->WP->wp_enqueue_script(sprintf('%s-component', $component), sprintf('build/components/%s/bundle.js', $component), array(), '1.0', true);
 	}
 
 	/**

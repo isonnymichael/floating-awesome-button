@@ -63,6 +63,10 @@ class BackendPage extends Base {
         $plugin = \Fab\Plugin::getInstance();
 		$slug = sprintf( '%s-setting', $this->Plugin->getSlug() );
 		$features = $this->page_setting_features();
+        $default = $this->Plugin->getConfig()->default;
+        $config  = $this->WP->get_option( 'fab_config' );
+        $options = (object) ( $this->Helper->ArrayMergeRecursive( (array) $default, (array) $config ) );
+        $featureshooks = $plugin->getHelper()->FeatureHooksLists( $features['features'], $features['featureHooks'], $options );
 
         /** Ignored setting in production */
         $ignored = array( 'core_asset' );
@@ -76,34 +80,17 @@ class BackendPage extends Base {
 		$this->page_setting_submission( $slug, $features );
 
         /** Section */
-        $sections                    = array();
-        if ( ! $this->Plugin->getConfig()->production ) {
-            $sections['Backend.feature'] = array( 'name' => 'Feature' );
-        }
+        $sections = array();
 
         /** Set View */
-        $view = new View( $this->Plugin );
-        $view->setTemplate( 'backend.setting' );
-        $view->setSections( $sections );
-        $view->addData(
-            array(
-                'result'       => isset( $result ) ? $result : '',
-                'background'   => 'bg-alizarin',
-                'features'     => $features['features'],
-                'featureHooks' => $features['featureHooks'],
-                'modules'     => $plugin->getModules(),
-                'options' => (object) (
-                    (array) $this->WP->get_option( 'fab_config' ) +
-                    (array) $this->Plugin->getConfig()->default
-                ),
-            )
-        );
-        $view->setOptions( array( 'shortcode' => false ) );
-        $view->build();
+        View::RenderStatic('Backend.setting');
 
         /** Data Normalization Before Send to Component */
         /** Section */
-        $sections['Backend.setting'] = array( 'name'   => 'Setting', 'active' => true );
+        if ( ! $this->Plugin->getConfig()->production ) {
+            $sections['Backend.feature'] = array( 'name' => 'Feature' );
+        }
+        $sections['Backend.setting'] = array( 'name' => 'Setting', 'active' => true );
         $sections['Backend.module'] = array( 'name' => 'Module' );
         $sections['Backend.about'] = array( 'name' => 'About' );
         $nav = array();
@@ -133,6 +120,7 @@ class BackendPage extends Base {
                 'modules' => $modules,
                 'fab_lists' => $fab_lists,
                 'features' => $features['features'],
+                'featuresHooks' => $featureshooks,
                 'nonce' => array(
                     'clear' => wp_create_nonce('clear-config'),
                     'module' => wp_create_nonce('module-config')
@@ -233,7 +221,7 @@ class BackendPage extends Base {
         if ( isset( $params['fab_hooks'] ) ) {
             $feature = $features['features']['core_hooks'];
             $feature->sanitize();
-            $options->fab_hooks = $feature->getParams();
+            $options->fab_hooks = $feature->transform();
         }
 
         /** Save config */

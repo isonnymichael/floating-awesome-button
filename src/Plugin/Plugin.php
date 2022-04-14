@@ -299,7 +299,7 @@ class Plugin {
 					$callbackName = preg_replace( '/[^A-Za-z0-9_]/', '', strtolower( $hook->getCallback() ) );
 					$key          = sprintf( 'hooks_%s_%s_%s_%s', $namespaceKey, strtolower( $name ), $hookName, $callbackName );
 					$status       = ( isset( $this->config->options->fab_hooks->$key ) ) ? $this->config->options->fab_hooks->$key : $hook->isStatus(); // Option Exists
-					$status       = ( $status=='true' ) ? true : false; // Grab option status
+					$status       = ( $status==='true' || $status=='1' ) ? true : false; // Grab option status
 					if ( $status == false && ! $hook->isMandatory() ) {
 						continue; // Check plugin isMandatory
 					}

@@ -1,5 +1,3 @@
-<div id="fab-setting-dom"></div>
-
 <div class="fab-container">
 
 	<div class="content py-4 mr-4">

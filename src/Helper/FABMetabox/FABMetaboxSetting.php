@@ -102,17 +102,25 @@ class FABMetaboxSetting extends Metabox {
 	/** $_POST input */
 	public static $input = array(
 		'fab_setting_type'          => array( 'default' => '' ),
+
+        /** Link */
 		'fab_setting_link'          => array( 'default' => '' ),
 		'fab_setting_link_behavior' => array( 'default' => '' ),
-		'fab_setting_hotkey'        => array( 'default' => '' ),
+
+        /** Print */
+		'fab_setting_print_target' => array( 'default' => '' ),
 	);
 
 	/** FAB Metabox Post Metas */
 	public static $post_metas = array(
 		'type'          => array( 'meta_key' => 'fab_setting_type' ),
+
+        /** Link */
 		'link'          => array( 'meta_key' => 'fab_setting_link' ),
 		'link_behavior' => array( 'meta_key' => 'fab_setting_link_behavior' ),
-		'hotkey'        => array( 'meta_key' => 'fab_setting_hotkey' ),
+
+        /** Print */
+		'print_target' => array( 'meta_key' => 'fab_setting_print_target' ),
 	);
 
 	/** Constructor */

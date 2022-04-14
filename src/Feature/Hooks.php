@@ -39,4 +39,15 @@ class Hooks extends Feature {
         $this->params = (object) $this->WP->sanitizeTextField( $this->params );
     }
 
+    /**
+     * Transform data before save
+     */
+    public function transform() {
+        /** Validate active/inactive asset */
+        $plugin   = \Fab\Plugin::getInstance();
+        $this->params = (object) $plugin->getHelper()->transformBooleanValue( (array) $this->params );
+
+        return $this->params;
+    }
+
 }
