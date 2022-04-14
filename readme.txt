@@ -4,7 +4,7 @@ Tags: floating action button, float menu, popup, sticky button, scroll to top
 Requires at least: 4.5
 Tested up to: 5.9.1
 Requires PHP: 5.6
-Stable tag: 1.5.15
+Stable tag: 1.5.16
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -159,7 +159,7 @@ who had helped provide and develop these libraries
 * 📟 Framework : [Svelte](https://svelte.dev/), [TailwindCSS](https://tailwindcss.com/)
 * 📟 Languages : [SASS](https://sass-lang.com/), [TypeScript](https://www.typescriptlang.org/)
 * 📟 jQuery : [jQuery Confirm](https://craftpip.github.io/jquery-confirm/), [jQuery Hotkeys](https://github.com/jeresig/jquery.hotkeys), [jQuery Select2](https://github.com/select2/select2)
-* 📟 NPM : [exit-intent-quattro](https://www.npmjs.com/package/exit-intent-quattro), [just-detect-adblock 🚫🕵](https://www.npmjs.com/package/just-detect-adblock)
+* 📟 NPM : [exit-intent-quattro](https://www.npmjs.com/package/exit-intent-quattro), [just-detect-adblock 🚫🕵](https://www.npmjs.com/package/just-detect-adblock), [Print.js](https://www.npmjs.com/package/print-js)
 * 📟 QA & Test : [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer), [Selenium](https://www.selenium.dev/), [WPCS](https://github.com/WordPress/WordPress-Coding-Standards)
 * 📟 Vendors : [Composer](https://getcomposer.org/), [NPM](https://www.npmjs.com/)
 
@@ -180,6 +180,13 @@ Releases :
 * 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
 
 == Changelog ==
+
+= 1.5.16 (11.04.2022) =
+* HOTFIX: Tooltip always display can't be disabled
+* Add Print.js library for print button
+* Enable targeted element print using id, image, pdf, html
+* Fully migrate backend scripts into svelte components for better performance
+* Had any problem [let us know!](https://community.artistudio.xyz/t/releases-1-5-16/52) 😄👍
 
 = 1.5.15 (08.03.2022) =
 * Update font awesome version to 6.0.0

@@ -32,10 +32,8 @@ class FABMetaboxDesign extends Metabox {
         /**
          * Button
          */
-        /** Icon */
-        'fab_design_icon_class'  => array( 'default' => 'fas fa-circle' ),
-		/** Responsive */
-		'fab_design_responsive'  => array(
+        'fab_design_icon_class'  => array( 'default' => 'fas fa-circle' ), // Icon.
+		'fab_design_responsive'  => array( // Responsive.
 			'default' => array(
 				'device' => array(
 					'mobile'  => 'true',
@@ -44,13 +42,11 @@ class FABMetaboxDesign extends Metabox {
 				),
 			),
 		),
-        /** Standalone */
-        'fab_design_standalone'   => array( 'default' => false ),
-        /** Size */
-        'fab_design_size_type'   => array( 'default' => '' ),
-        'fab_design_size_custom' => array( 'default' => '' ),
-        /** Template */
-        'fab_design_template'  => array(
+        'fab_design_standalone'   => array( 'default' => false ), // Standalone.
+        'fab_design_size_type'   => array( 'default' => '' ), // Size.
+        'fab_design_size_custom' => array( 'default' => '' ), // Size.
+        'fab_setting_hotkey'        => array( 'default' => '' ), // Hotkey.
+        'fab_design_template'  => array( // Template.
             'default' => array(
                 'color' => '',
                 'icon' => array(
@@ -60,8 +56,7 @@ class FABMetaboxDesign extends Metabox {
                 'grouped'  => true,
             ),
         ),
-        /** Tooltip */
-        'fab_design_tooltip'  => array(
+        'fab_design_tooltip'  => array( // Tooltip.
             'default' => array(
                 'alwaysdisplay' => false,
                 'font' => array(
@@ -136,6 +131,7 @@ class FABMetaboxDesign extends Metabox {
 		'standalone'  => array( 'meta_key' => 'fab_design_standalone' ), // Standalone.
 		'template' => array( 'meta_key' => 'fab_design_template' ), // Template.
 		'tooltip' => array( 'meta_key' => 'fab_design_tooltip' ), // Tooltip.
+        'hotkey' => array( 'meta_key' => 'fab_setting_hotkey' ), // Hotkey.
 
         /** Modal */
         'modal_navigation'  => array( 'meta_key' => 'fab_modal_navigation' ), // Navigation.
@@ -179,6 +175,7 @@ class FABMetaboxDesign extends Metabox {
         $plugin   = \Fab\Plugin::getInstance();
         $this->params['fab_modal_navigation'] = $plugin->getHelper()->transformBooleanValue( $this->params['fab_modal_navigation'] );
 		$this->params['fab_design_responsive'] = $plugin->getHelper()->transformBooleanValue( $this->params['fab_design_responsive'] );
+		$this->params['fab_design_tooltip'] = $plugin->getHelper()->transformBooleanValue( $this->params['fab_design_tooltip'] );
 	}
 
 	/** Save data to database */
