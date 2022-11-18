@@ -134,15 +134,15 @@ class Frontend extends Base {
 
         /** Load Components */
         foreach($fab_to_display as $component){
-            $this->WP->wp_enqueue_style( sprintf('%s-component', $component['type']), sprintf('build/components/%s/bundle.css', $component['type']) );
-            $this->WP->wp_enqueue_script(sprintf('%s-component', $component['type']), sprintf('build/components/%s/bundle.js', $component['type']), array(), '1.0', true);
+            $this->WP->wp_enqueue_style( sprintf('fab-%s-component', $component['type']), sprintf('build/components/%s/bundle.css', $component['type']) );
+            $this->WP->wp_enqueue_script(sprintf('fab-%s-component', $component['type']), sprintf('build/components/%s/bundle.js', $component['type']), array(), '1.0', true);
         }
 
         /** Load Special Plugin Components */
         $components = ['fab', 'readingbar'];
         foreach($components as $component){
-            $this->WP->wp_enqueue_style( sprintf('%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
-            $this->WP->wp_enqueue_script(sprintf('%s-component', $component), sprintf('build/components/%s/bundle.js', $component), array(), '1.0', true);
+            $this->WP->wp_enqueue_style( sprintf('fab-%s-component', $component), sprintf('build/components/%s/bundle.css', $component) );
+            $this->WP->wp_enqueue_script(sprintf('fab-%s-component', $component), sprintf('build/components/%s/bundle.js', $component), array(), '1.0', true);
         }
 
         /** Special Template/Styles */

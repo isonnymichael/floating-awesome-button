@@ -2,9 +2,9 @@
 Contributors: agung2001
 Tags: floating action button, float menu, popup, sticky button, scroll to top
 Requires at least: 4.5
-Tested up to: 5.9.1
+Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 1.5.16
+Stable tag: 1.6.0
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -137,16 +137,13 @@ More Video & Tutorial on YouTube :
 * 🧩 [WPForms](https://wordpress.org/plugins/wpforms-lite/)
 
 = 3rd Party API Support =
-* 🕹 [Google reCaptcha v2](https://www.youtube.com/watch?v=EYLaaqQd0xE)
-* 🕹 [Google reCaptcha v3](https://www.youtube.com/watch?v=RxCCZ1x9TNk)
+* 🕹 Google reCaptcha [v2](https://www.youtube.com/watch?v=EYLaaqQd0xE) & [v3](https://www.youtube.com/watch?v=RxCCZ1x9TNk)
 
 = Sharing is Caring =
 
 ⭐⭐️⭐️⭐️⭐️
 Thanks for using our plugin, your rating and feedback help us grow!
 If you enjoy it please feel free to spread the words 👊 🥳 👍
-
-* 👋 👊 [Join Our Community](https://community.artistudio.xyz/) 🦸👨‍🚀🥷
 
 = Credits =
 
@@ -181,12 +178,17 @@ Releases :
 
 == Changelog ==
 
+= 1.6.0 (19.11.2022) =
+* Major bug fixes and supports
+
+= 1.5.18 (17.11.2022) =
+* Update reame.txt file, add support to WordPress 6
+
 = 1.5.16 (11.04.2022) =
 * HOTFIX: Tooltip always display can't be disabled
 * Add Print.js library for print button
 * Enable targeted element print using id, image, pdf, html
 * Fully migrate backend scripts into svelte components for better performance
-* Had any problem [let us know!](https://community.artistudio.xyz/t/releases-1-5-16/52) 😄👍
 
 = 1.5.15 (08.03.2022) =
 * Update font awesome version to 6.0.0
@@ -194,7 +196,6 @@ Releases :
 * HOTFIX: FAB edge unclickable
 * Upgrade tailwindcss to v3
 * Improve exit intent using exit-intent-quattro library
-* Had any problem [let us know!](https://community.artistudio.xyz/t/release-1-5-15/15) 😄👍
 
 = 1.5.14 (03.03.2022) =
 * Modify readme.txt & add support for print button type
@@ -227,17 +228,6 @@ Releases :
 * HOTFIX: FAB Shape not changing
 * HOTFIX: Grecaptcha on mobile
 * Migrate backend setting to components
-
-= 1.5.2 =
-* Integrate ajax search component
-
-= 1.5.1 =
-* HOTFIX: Anchor link scroll position
-* HOTFIX: Single scroll to top button only not showing
-
-= 1.5.0 =
-* Add support location rules for user roles & post taxonomies
-* Migrate metabox location rules to svelte
 
 For older changelog entries, please see the [additional changelog.txt  file](https://plugins.svn.wordpress.org/floating-awesome-button/trunk/changelog.txt) delivered with the plugin.
 
