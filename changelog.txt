@@ -5,6 +5,17 @@
 This file contains older changelog entries, so we can keep the size of the standard WordPress readme.txt file reasonable.
 For the latest changes, please see the "Changelog" section of the [readme.txt file](https://plugins.svn.wordpress.org/floating-awesome-button/trunk/readme.txt).
 
+= 1.5.2 =
+* Integrate ajax search component
+
+= 1.5.1 =
+* HOTFIX: Anchor link scroll position
+* HOTFIX: Single scroll to top button only not showing
+
+= 1.5.0 =
+* Add support location rules for user roles & post taxonomies
+* Migrate metabox location rules to svelte
+
 = 1.4.25 =
 * Add External Link Hook Support
 * Add New Button Type Latest Post Link

@@ -179,7 +179,7 @@ class FABItem {
         $this->icon_class      = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['icon_class']['meta_key'], true );
         $this->icon_class      = $this->getIconClass();
         $this->type            = $this->WP->get_post_meta( $this->ID, FABMetaboxSetting::$post_metas['type']['meta_key'], true );
-        $this->hotkey          = $this->WP->get_post_meta( $this->ID, FABMetaboxSetting::$post_metas['hotkey']['meta_key'], true );
+        $this->hotkey          = $this->WP->get_post_meta( $this->ID, FABMetaboxDesign::$post_metas['hotkey']['meta_key'], true );
         $this->hotkey          = ($this->hotkey==='none') ? '' : $this->hotkey;
 
         /** Construct Function */
@@ -372,7 +372,7 @@ class FABItem {
      * Detect content builder
      */
     public function detect_builder() {
-        if ( is_plugin_active( 'elementor/elementor.php' ) && \Elementor\Plugin::instance()->db->is_built_with_elementor( $this->getID() ) ) {
+        if ( is_plugin_active( 'elementor/elementor.php' ) && \Elementor\Plugin::instance()->documents->get( $this->getID() )->is_built_with_elementor()) {
             // Elementor builder
             $this->builder = 'elementor';
         } else { // Default builder
@@ -408,7 +408,7 @@ class FABItem {
 
         /** Render Elementor */
         if ( $this->builder === 'elementor' ) {
-            $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $this->getID() );
+//            $content = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $this->getID() );
         } else {
             $content = get_post_field( 'post_content', $this->getID() ); // Get post content.
             $content = $wp_embed->autoembed( do_blocks( $content ) );
