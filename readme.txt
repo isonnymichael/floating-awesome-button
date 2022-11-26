@@ -4,7 +4,7 @@ Tags: floating action button, float menu, popup, sticky button, scroll to top
 Requires at least: 4.5
 Tested up to: 6.1.1
 Requires PHP: 5.6
-Stable tag: 1.6.0
+Stable tag: 1.6.1
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -177,6 +177,9 @@ Releases :
 * 📟 [Github/Floating Awesome Button](https://github.com/artistudioxyz/floating-awesome-button)
 
 == Changelog ==
+
+= 1.6.1 (26.11.2022) =
+* Minor bug fixes and supports
 
 = 1.6.0 (19.11.2022) =
 * Major bug fixes and supports

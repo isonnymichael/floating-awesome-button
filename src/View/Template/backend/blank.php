@@ -1,3 +1,4 @@
-<?php foreach($this->sections as $path => $options): ?>
-    <?php $this->loadContent($path) ?>
-<?php endforeach; ?>
+<?php
+foreach($this->sections as $bingopress_path => $options){
+    $this->loadContent($bingopress_path);
+}

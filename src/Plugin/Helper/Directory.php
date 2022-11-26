@@ -65,21 +65,4 @@ trait Directory {
         rmdir($dirPath);
     }
 
-    /**
-     * Copy directories contents (Files and Dir) to another directories
-     * @return void
-     */
-    public function copyDir($src,$dst) {
-        $dir = opendir($src);
-        @mkdir($dst);
-        while(false !== ( $file = readdir($dir)) ) {
-            if (( $file != '.' ) && ( $file != '..' )) {
-                if ( is_dir($src . '/' . $file) ) {
-                    $this->copyDir($src . '/' . $file,$dst . '/' . $file);
-                } else { copy($src . '/' . $file,$dst . '/' . $file); }
-            }
-        }
-        closedir($dir);
-    }
-
 }
