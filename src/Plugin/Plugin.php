@@ -484,14 +484,14 @@ class Plugin {
 	/**
 	 * @return object
 	 */
-	public function getConfig(): object {
+	public function getConfig() {
 		return $this->config;
 	}
 
 	/**
 	 * @param object $config
 	 */
-	public function setConfig( object $config ): void {
+	public function setConfig( $config ): void {
 		$this->config = $config;
 	}
 
